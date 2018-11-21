@@ -1,20 +1,87 @@
 {
-  parserClass="com.wasmplugin.parser.WasmParser"
+    parserClass="com.wasmplugin.parser.WasmParser"
 
-  extends="com.intellij.extapi.psi.ASTWrapperPsiElement"
+    extends="com.intellij.extapi.psi.ASTWrapperPsiElement"
 
-  psiClassPrefix="Wasm"
-  psiImplClassSuffix="Impl"
-  psiPackage="com.wasmplugin.psi"
-  psiImplPackage="com.wasmplugin.psi.impl"
+    psiClassPrefix="Wasm"
+    psiImplClassSuffix="Impl"
+    psiPackage="com.wasmplugin.psi"
+    psiImplPackage="com.wasmplugin.psi.impl"
 
-  elementTypeHolderClass="com.wasmplugin.psi.WasmTypes"
-  elementTypeClass="com.wasmplugin.psi.WasmElementType"
-  tokenTypeClass="com.wasmplugin.psi.WasmTokenType"
+    elementTypeHolderClass="com.wasmplugin.psi.WasmTypes"
+    elementTypeClass="com.wasmplugin.psi.WasmElementType"
+    tokenTypeClass="com.wasmplugin.psi.WasmTokenType"
+
 }
 
-simpleFile ::= item_*
+module ::= tLP tMODULE top_declaration* tRP|
 
-private item_ ::= (property|COMMENT|CRLF)
+private top_declaration ::= (type* import* table* memory* global* start* export* start? element* data*)
 
-property ::= (KEY? SEPARATOR VALUE?) | KEY
+
+
+value_type::= tI32|tF64|tF32|tI64
+//
+type_use::= tLP tTYPE idx tRP | func_type
+//
+idx::= tUINTEGER | tID
+//
+table_type::= limits elem_type
+limits::= tUINTEGER | tUINTEGER tUINTEGER
+
+elem_type::= tANYFUNC
+
+
+
+memory_type::= limits
+
+global_type::= value_type | tLP tMUT value_type tRP
+
+type::= tLP tTYPE tID? func_type tRP
+func_type::= tLP tFUNC param_list? result? tRP
+param_list::=  tLP tPARAM value_type value_type+ tRP
+              |param_explicit+
+param_explicit::=tLP tPARAM tID? value_type tRP
+result::=   tLP tRESULT  value_type value_type+ tRP
+        | result_explicit+
+result_explicit::= tLP tRESULT value_type tRP
+
+import::= tLP tIMPORT tNAME tNAME import_desc tRP
+import_desc::= tLP tFUNC tID? type_use tRP
+            | tLP tTABLE tID? table_type tRP
+            | tLP tMEMORY tID? memory_type tRP
+            | tLP tGLOBAL tID? global_type tRP
+
+table::= tLP tTABLE tID? table_type tRP
+        | tLP tTABLE tID? elem_type elem_short
+        | tLP tTABLE tID? import_short table_type tRP
+        | tLP tTABLE tID? export_short (export_short|import_short|elem_short)* tRP
+import_short::= tLP tIMPORT tNAME tNAME tRP
+export_short::= tLP tEXPORT tNAME tRP
+elem_short ::= tLP tELEM idx* tRP
+//
+memory::= tLP tMEMORY tID? memory_type tRP
+        | tLP tMEMORY tID? data_short tRP
+        | tLP tMEMORY tID? import_short memory_type tRP
+        | tLP tMEMORY tID? export_short (data_short|export_short|import_short)* tRP
+
+data_short::= tLP tDATA tSTRING tRP
+
+global::= tLP tGLOBAL tID? global_type /*TODO: MISSING EXPRESSION*/ tRP
+        | tLP tGLOBAL tID? import_short global_type tRP
+        | tLP tGLOBAL tID? export_short (import_short|export_short)* tRP // TODO: TEST import_short/export_short recursion
+
+export::= tLP tEXPORT tNAME export_desc tRP
+export_desc::= tLP (tFUNC|tMEMORY|tTABLE|tGLOBAL) idx tRP
+//
+start::= tLP tSTART idx tRP
+//
+element::=  tLP tELEM idx? tLP off tRP tRP
+off::= tOFFSET /*TODO: ADD EXPRESSION */
+//
+data::= tLP tDATA idx? off tSTRING* tRP
+
+com::= COMMENT
+//instruction::= value_type DOT CONST ()
+
+

@@ -7,7 +7,123 @@ import com.intellij.psi.PsiElement;
 
 public class WasmVisitor extends PsiElementVisitor {
 
-  public void visitProperty(@NotNull WasmProperty o) {
+  public void visitCom(@NotNull WasmCom o) {
+    visitPsiElement(o);
+  }
+
+  public void visitData(@NotNull WasmData o) {
+    visitPsiElement(o);
+  }
+
+  public void visitDataShort(@NotNull WasmDataShort o) {
+    visitPsiElement(o);
+  }
+
+  public void visitElemShort(@NotNull WasmElemShort o) {
+    visitPsiElement(o);
+  }
+
+  public void visitElemType(@NotNull WasmElemType o) {
+    visitPsiElement(o);
+  }
+
+  public void visitElement(@NotNull WasmElement o) {
+    visitPsiElement(o);
+  }
+
+  public void visitExport(@NotNull WasmExport o) {
+    visitPsiElement(o);
+  }
+
+  public void visitExportDesc(@NotNull WasmExportDesc o) {
+    visitPsiElement(o);
+  }
+
+  public void visitExportShort(@NotNull WasmExportShort o) {
+    visitPsiElement(o);
+  }
+
+  public void visitFuncType(@NotNull WasmFuncType o) {
+    visitPsiElement(o);
+  }
+
+  public void visitGlobal(@NotNull WasmGlobal o) {
+    visitPsiElement(o);
+  }
+
+  public void visitGlobalType(@NotNull WasmGlobalType o) {
+    visitPsiElement(o);
+  }
+
+  public void visitIdx(@NotNull WasmIdx o) {
+    visitPsiElement(o);
+  }
+
+  public void visitImport(@NotNull WasmImport o) {
+    visitPsiElement(o);
+  }
+
+  public void visitImportDesc(@NotNull WasmImportDesc o) {
+    visitPsiElement(o);
+  }
+
+  public void visitImportShort(@NotNull WasmImportShort o) {
+    visitPsiElement(o);
+  }
+
+  public void visitLimits(@NotNull WasmLimits o) {
+    visitPsiElement(o);
+  }
+
+  public void visitMemory(@NotNull WasmMemory o) {
+    visitPsiElement(o);
+  }
+
+  public void visitMemoryType(@NotNull WasmMemoryType o) {
+    visitPsiElement(o);
+  }
+
+  public void visitOff(@NotNull WasmOff o) {
+    visitPsiElement(o);
+  }
+
+  public void visitParamExplicit(@NotNull WasmParamExplicit o) {
+    visitPsiElement(o);
+  }
+
+  public void visitParamList(@NotNull WasmParamList o) {
+    visitPsiElement(o);
+  }
+
+  public void visitResult(@NotNull WasmResult o) {
+    visitPsiElement(o);
+  }
+
+  public void visitResultExplicit(@NotNull WasmResultExplicit o) {
+    visitPsiElement(o);
+  }
+
+  public void visitStart(@NotNull WasmStart o) {
+    visitPsiElement(o);
+  }
+
+  public void visitTable(@NotNull WasmTable o) {
+    visitPsiElement(o);
+  }
+
+  public void visitTableType(@NotNull WasmTableType o) {
+    visitPsiElement(o);
+  }
+
+  public void visitType(@NotNull WasmType o) {
+    visitPsiElement(o);
+  }
+
+  public void visitTypeUse(@NotNull WasmTypeUse o) {
+    visitPsiElement(o);
+  }
+
+  public void visitValueType(@NotNull WasmValueType o) {
     visitPsiElement(o);
   }
 

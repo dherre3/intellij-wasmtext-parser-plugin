@@ -1,11 +1,11 @@
 package com.wasmplugin.psi;
 
-
 import com.intellij.psi.tree.IElementType;
-import org.jetbrains.annotations.*;
 import com.wasmplugin.WasmTextLanguage;
+import org.jetbrains.annotations.*;
 
 public class WasmTokenType extends IElementType {
+
     public WasmTokenType(@NotNull @NonNls String debugName) {
         super(debugName, WasmTextLanguage.INSTANCE);
     }
@@ -14,4 +14,5 @@ public class WasmTokenType extends IElementType {
     public String toString() {
         return "WasmTokenType." + super.toString();
     }
+
 }
