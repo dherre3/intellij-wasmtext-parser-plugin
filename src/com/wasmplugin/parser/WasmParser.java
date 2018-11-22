@@ -124,14 +124,15 @@ public class WasmParser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // COMMENT
+  // BLOCK_COMMENT | LINE_COMMENT
   public static boolean com(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "com")) return false;
-    if (!nextTokenIs(b, COMMENT)) return false;
+    if (!nextTokenIs(b, "<com>", BLOCK_COMMENT, LINE_COMMENT)) return false;
     boolean r;
-    Marker m = enter_section_(b);
-    r = consumeToken(b, COMMENT);
-    exit_section_(b, m, COM, r);
+    Marker m = enter_section_(b, l, _NONE_, COM, "<com>");
+    r = consumeToken(b, BLOCK_COMMENT);
+    if (!r) r = consumeToken(b, LINE_COMMENT);
+    exit_section_(b, l, m, r, false, null);
     return r;
   }
 
@@ -728,7 +729,7 @@ public class WasmParser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // tLP tMODULE top_declaration* tRP|
+  // tLP tMODULE tID? top_declaration* tRP | /*empty*/
   static boolean module(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "module")) return false;
     boolean r;
@@ -739,25 +740,33 @@ public class WasmParser implements PsiParser, LightPsiParser {
     return r;
   }
 
-  // tLP tMODULE top_declaration* tRP
+  // tLP tMODULE tID? top_declaration* tRP
   private static boolean module_0(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "module_0")) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = consumeTokens(b, 0, TLP, TMODULE);
     r = r && module_0_2(b, l + 1);
+    r = r && module_0_3(b, l + 1);
     r = r && consumeToken(b, TRP);
     exit_section_(b, m, null, r);
     return r;
   }
 
-  // top_declaration*
+  // tID?
   private static boolean module_0_2(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "module_0_2")) return false;
+    consumeToken(b, TID);
+    return true;
+  }
+
+  // top_declaration*
+  private static boolean module_0_3(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "module_0_3")) return false;
     while (true) {
       int c = current_position_(b);
       if (!top_declaration(b, l + 1)) break;
-      if (!empty_element_parsed_guard_(b, "module_0_2", c)) break;
+      if (!empty_element_parsed_guard_(b, "module_0_3", c)) break;
     }
     return true;
   }
@@ -1073,129 +1082,29 @@ public class WasmParser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // type* import* table* memory* global* start* export* start? element* data*
+  // type
+  //                             | import
+  //                             | table
+  //                             | memory
+  //                             | global
+  //                             | start
+  //                             | export
+  //                             | element
+  //                             | data
   static boolean top_declaration(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "top_declaration")) return false;
+    if (!nextTokenIs(b, TLP)) return false;
     boolean r;
-    Marker m = enter_section_(b);
-    r = top_declaration_0(b, l + 1);
-    r = r && top_declaration_1(b, l + 1);
-    r = r && top_declaration_2(b, l + 1);
-    r = r && top_declaration_3(b, l + 1);
-    r = r && top_declaration_4(b, l + 1);
-    r = r && top_declaration_5(b, l + 1);
-    r = r && top_declaration_6(b, l + 1);
-    r = r && top_declaration_7(b, l + 1);
-    r = r && top_declaration_8(b, l + 1);
-    r = r && top_declaration_9(b, l + 1);
-    exit_section_(b, m, null, r);
+    r = type(b, l + 1);
+    if (!r) r = import_$(b, l + 1);
+    if (!r) r = table(b, l + 1);
+    if (!r) r = memory(b, l + 1);
+    if (!r) r = global(b, l + 1);
+    if (!r) r = start(b, l + 1);
+    if (!r) r = export(b, l + 1);
+    if (!r) r = element(b, l + 1);
+    if (!r) r = data(b, l + 1);
     return r;
-  }
-
-  // type*
-  private static boolean top_declaration_0(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "top_declaration_0")) return false;
-    while (true) {
-      int c = current_position_(b);
-      if (!type(b, l + 1)) break;
-      if (!empty_element_parsed_guard_(b, "top_declaration_0", c)) break;
-    }
-    return true;
-  }
-
-  // import*
-  private static boolean top_declaration_1(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "top_declaration_1")) return false;
-    while (true) {
-      int c = current_position_(b);
-      if (!import_$(b, l + 1)) break;
-      if (!empty_element_parsed_guard_(b, "top_declaration_1", c)) break;
-    }
-    return true;
-  }
-
-  // table*
-  private static boolean top_declaration_2(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "top_declaration_2")) return false;
-    while (true) {
-      int c = current_position_(b);
-      if (!table(b, l + 1)) break;
-      if (!empty_element_parsed_guard_(b, "top_declaration_2", c)) break;
-    }
-    return true;
-  }
-
-  // memory*
-  private static boolean top_declaration_3(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "top_declaration_3")) return false;
-    while (true) {
-      int c = current_position_(b);
-      if (!memory(b, l + 1)) break;
-      if (!empty_element_parsed_guard_(b, "top_declaration_3", c)) break;
-    }
-    return true;
-  }
-
-  // global*
-  private static boolean top_declaration_4(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "top_declaration_4")) return false;
-    while (true) {
-      int c = current_position_(b);
-      if (!global(b, l + 1)) break;
-      if (!empty_element_parsed_guard_(b, "top_declaration_4", c)) break;
-    }
-    return true;
-  }
-
-  // start*
-  private static boolean top_declaration_5(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "top_declaration_5")) return false;
-    while (true) {
-      int c = current_position_(b);
-      if (!start(b, l + 1)) break;
-      if (!empty_element_parsed_guard_(b, "top_declaration_5", c)) break;
-    }
-    return true;
-  }
-
-  // export*
-  private static boolean top_declaration_6(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "top_declaration_6")) return false;
-    while (true) {
-      int c = current_position_(b);
-      if (!export(b, l + 1)) break;
-      if (!empty_element_parsed_guard_(b, "top_declaration_6", c)) break;
-    }
-    return true;
-  }
-
-  // start?
-  private static boolean top_declaration_7(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "top_declaration_7")) return false;
-    start(b, l + 1);
-    return true;
-  }
-
-  // element*
-  private static boolean top_declaration_8(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "top_declaration_8")) return false;
-    while (true) {
-      int c = current_position_(b);
-      if (!element(b, l + 1)) break;
-      if (!empty_element_parsed_guard_(b, "top_declaration_8", c)) break;
-    }
-    return true;
-  }
-
-  // data*
-  private static boolean top_declaration_9(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "top_declaration_9")) return false;
-    while (true) {
-      int c = current_position_(b);
-      if (!data(b, l + 1)) break;
-      if (!empty_element_parsed_guard_(b, "top_declaration_9", c)) break;
-    }
-    return true;
   }
 
   /* ********************************************************** */

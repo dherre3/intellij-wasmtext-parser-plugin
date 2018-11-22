@@ -11,7 +11,7 @@ import org.jetbrains.annotations.NotNull;
 
 public class WasmParserDefinition implements ParserDefinition {
     public static final TokenSet WHITE_SPACES = TokenSet.create(TokenType.WHITE_SPACE);
-    public static final TokenSet COMMENTS = TokenSet.create(WasmTypes.COMMENT);
+    public static final TokenSet COMMENTS = TokenSet.create(WasmTypes.LINE_COMMENT, WasmTypes.BLOCK_COMMENT);
     public static final TokenSet STRINGS = TokenSet.create(WasmTypes.TSTRING);
     public static final IFileElementType FILE = new IFileElementType(WasmTextLanguage.INSTANCE);
 
@@ -48,6 +48,11 @@ public class WasmParserDefinition implements ParserDefinition {
 
     public PsiFile createFile(FileViewProvider viewProvider) {
         return new WasmFile(viewProvider);
+    }
+
+    @Override
+    public SpaceRequirements spaceExistanceTypeBetweenTokens(ASTNode left, ASTNode right) {
+        return SpaceRequirements.MAY;
     }
 
     @NotNull

@@ -6,7 +6,7 @@ import org.jetbrains.annotations.*;
 
 public class WasmTokenType extends IElementType {
 
-    public WasmTokenType(@NotNull @NonNls String debugName) {
+    WasmTokenType(@NotNull @NonNls String debugName) {
         super(debugName, WasmTextLanguage.INSTANCE);
     }
 

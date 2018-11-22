@@ -39,7 +39,8 @@ public interface WasmTypes {
   IElementType TYPE_USE = new WasmElementType("TYPE_USE");
   IElementType VALUE_TYPE = new WasmElementType("VALUE_TYPE");
 
-  IElementType COMMENT = new WasmTokenType("COMMENT");
+  IElementType BLOCK_COMMENT = new WasmTokenType("BLOCK_COMMENT");
+  IElementType LINE_COMMENT = new WasmTokenType("LINE_COMMENT");
   IElementType MODULE_1_0 = new WasmTokenType("module_1_0");
   IElementType TANYFUNC = new WasmTokenType("tANYFUNC");
   IElementType TDATA = new WasmTokenType("tDATA");

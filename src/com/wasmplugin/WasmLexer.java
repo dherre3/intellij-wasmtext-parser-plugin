@@ -37,28 +37,27 @@ class WasmLexer implements FlexLexer {
 
   /** 
    * Translates characters to character classes
-   * Chosen bits are [9, 6, 6]
-   * Total runtime size is 1568 bytes
+   * Chosen bits are [8, 6, 7]
+   * Total runtime size is 1040 bytes
    */
   public static int ZZ_CMAP(int ch) {
-    return ZZ_CMAP_A[(ZZ_CMAP_Y[ZZ_CMAP_Z[ch>>12]|((ch>>6)&0x3f)]<<6)|(ch&0x3f)];
+    return ZZ_CMAP_A[ZZ_CMAP_Y[ZZ_CMAP_Z[ch>>13]|((ch>>7)&0x3f)]|(ch&0x7f)];
   }
 
-  /* The ZZ_CMAP_Z table has 272 entries */
+  /* The ZZ_CMAP_Z table has 136 entries */
   static final char ZZ_CMAP_Z[] = zzUnpackCMap(
-    "\1\0\1\100\1\200\u010d\100");
+    "\1\0\207\100");
 
-  /* The ZZ_CMAP_Y table has 192 entries */
+  /* The ZZ_CMAP_Y table has 128 entries */
   static final char ZZ_CMAP_Y[] = zzUnpackCMap(
-    "\1\0\1\1\176\2\1\3\7\2\1\4\67\2");
+    "\1\0\177\200");
 
-  /* The ZZ_CMAP_A table has 320 entries */
+  /* The ZZ_CMAP_A table has 256 entries */
   static final char ZZ_CMAP_A[] = zzUnpackCMap(
-    "\11\0\1\6\1\2\2\0\1\6\22\0\1\5\1\10\1\13\1\10\1\11\2\10\1\14\1\3\1\4\1\0\1"+
-    "\10\2\0\2\10\1\7\1\12\1\42\1\41\1\44\1\12\1\43\3\12\1\10\1\1\37\10\1\0\1\15"+
-    "\2\0\2\10\1\32\1\35\1\30\1\23\1\26\1\27\1\36\1\10\1\37\2\10\1\25\1\21\1\17"+
-    "\1\22\1\31\1\10\1\20\1\33\1\16\1\24\2\10\1\40\1\34\1\10\1\0\1\10\1\0\1\10"+
-    "\1\14\131\0\1\10\30\0\1\10\37\0\1\10\3\0\2\10\50\0");
+    "\11\4\1\25\1\21\2\4\1\25\22\4\1\24\1\3\1\10\1\3\1\17\2\3\1\7\1\22\1\23\2\3"+
+    "\1\0\3\3\1\11\1\1\1\44\1\43\1\46\1\1\1\45\3\1\1\3\1\20\5\3\6\2\24\3\1\0\1"+
+    "\5\1\0\3\3\1\16\1\26\1\36\1\33\1\30\1\15\1\42\1\3\1\13\2\3\1\35\1\31\1\14"+
+    "\1\32\1\27\1\3\1\37\1\40\1\6\1\34\2\3\1\12\1\41\1\3\1\0\1\3\1\0\1\3\201\0");
 
   /** 
    * Translates DFA states to action switch labels.
@@ -66,15 +65,16 @@ class WasmLexer implements FlexLexer {
   private static final int [] ZZ_ACTION = zzUnpackAction();
 
   private static final String ZZ_ACTION_PACKED_0 =
-    "\2\0\2\1\1\2\1\3\1\4\1\5\1\1\1\5"+
-    "\15\1\2\0\1\6\1\0\1\7\25\0\1\10\2\0"+
-    "\1\7\4\0\1\11\6\0\1\12\1\13\5\0\1\14"+
-    "\1\15\1\0\1\16\4\0\1\17\1\20\1\0\1\21"+
-    "\5\0\1\22\5\0\1\23\1\0\1\24\2\0\1\25"+
-    "\1\26\1\27\1\30\1\31\1\0\1\32\1\33\1\34";
+    "\2\0\1\1\1\2\2\1\1\2\5\1\1\3\1\4"+
+    "\1\5\10\1\4\0\1\6\7\0\1\7\21\0\1\10"+
+    "\1\11\1\0\1\12\1\13\1\0\1\14\7\0\1\15"+
+    "\6\0\1\16\1\0\1\17\1\0\1\20\2\0\1\21"+
+    "\3\0\1\22\3\0\1\23\2\0\1\24\5\0\1\25"+
+    "\1\0\1\26\1\0\1\27\1\30\1\31\1\32\1\33"+
+    "\1\34\1\35";
 
   private static int [] zzUnpackAction() {
-    int [] result = new int[108];
+    int [] result = new int[109];
     int offset = 0;
     offset = zzUnpackAction(ZZ_ACTION_PACKED_0, offset, result);
     return result;
@@ -99,23 +99,23 @@ class WasmLexer implements FlexLexer {
   private static final int [] ZZ_ROWMAP = zzUnpackRowMap();
 
   private static final String ZZ_ROWMAP_PACKED_0 =
-    "\0\0\0\45\0\112\0\157\0\224\0\271\0\112\0\112"+
-    "\0\336\0\u0103\0\u0128\0\u014d\0\u0172\0\u0197\0\u01bc\0\u01e1"+
-    "\0\u0206\0\u022b\0\u0250\0\u0275\0\u029a\0\u02bf\0\u02e4\0\u0309"+
-    "\0\u032e\0\112\0\u0128\0\112\0\u0353\0\u0378\0\u039d\0\u03c2"+
-    "\0\u03e7\0\u040c\0\u0431\0\u0456\0\u047b\0\u04a0\0\u04c5\0\u04ea"+
-    "\0\u050f\0\u0534\0\u0559\0\u057e\0\u05a3\0\u05c8\0\u05ed\0\u0612"+
-    "\0\u0637\0\112\0\u065c\0\u0681\0\u0128\0\u06a6\0\u06cb\0\u06f0"+
-    "\0\u0715\0\112\0\u073a\0\u075f\0\u0784\0\u07a9\0\u07ce\0\u07f3"+
-    "\0\112\0\112\0\u0818\0\u083d\0\u0862\0\u0887\0\u08ac\0\112"+
-    "\0\112\0\u08d1\0\112\0\u08f6\0\u091b\0\u0940\0\u0965\0\112"+
-    "\0\112\0\u098a\0\112\0\u09af\0\u09d4\0\u09f9\0\u0a1e\0\u0a43"+
-    "\0\112\0\u0a68\0\u0a8d\0\u0ab2\0\u0ad7\0\u0afc\0\112\0\u0b21"+
-    "\0\112\0\u0b46\0\u0b6b\0\112\0\112\0\112\0\112\0\112"+
-    "\0\u0b90\0\112\0\112\0\112";
+    "\0\0\0\47\0\116\0\165\0\234\0\303\0\116\0\352"+
+    "\0\u0111\0\u0138\0\u015f\0\u0186\0\u01ad\0\u01d4\0\116\0\u01fb"+
+    "\0\u0222\0\u0249\0\u0270\0\u0297\0\u02be\0\u02e5\0\u030c\0\u0333"+
+    "\0\u035a\0\303\0\u0381\0\116\0\u03a8\0\u03cf\0\u03f6\0\u041d"+
+    "\0\u0444\0\u046b\0\u0492\0\u015f\0\u04b9\0\u04e0\0\u0507\0\u052e"+
+    "\0\u0555\0\u057c\0\u05a3\0\u05ca\0\u05f1\0\u0618\0\u063f\0\u0666"+
+    "\0\u068d\0\u06b4\0\u06db\0\u0702\0\u0729\0\116\0\116\0\u0750"+
+    "\0\116\0\116\0\u0777\0\116\0\u079e\0\u07c5\0\u07ec\0\u0813"+
+    "\0\u083a\0\u0861\0\u0888\0\116\0\u08af\0\u08d6\0\u08fd\0\u0924"+
+    "\0\u094b\0\u0972\0\116\0\u0999\0\116\0\u09c0\0\116\0\u09e7"+
+    "\0\u0a0e\0\116\0\u0a35\0\u0a5c\0\u0a83\0\116\0\u0aaa\0\u0ad1"+
+    "\0\u0af8\0\116\0\u0b1f\0\u0b46\0\116\0\u0b6d\0\u0b94\0\u0bbb"+
+    "\0\u0be2\0\u0c09\0\116\0\u0c30\0\116\0\u0c57\0\116\0\116"+
+    "\0\116\0\116\0\116\0\116\0\116";
 
   private static int [] zzUnpackRowMap() {
-    int [] result = new int[108];
+    int [] result = new int[109];
     int offset = 0;
     offset = zzUnpackRowMap(ZZ_ROWMAP_PACKED_0, offset, result);
     return result;
@@ -138,38 +138,43 @@ class WasmLexer implements FlexLexer {
   private static final int [] ZZ_TRANS = zzUnpackTrans();
 
   private static final String ZZ_TRANS_PACKED_0 =
-    "\1\3\1\4\1\5\1\6\1\7\2\5\1\10\1\3"+
-    "\1\11\1\12\1\13\2\3\1\14\1\3\1\15\1\16"+
-    "\1\17\1\20\2\3\1\21\1\22\1\3\1\23\1\24"+
-    "\1\25\2\3\1\26\1\27\1\3\4\12\45\3\46\0"+
-    "\1\30\45\0\1\5\2\0\2\5\37\0\1\31\52\0"+
-    "\4\32\3\0\27\32\7\0\1\12\2\0\1\12\26\0"+
-    "\4\12\2\33\1\0\3\33\1\0\4\33\1\34\1\0"+
-    "\1\35\27\33\32\0\1\36\1\0\1\37\36\0\1\40"+
-    "\40\0\1\41\1\0\1\42\1\0\1\43\45\0\1\44"+
-    "\47\0\1\45\37\0\1\46\12\0\1\47\30\0\1\50"+
-    "\14\0\1\51\1\0\1\52\33\0\1\53\31\0\1\54"+
-    "\43\0\1\55\53\0\1\56\40\0\1\57\17\0\1\60"+
-    "\1\0\1\61\1\0\2\30\1\62\42\30\1\31\1\63"+
-    "\1\31\1\64\41\31\2\33\1\0\3\33\1\0\4\33"+
-    "\1\65\1\0\1\35\27\33\35\0\1\66\40\0\1\67"+
-    "\46\0\1\70\34\0\1\71\37\0\1\72\47\0\1\73"+
-    "\52\0\1\74\33\0\1\75\54\0\1\76\47\0\1\77"+
-    "\32\0\1\100\67\0\1\101\46\0\1\102\20\0\1\103"+
-    "\60\0\1\104\42\0\1\105\34\0\1\106\53\0\1\107"+
-    "\55\0\1\110\46\0\1\111\4\31\1\62\41\31\1\0"+
-    "\43\31\25\0\1\112\45\0\1\113\42\0\1\114\44\0"+
-    "\1\115\42\0\1\116\55\0\1\117\43\0\1\120\33\0"+
-    "\1\121\45\0\1\122\52\0\1\123\46\0\1\124\41\0"+
-    "\1\125\35\0\1\126\61\0\1\127\31\0\1\130\50\0"+
-    "\1\131\43\0\1\132\44\0\1\133\37\0\1\134\52\0"+
-    "\1\135\36\0\1\136\45\0\1\137\47\0\1\140\36\0"+
-    "\1\141\60\0\1\142\32\0\1\143\42\0\1\144\54\0"+
-    "\1\145\52\0\1\146\26\0\1\147\44\0\1\150\45\0"+
-    "\1\151\52\0\1\152\35\0\1\153\56\0\1\154\14\0";
+    "\1\3\1\4\4\3\1\5\1\3\1\6\1\7\1\3"+
+    "\1\10\1\3\1\11\1\12\1\13\1\14\1\15\1\16"+
+    "\1\17\2\15\1\3\1\20\1\21\1\22\1\23\1\24"+
+    "\3\3\1\25\1\26\1\3\1\27\4\4\47\3\50\0"+
+    "\1\4\7\0\1\4\31\0\4\4\16\0\1\30\22\0"+
+    "\1\31\5\0\4\32\1\0\1\33\2\32\1\34\10\32"+
+    "\1\0\3\32\1\0\21\32\31\0\1\35\11\0\1\36"+
+    "\1\0\1\37\35\0\1\40\6\0\1\41\1\0\1\42"+
+    "\15\0\1\43\33\0\3\44\1\0\3\44\1\0\7\44"+
+    "\6\0\21\44\20\0\1\45\47\0\1\15\2\0\2\15"+
+    "\41\0\1\46\44\0\1\47\42\0\1\50\22\0\1\51"+
+    "\41\0\1\52\1\0\1\53\1\0\1\54\27\0\1\55"+
+    "\47\0\1\56\60\0\1\57\24\0\1\60\75\0\1\61"+
+    "\37\0\1\62\47\0\1\63\20\0\2\64\3\0\3\32"+
+    "\1\64\2\0\1\32\2\64\7\0\1\64\1\0\1\64"+
+    "\2\0\1\64\2\0\1\64\1\32\3\0\4\64\27\0"+
+    "\1\65\63\0\1\66\50\0\1\67\14\0\1\70\76\0"+
+    "\1\71\50\0\1\72\41\0\1\73\5\0\21\45\1\74"+
+    "\25\45\20\46\1\75\1\46\1\76\24\46\37\0\1\77"+
+    "\36\0\1\100\47\0\1\101\47\0\1\102\50\0\1\103"+
+    "\21\0\1\104\55\0\1\105\37\0\1\106\100\0\1\107"+
+    "\24\0\1\110\62\0\1\111\51\0\1\112\41\0\1\113"+
+    "\17\0\2\32\6\0\1\32\3\0\2\32\7\0\1\32"+
+    "\1\0\1\32\2\0\1\32\2\0\1\32\4\0\4\32"+
+    "\32\0\1\114\52\0\1\115\25\0\1\116\31\0\23\46"+
+    "\1\117\43\46\1\0\26\46\16\0\1\120\62\0\1\121"+
+    "\45\0\1\122\47\0\1\123\50\0\1\124\52\0\1\125"+
+    "\24\0\1\126\64\0\1\127\51\0\1\130\35\0\1\131"+
+    "\50\0\1\132\55\0\1\133\43\0\1\134\43\0\1\135"+
+    "\54\0\1\136\46\0\1\137\44\0\1\140\41\0\1\141"+
+    "\53\0\1\142\17\0\1\143\56\0\1\144\36\0\1\145"+
+    "\54\0\1\146\40\0\1\147\101\0\1\150\35\0\1\151"+
+    "\24\0\1\152\46\0\1\153\75\0\1\154\47\0\1\155"+
+    "\10\0";
 
   private static int [] zzUnpackTrans() {
-    int [] result = new int[2997];
+    int [] result = new int[3198];
     int offset = 0;
     offset = zzUnpackTrans(ZZ_TRANS_PACKED_0, offset, result);
     return result;
@@ -207,14 +212,14 @@ class WasmLexer implements FlexLexer {
   private static final int [] ZZ_ATTRIBUTE = zzUnpackAttribute();
 
   private static final String ZZ_ATTRIBUTE_PACKED_0 =
-    "\2\0\1\11\3\1\2\11\17\1\2\0\1\11\1\0"+
-    "\1\11\25\0\1\11\2\0\1\1\4\0\1\11\6\0"+
-    "\2\11\5\0\2\11\1\0\1\11\4\0\2\11\1\0"+
-    "\1\11\5\0\1\11\5\0\1\11\1\0\1\11\2\0"+
-    "\5\11\1\0\3\11";
+    "\2\0\1\11\3\1\1\11\7\1\1\11\10\1\4\0"+
+    "\1\11\7\0\1\1\21\0\2\11\1\0\2\11\1\0"+
+    "\1\11\7\0\1\11\6\0\1\11\1\0\1\11\1\0"+
+    "\1\11\2\0\1\11\3\0\1\11\3\0\1\11\2\0"+
+    "\1\11\5\0\1\11\1\0\1\11\1\0\7\11";
 
   private static int [] zzUnpackAttribute() {
-    int [] result = new int[108];
+    int [] result = new int[109];
     int offset = 0;
     offset = zzUnpackAttribute(ZZ_ATTRIBUTE_PACKED_0, offset, result);
     return result;
@@ -534,142 +539,147 @@ class WasmLexer implements FlexLexer {
             { return TokenType.BAD_CHARACTER;
             } 
             // fall through
-          case 29: break;
-          case 2: 
-            { return TokenType.WHITE_SPACE;
-            } 
-            // fall through
           case 30: break;
-          case 3: 
-            { return WasmTypes.TLP;
-            } 
-            // fall through
-          case 31: break;
-          case 4: 
-            { return WasmTypes.TRP;
-            } 
-            // fall through
-          case 32: break;
-          case 5: 
+          case 2: 
             { return WasmTypes.TUINTEGER;
             } 
             // fall through
+          case 31: break;
+          case 3: 
+            { return TokenType.WHITE_SPACE;
+            } 
+            // fall through
+          case 32: break;
+          case 4: 
+            { return WasmTypes.TLP;
+            } 
+            // fall through
           case 33: break;
-          case 6: 
-            { return WasmTypes.TID;
+          case 5: 
+            { return WasmTypes.TRP;
             } 
             // fall through
           case 34: break;
-          case 7: 
+          case 6: 
             { return WasmTypes.TSTRING;
             } 
             // fall through
           case 35: break;
-          case 8: 
-            { return WasmTypes.COMMENT;
+          case 7: 
+            { return WasmTypes.TID;
             } 
             // fall through
           case 36: break;
-          case 9: 
-            { return WasmTypes.TMUT;
+          case 8: 
+            { return WasmTypes.TI32;
             } 
             // fall through
           case 37: break;
+          case 9: 
+            { return WasmTypes.TI64;
+            } 
+            // fall through
+          case 38: break;
           case 10: 
             { return WasmTypes.TF32;
             } 
             // fall through
-          case 38: break;
+          case 39: break;
           case 11: 
             { return WasmTypes.TF64;
             } 
             // fall through
-          case 39: break;
-          case 12: 
-            { return WasmTypes.TI32;
-            } 
-            // fall through
           case 40: break;
-          case 13: 
-            { return WasmTypes.TI64;
+          case 12: 
+            { return WasmTypes.LINE_COMMENT;
             } 
             // fall through
           case 41: break;
+          case 13: 
+            { return WasmTypes.TMUT;
+            } 
+            // fall through
+          case 42: break;
           case 14: 
             { return WasmTypes.TTYPE;
             } 
             // fall through
-          case 42: break;
-          case 15: 
-            { return WasmTypes.TDATA;
-            } 
-            // fall through
           case 43: break;
-          case 16: 
-            { return WasmTypes.TELEM;
-            } 
-            // fall through
-          case 44: break;
-          case 17: 
+          case 15: 
             { return WasmTypes.TFUNC;
             } 
             // fall through
+          case 44: break;
+          case 16: 
+            { return WasmTypes.BLOCK_COMMENT;
+            } 
+            // fall through
           case 45: break;
-          case 18: 
-            { return WasmTypes.TTABLE;
+          case 17: 
+            { return WasmTypes.TELEM;
             } 
             // fall through
           case 46: break;
-          case 19: 
-            { return WasmTypes.TPARAM;
+          case 18: 
+            { return WasmTypes.TDATA;
             } 
             // fall through
           case 47: break;
-          case 20: 
-            { return WasmTypes.TSTART;
+          case 19: 
+            { return WasmTypes.TTABLE;
             } 
             // fall through
           case 48: break;
-          case 21: 
-            { return WasmTypes.TRESULT;
+          case 20: 
+            { return WasmTypes.TPARAM;
             } 
             // fall through
           case 49: break;
-          case 22: 
-            { return WasmTypes.TMODULE;
+          case 21: 
+            { return WasmTypes.TSTART;
             } 
             // fall through
           case 50: break;
-          case 23: 
-            { return WasmTypes.TMEMORY;
-            } 
-            // fall through
-          case 51: break;
-          case 24: 
-            { return WasmTypes.TOFFSET;
-            } 
-            // fall through
-          case 52: break;
-          case 25: 
-            { return WasmTypes.TEXPORT;
-            } 
-            // fall through
-          case 53: break;
-          case 26: 
-            { return WasmTypes.TGLOBAL;
-            } 
-            // fall through
-          case 54: break;
-          case 27: 
+          case 22: 
             { return WasmTypes.TIMPORT;
             } 
             // fall through
+          case 51: break;
+          case 23: 
+            { return WasmTypes.TEXPORT;
+            } 
+            // fall through
+          case 52: break;
+          case 24: 
+            { return WasmTypes.TMEMORY;
+            } 
+            // fall through
+          case 53: break;
+          case 25: 
+            { return WasmTypes.TMODULE;
+            } 
+            // fall through
+          case 54: break;
+          case 26: 
+            { return WasmTypes.TOFFSET;
+            } 
+            // fall through
           case 55: break;
-          case 28: 
-            { return WasmTypes.TANYFUNC;
+          case 27: 
+            { return WasmTypes.TRESULT;
             } 
             // fall through
           case 56: break;
+          case 28: 
+            { return WasmTypes.TGLOBAL;
+            } 
+            // fall through
+          case 57: break;
+          case 29: 
+            { return WasmTypes.TANYFUNC;
+            } 
+            // fall through
+          case 58: break;
           default:
             zzScanError(ZZ_NO_MATCH);
           }

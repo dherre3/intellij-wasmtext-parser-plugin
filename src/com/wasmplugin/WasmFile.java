@@ -9,7 +9,6 @@ public class WasmFile extends PsiFileBase {
     public WasmFile(@NotNull FileViewProvider viewProvider) {
         super(viewProvider, WasmTextLanguage.INSTANCE);
     }
-
     @NotNull
     @Override
     public FileType getFileType() {

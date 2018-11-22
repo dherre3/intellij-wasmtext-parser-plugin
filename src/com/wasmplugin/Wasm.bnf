@@ -11,12 +11,41 @@
     elementTypeHolderClass="com.wasmplugin.psi.WasmTypes"
     elementTypeClass="com.wasmplugin.psi.WasmElementType"
     tokenTypeClass="com.wasmplugin.psi.WasmTokenType"
+    tokens=[
+        tLP="("
+        tRP=")"
+        tMODULE="module"
+        tTYPE="type"
+        tID="regexp:\$([0-9]|[a-z]|[A-Z]|[!]  |  [#]  |  [$]  |  [%]  |  [&]  |  [′]  |  [∗]  |  [+]  |  [−]  |  [.]  | [/] | [:]  |  [<]  |  [=]  |  [>]  |  [?]  |  [@]  |  [∖]  |  [’]  |  [_]  |  [`]  |  [|]  |[~])+"
+        tUINTEGER="regexp:[0-9]|[1-9][0-9]*"
+        tFUNC="func"
+        tPARAM="param"
+        tI32="i32"
+        tI64="i32"
+        tF32="f32"
+        tF64="f64"
+        tRESULT="result"
+        tGLOBAL="global"
+        tTABLE="table"
+        tMUT="mut"
+        tANYFUNC="anyfunc"
+        space='regexp:\s+'
+        tELEM="elem"
 
+    ]
 }
 
-module ::= tLP tMODULE top_declaration* tRP|
+module ::= tLP tMODULE tID? top_declaration* tRP | /*empty*/
 
-private top_declaration ::= (type* import* table* memory* global* start* export* start? element* data*)
+private top_declaration ::=   type
+                            | import
+                            | table
+                            | memory
+                            | global
+                            | start
+                            | export
+                            | element
+                            | data
 
 
 
@@ -27,7 +56,8 @@ type_use::= tLP tTYPE idx tRP | func_type
 idx::= tUINTEGER | tID
 //
 table_type::= limits elem_type
-limits::= tUINTEGER | tUINTEGER tUINTEGER
+
+limits::=  tUINTEGER tUINTEGER | tUINTEGER
 
 elem_type::= tANYFUNC
 
@@ -58,7 +88,7 @@ table::= tLP tTABLE tID? table_type tRP
         | tLP tTABLE tID? export_short (export_short|import_short|elem_short)* tRP
 import_short::= tLP tIMPORT tNAME tNAME tRP
 export_short::= tLP tEXPORT tNAME tRP
-elem_short ::= tLP tELEM idx* tRP
+elem_short ::= tLP tELEM idx* tRP //TODO(dherre) add data
 //
 memory::= tLP tMEMORY tID? memory_type tRP
         | tLP tMEMORY tID? data_short tRP
@@ -81,7 +111,7 @@ off::= tOFFSET /*TODO: ADD EXPRESSION */
 //
 data::= tLP tDATA idx? off tSTRING* tRP
 
-com::= COMMENT
+com::= BLOCK_COMMENT | LINE_COMMENT
 //instruction::= value_type DOT CONST ()
 
 
