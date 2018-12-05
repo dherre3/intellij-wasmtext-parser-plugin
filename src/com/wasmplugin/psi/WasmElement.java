@@ -10,7 +10,4 @@ public interface WasmElement extends PsiElement {
   @Nullable
   WasmIdx getIdx();
 
-  @NotNull
-  WasmOff getOff();
-
 }

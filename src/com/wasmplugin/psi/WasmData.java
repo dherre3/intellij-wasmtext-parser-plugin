@@ -11,6 +11,6 @@ public interface WasmData extends PsiElement {
   WasmIdx getIdx();
 
   @NotNull
-  WasmOff getOff();
+  WasmOffsetData getOffsetData();
 
 }

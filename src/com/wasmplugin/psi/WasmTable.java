@@ -13,8 +13,8 @@ public interface WasmTable extends PsiElement {
   @Nullable
   WasmElemType getElemType();
 
-  @NotNull
-  List<WasmExportShort> getExportShortList();
+  @Nullable
+  WasmExportShort getExportShort();
 
   @Nullable
   WasmImportShort getImportShort();

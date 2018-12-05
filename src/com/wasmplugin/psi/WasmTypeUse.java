@@ -8,9 +8,12 @@ import com.intellij.psi.PsiElement;
 public interface WasmTypeUse extends PsiElement {
 
   @Nullable
-  WasmFuncType getFuncType();
+  WasmIdx getIdx();
 
   @Nullable
-  WasmIdx getIdx();
+  WasmParamList getParamList();
+
+  @Nullable
+  WasmResult getResult();
 
 }

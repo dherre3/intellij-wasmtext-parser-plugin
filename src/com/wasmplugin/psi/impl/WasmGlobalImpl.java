@@ -27,21 +27,27 @@ public class WasmGlobalImpl extends ASTWrapperPsiElement implements WasmGlobal {
   }
 
   @Override
-  @NotNull
-  public List<WasmExportShort> getExportShortList() {
-    return PsiTreeUtil.getChildrenOfTypeAsList(this, WasmExportShort.class);
+  @Nullable
+  public WasmExportShort getExportShort() {
+    return findChildByClass(WasmExportShort.class);
   }
 
   @Override
-  @Nullable
+  @NotNull
   public WasmGlobalType getGlobalType() {
-    return findChildByClass(WasmGlobalType.class);
+    return findNotNullChildByClass(WasmGlobalType.class);
   }
 
   @Override
   @Nullable
   public WasmImportShort getImportShort() {
     return findChildByClass(WasmImportShort.class);
+  }
+
+  @Override
+  @Nullable
+  public WasmInstruction getInstruction() {
+    return findChildByClass(WasmInstruction.class);
   }
 
 }

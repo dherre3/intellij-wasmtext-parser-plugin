@@ -43,6 +43,10 @@ public class WasmVisitor extends PsiElementVisitor {
     visitPsiElement(o);
   }
 
+  public void visitFunc(@NotNull WasmFunc o) {
+    visitPsiElement(o);
+  }
+
   public void visitFuncType(@NotNull WasmFuncType o) {
     visitPsiElement(o);
   }
@@ -71,7 +75,23 @@ public class WasmVisitor extends PsiElementVisitor {
     visitPsiElement(o);
   }
 
+  public void visitInstruction(@NotNull WasmInstruction o) {
+    visitPsiElement(o);
+  }
+
   public void visitLimits(@NotNull WasmLimits o) {
+    visitPsiElement(o);
+  }
+
+  public void visitLocal(@NotNull WasmLocal o) {
+    visitPsiElement(o);
+  }
+
+  public void visitLocalExplicit(@NotNull WasmLocalExplicit o) {
+    visitPsiElement(o);
+  }
+
+  public void visitMemArg(@NotNull WasmMemArg o) {
     visitPsiElement(o);
   }
 
@@ -83,7 +103,11 @@ public class WasmVisitor extends PsiElementVisitor {
     visitPsiElement(o);
   }
 
-  public void visitOff(@NotNull WasmOff o) {
+  public void visitNum(@NotNull WasmNum o) {
+    visitPsiElement(o);
+  }
+
+  public void visitOffsetData(@NotNull WasmOffsetData o) {
     visitPsiElement(o);
   }
 

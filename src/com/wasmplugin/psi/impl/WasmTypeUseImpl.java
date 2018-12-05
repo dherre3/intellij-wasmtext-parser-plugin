@@ -28,14 +28,20 @@ public class WasmTypeUseImpl extends ASTWrapperPsiElement implements WasmTypeUse
 
   @Override
   @Nullable
-  public WasmFuncType getFuncType() {
-    return findChildByClass(WasmFuncType.class);
+  public WasmIdx getIdx() {
+    return findChildByClass(WasmIdx.class);
   }
 
   @Override
   @Nullable
-  public WasmIdx getIdx() {
-    return findChildByClass(WasmIdx.class);
+  public WasmParamList getParamList() {
+    return findChildByClass(WasmParamList.class);
+  }
+
+  @Override
+  @Nullable
+  public WasmResult getResult() {
+    return findChildByClass(WasmResult.class);
   }
 
 }

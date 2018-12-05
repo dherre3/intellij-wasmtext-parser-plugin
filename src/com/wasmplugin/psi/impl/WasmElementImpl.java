@@ -32,10 +32,4 @@ public class WasmElementImpl extends ASTWrapperPsiElement implements WasmElement
     return findChildByClass(WasmIdx.class);
   }
 
-  @Override
-  @NotNull
-  public WasmOff getOff() {
-    return findNotNullChildByClass(WasmOff.class);
-  }
-
 }

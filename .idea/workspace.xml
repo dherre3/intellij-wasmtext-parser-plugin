@@ -2,44 +2,118 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4b00be01-432d-452d-ae1d-05910f9d2704" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/wasm-parser-plugin.iml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/as.wat" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/com/wasmplugin/wasm_icon.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/com/wasmplugin/wasm_icon_16x16.png" />
       <change beforePath="$PROJECT_DIR$/.idea/.name" afterPath="$PROJECT_DIR$/.idea/.name" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/plugin.iml" afterPath="$PROJECT_DIR$/.idea/wasm-text-format-parser-plugin.iml" />
+      <change beforePath="$PROJECT_DIR$/.idea/plugin.jar" afterPath="" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/out/production/plugin/META-INF/plugin.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/plugin/com/wasmplugin/Wasm.bnf" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/plugin/com/wasmplugin/WasmFileType.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/plugin/com/wasmplugin/WasmFileTypeFactory.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/plugin/com/wasmplugin/WasmIcon.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/plugin/com/wasmplugin/WasmLexer.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/plugin/com/wasmplugin/WasmLexerAdapter.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/plugin/com/wasmplugin/WasmParserDefinition.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/plugin/com/wasmplugin/WasmTextLanguage.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/plugin/com/wasmplugin/parser/WasmParser.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/plugin/com/wasmplugin/psi/WasmElementType.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/plugin/com/wasmplugin/psi/WasmFile.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/plugin/com/wasmplugin/psi/WasmProperty.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/plugin/com/wasmplugin/psi/WasmTokenType.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/plugin/com/wasmplugin/psi/WasmTypes$Factory.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/plugin/com/wasmplugin/psi/WasmTypes.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/plugin/com/wasmplugin/psi/WasmVisitor.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/plugin/com/wasmplugin/psi/impl/WasmPropertyImpl.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/plugin/com/wasmplugin/wasm_icon.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/gen/production/plugin/META-INF/wasm_icon.ico" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/Wasm.bnf" afterPath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/Wasm.bnf" />
+      <change beforePath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/WasmIcon.class" afterPath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/WasmIcon.class" />
+      <change beforePath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/WasmLexer.class" afterPath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/WasmLexer.class" />
+      <change beforePath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/WasmParserDefinition.class" afterPath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/WasmParserDefinition.class" />
+      <change beforePath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/WasmSyntaxHighlighter.class" afterPath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/WasmSyntaxHighlighter.class" />
+      <change beforePath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/parser/WasmParser.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/psi/WasmData.class" afterPath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/psi/WasmData.class" />
+      <change beforePath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/psi/WasmElement.class" afterPath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/psi/WasmElement.class" />
+      <change beforePath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/psi/WasmGlobal.class" afterPath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/psi/WasmGlobal.class" />
+      <change beforePath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/psi/WasmMemory.class" afterPath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/psi/WasmMemory.class" />
+      <change beforePath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/psi/WasmTable.class" afterPath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/psi/WasmTable.class" />
+      <change beforePath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/psi/WasmTypeUse.class" afterPath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/psi/WasmTypeUse.class" />
+      <change beforePath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/psi/WasmTypes$Factory.class" afterPath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/psi/WasmTypes$Factory.class" />
+      <change beforePath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/psi/WasmTypes.class" afterPath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/psi/WasmTypes.class" />
+      <change beforePath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/psi/WasmVisitor.class" afterPath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/psi/WasmVisitor.class" />
+      <change beforePath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/psi/impl/WasmComImpl.class" afterPath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/psi/impl/WasmComImpl.class" />
+      <change beforePath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/psi/impl/WasmDataImpl.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/psi/impl/WasmDataShortImpl.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/psi/impl/WasmElemShortImpl.class" afterPath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/psi/impl/WasmElemShortImpl.class" />
+      <change beforePath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/psi/impl/WasmElemTypeImpl.class" afterPath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/psi/impl/WasmElemTypeImpl.class" />
+      <change beforePath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/psi/impl/WasmElementImpl.class" afterPath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/psi/impl/WasmElementImpl.class" />
+      <change beforePath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/psi/impl/WasmExportDescImpl.class" afterPath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/psi/impl/WasmExportDescImpl.class" />
+      <change beforePath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/psi/impl/WasmExportImpl.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/psi/impl/WasmExportShortImpl.class" afterPath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/psi/impl/WasmExportShortImpl.class" />
+      <change beforePath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/psi/impl/WasmFuncTypeImpl.class" afterPath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/psi/impl/WasmFuncTypeImpl.class" />
+      <change beforePath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/psi/impl/WasmGlobalImpl.class" afterPath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/psi/impl/WasmGlobalImpl.class" />
+      <change beforePath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/psi/impl/WasmGlobalTypeImpl.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/psi/impl/WasmIdxImpl.class" afterPath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/psi/impl/WasmIdxImpl.class" />
+      <change beforePath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/psi/impl/WasmImportDescImpl.class" afterPath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/psi/impl/WasmImportDescImpl.class" />
+      <change beforePath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/psi/impl/WasmImportImpl.class" afterPath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/psi/impl/WasmImportImpl.class" />
+      <change beforePath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/psi/impl/WasmImportShortImpl.class" afterPath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/psi/impl/WasmImportShortImpl.class" />
+      <change beforePath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/psi/impl/WasmLimitsImpl.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/psi/impl/WasmMemoryImpl.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/psi/impl/WasmMemoryTypeImpl.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/psi/impl/WasmOffImpl.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/psi/impl/WasmParamExplicitImpl.class" afterPath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/psi/impl/WasmParamExplicitImpl.class" />
+      <change beforePath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/psi/impl/WasmParamListImpl.class" afterPath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/psi/impl/WasmParamListImpl.class" />
+      <change beforePath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/psi/impl/WasmResultExplicitImpl.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/psi/impl/WasmResultImpl.class" afterPath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/psi/impl/WasmResultImpl.class" />
+      <change beforePath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/psi/impl/WasmStartImpl.class" afterPath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/psi/impl/WasmStartImpl.class" />
+      <change beforePath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/psi/impl/WasmTableImpl.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/psi/impl/WasmTableTypeImpl.class" afterPath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/psi/impl/WasmTableTypeImpl.class" />
+      <change beforePath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/psi/impl/WasmTypeImpl.class" afterPath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/psi/impl/WasmTypeImpl.class" />
+      <change beforePath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/psi/impl/WasmTypeUseImpl.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/psi/impl/WasmValueTypeImpl.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/wasm_icon.ico" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/gen/production/plugin/production/plugin/META-INF/wasm_icon.ico" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/gen/production/plugin/production/plugin/com/wasmplugin/wasm_icon.ico" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/gen/production/plugin/production/plugin/production/plugin/META-INF/wasm_icon.ico" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/gen/production/plugin/production/plugin/production/plugin/com/wasmplugin/Wasm.bnf" afterPath="$PROJECT_DIR$/gen/production/plugin/production/plugin/production/plugin/com/wasmplugin/Wasm.bnf" />
+      <change beforePath="$PROJECT_DIR$/gen/production/plugin/production/plugin/production/plugin/com/wasmplugin/wasm_icon.ico" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/gen/production/plugin/production/plugin/production/plugin/production/plugin/com/wasmplugin/Wasm.bnf" afterPath="$PROJECT_DIR$/gen/production/plugin/production/plugin/production/plugin/production/plugin/com/wasmplugin/Wasm.bnf" />
+      <change beforePath="$PROJECT_DIR$/intellij-wasmtext-parser-plugin.jar" afterPath="" />
       <change beforePath="$PROJECT_DIR$/resources/META-INF/plugin.xml" afterPath="$PROJECT_DIR$/resources/META-INF/plugin.xml" />
-      <change beforePath="$PROJECT_DIR$/src/asdas.wat" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/META-INF/wasm_icon.ico" afterPath="" />
       <change beforePath="$PROJECT_DIR$/src/com/wasmplugin/Wasm.bnf" afterPath="$PROJECT_DIR$/src/com/wasmplugin/Wasm.bnf" />
       <change beforePath="$PROJECT_DIR$/src/com/wasmplugin/Wasm.flex" afterPath="$PROJECT_DIR$/src/com/wasmplugin/Wasm.flex" />
-      <change beforePath="$PROJECT_DIR$/src/com/wasmplugin/WasmFile.java" afterPath="$PROJECT_DIR$/src/com/wasmplugin/WasmFile.java" />
+      <change beforePath="$PROJECT_DIR$/src/com/wasmplugin/WasmIcon.java" afterPath="$PROJECT_DIR$/src/com/wasmplugin/WasmIcon.java" />
       <change beforePath="$PROJECT_DIR$/src/com/wasmplugin/WasmLexer.java" afterPath="$PROJECT_DIR$/src/com/wasmplugin/WasmLexer.java" />
       <change beforePath="$PROJECT_DIR$/src/com/wasmplugin/WasmParserDefinition.java" afterPath="$PROJECT_DIR$/src/com/wasmplugin/WasmParserDefinition.java" />
       <change beforePath="$PROJECT_DIR$/src/com/wasmplugin/WasmSyntaxHighlighter.java" afterPath="$PROJECT_DIR$/src/com/wasmplugin/WasmSyntaxHighlighter.java" />
-      <change beforePath="$PROJECT_DIR$/src/com/wasmplugin/asda.wat" afterPath="" />
       <change beforePath="$PROJECT_DIR$/src/com/wasmplugin/parser/WasmParser.java" afterPath="$PROJECT_DIR$/src/com/wasmplugin/parser/WasmParser.java" />
-      <change beforePath="$PROJECT_DIR$/src/com/wasmplugin/psi/WasmTokenType.java" afterPath="$PROJECT_DIR$/src/com/wasmplugin/psi/WasmTokenType.java" />
+      <change beforePath="$PROJECT_DIR$/src/com/wasmplugin/psi/WasmData.java" afterPath="$PROJECT_DIR$/src/com/wasmplugin/psi/WasmData.java" />
+      <change beforePath="$PROJECT_DIR$/src/com/wasmplugin/psi/WasmElement.java" afterPath="$PROJECT_DIR$/src/com/wasmplugin/psi/WasmElement.java" />
+      <change beforePath="$PROJECT_DIR$/src/com/wasmplugin/psi/WasmGlobal.java" afterPath="$PROJECT_DIR$/src/com/wasmplugin/psi/WasmGlobal.java" />
+      <change beforePath="$PROJECT_DIR$/src/com/wasmplugin/psi/WasmMemory.java" afterPath="$PROJECT_DIR$/src/com/wasmplugin/psi/WasmMemory.java" />
+      <change beforePath="$PROJECT_DIR$/src/com/wasmplugin/psi/WasmTable.java" afterPath="$PROJECT_DIR$/src/com/wasmplugin/psi/WasmTable.java" />
+      <change beforePath="$PROJECT_DIR$/src/com/wasmplugin/psi/WasmTypeUse.java" afterPath="$PROJECT_DIR$/src/com/wasmplugin/psi/WasmTypeUse.java" />
       <change beforePath="$PROJECT_DIR$/src/com/wasmplugin/psi/WasmTypes.java" afterPath="$PROJECT_DIR$/src/com/wasmplugin/psi/WasmTypes.java" />
+      <change beforePath="$PROJECT_DIR$/src/com/wasmplugin/psi/WasmVisitor.java" afterPath="$PROJECT_DIR$/src/com/wasmplugin/psi/WasmVisitor.java" />
+      <change beforePath="$PROJECT_DIR$/src/com/wasmplugin/psi/impl/WasmComImpl.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/com/wasmplugin/psi/impl/WasmDataImpl.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/com/wasmplugin/psi/impl/WasmDataShortImpl.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/com/wasmplugin/psi/impl/WasmElemShortImpl.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/com/wasmplugin/psi/impl/WasmElemTypeImpl.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/com/wasmplugin/psi/impl/WasmElementImpl.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/com/wasmplugin/psi/impl/WasmExportDescImpl.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/com/wasmplugin/psi/impl/WasmExportImpl.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/com/wasmplugin/psi/impl/WasmExportShortImpl.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/com/wasmplugin/psi/impl/WasmFuncTypeImpl.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/com/wasmplugin/psi/impl/WasmGlobalImpl.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/com/wasmplugin/psi/impl/WasmGlobalTypeImpl.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/com/wasmplugin/psi/impl/WasmIdxImpl.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/com/wasmplugin/psi/impl/WasmImportDescImpl.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/com/wasmplugin/psi/impl/WasmImportImpl.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/com/wasmplugin/psi/impl/WasmImportShortImpl.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/com/wasmplugin/psi/impl/WasmLimitsImpl.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/com/wasmplugin/psi/impl/WasmMemoryImpl.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/com/wasmplugin/psi/impl/WasmMemoryTypeImpl.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/com/wasmplugin/psi/impl/WasmOffImpl.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/com/wasmplugin/psi/impl/WasmParamExplicitImpl.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/com/wasmplugin/psi/impl/WasmParamListImpl.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/com/wasmplugin/psi/impl/WasmResultExplicitImpl.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/com/wasmplugin/psi/impl/WasmResultImpl.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/com/wasmplugin/psi/impl/WasmStartImpl.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/com/wasmplugin/psi/impl/WasmTableImpl.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/com/wasmplugin/psi/impl/WasmTableTypeImpl.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/com/wasmplugin/psi/impl/WasmTypeImpl.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/com/wasmplugin/psi/impl/WasmTypeUseImpl.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/com/wasmplugin/psi/impl/WasmValueTypeImpl.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/com/wasmplugin/wasm_icon.ico" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/wasm-parser-plugin.iml" afterPath="$PROJECT_DIR$/wasm-text-format-parser-plugin.iml" />
+      <change beforePath="$PROJECT_DIR$/wasm-parser-plugin.jar" afterPath="" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -48,193 +122,132 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FavoritesManager">
+    <favorites_list name="wasm-parser-plugin.iml" />
+  </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="vertical" split-proportion="0.57403654">
-      <split-first>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="Wasm.bnf" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/com/wasmplugin/Wasm.bnf">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="32">
-                  <caret line="90" column="57" lean-forward="false" selection-start-line="90" selection-start-column="57" selection-end-line="90" selection-end-column="57" />
-                  <folding>
-                    <element signature="e#0#1072#0" expanded="true" />
-                    <element signature="e#433#1070#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="WasmLexer.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/com/wasmplugin/WasmLexer.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="375">
-                  <caret line="593" column="35" lean-forward="false" selection-start-line="593" selection-start-column="35" selection-end-line="593" selection-end-column="35" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="Wasm.flex" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/com/wasmplugin/Wasm.flex">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="77">
-                  <caret line="49" column="24" lean-forward="true" selection-start-line="49" selection-start-column="24" selection-end-line="49" selection-end-column="24" />
-                  <folding>
-                    <marker date="1542910044700" expanded="false" signature="32:176" ph="..." />
-                    <marker date="1542910044700" expanded="true" signature="1746:3787" ph="{...}" />
-                    <marker date="1542910044700" expanded="true" signature="1746:4249" ph="{...}" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="WasmTokenType.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/com/wasmplugin/psi/WasmTokenType.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="60">
-                  <caret line="6" column="39" lean-forward="false" selection-start-line="6" selection-start-column="39" selection-end-line="6" selection-end-column="39" />
-                  <folding>
-                    <element signature="e#253#254#0" expanded="true" />
-                    <element signature="e#312#313#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="WasmParserDefinition.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/com/wasmplugin/WasmParserDefinition.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="134">
-                  <caret line="21" column="5" lean-forward="false" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="WasmSyntaxHighlighter.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/com/wasmplugin/WasmSyntaxHighlighter.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="238">
-                  <caret line="60" column="55" lean-forward="false" selection-start-line="60" selection-start-column="55" selection-end-line="60" selection-end-column="55" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="TextAttributesKey.class" pinned="false" current-in-tab="false">
-            <entry file="jar://$APPLICATION_HOME_DIR$/lib/openapi.jar!/com/intellij/openapi/editor/colors/TextAttributesKey.class">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-106">
-                  <caret line="24" column="19" lean-forward="false" selection-start-line="24" selection-start-column="19" selection-end-line="24" selection-end-column="19" />
-                  <folding>
-                    <marker date="1519073637759" expanded="false" signature="0:104" ph="/.../" />
-                    <marker date="1519073637759" expanded="false" signature="158:885" ph="..." />
-                    <marker date="1519073637759" expanded="false" signature="1429:1613" ph="compute() → {" />
-                    <marker date="1519073637759" expanded="false" signature="1774:1785" ph="}" />
-                    <marker date="1519073637759" expanded="true" signature="1982:2085" ph="{...}" />
-                    <marker date="1519073637759" expanded="true" signature="2142:2556" ph="{...}" />
-                    <marker date="1519073637759" expanded="true" signature="2650:2927" ph="{...}" />
-                    <marker date="1519073637759" expanded="false" signature="2957:2968" ph=" { " />
-                    <marker date="1519073637759" expanded="false" signature="2995:3001" ph=" }" />
-                    <marker date="1519073637759" expanded="false" signature="3038:3049" ph=" { " />
-                    <marker date="1519073637759" expanded="false" signature="3076:3082" ph=" }" />
-                    <marker date="1519073637759" expanded="true" signature="3141:3286" ph="{...}" />
-                    <marker date="1519073637759" expanded="true" signature="3399:3646" ph="{...}" />
-                    <marker date="1519073637759" expanded="true" signature="3695:4016" ph="{...}" />
-                    <marker date="1519073637759" expanded="true" signature="4054:4358" ph="{...}" />
-                    <marker date="1519073637759" expanded="false" signature="4385:4396" ph=" { " />
-                    <marker date="1519073637759" expanded="false" signature="4434:4440" ph=" }" />
-                    <marker date="1519073637759" expanded="true" signature="4491:5053" ph="{...}" />
-                    <marker date="1519073637759" expanded="true" signature="5059:5077" ph="/**...*/" />
-                    <marker date="1519073637759" expanded="true" signature="5082:5106" ph="@{...}" />
-                    <marker date="1519073637759" expanded="true" signature="5239:5632" ph="{...}" />
-                    <marker date="1519073637759" expanded="true" signature="5783:6079" ph="{...}" />
-                    <marker date="1519073637759" expanded="true" signature="6232:6525" ph="{...}" />
-                    <marker date="1519073637759" expanded="false" signature="6595:6606" ph=" { " />
-                    <marker date="1519073637759" expanded="false" signature="6641:6647" ph=" }" />
-                    <marker date="1519073637759" expanded="true" signature="6739:7310" ph="{...}" />
-                    <marker date="1519073637759" expanded="true" signature="6948:7031" ph="{...}" />
-                    <marker date="1519073637759" expanded="true" signature="7065:7114" ph="{...}" />
-                    <marker date="1519073637759" expanded="true" signature="7397:7528" ph="{...}" />
-                    <marker date="1519073637759" expanded="true" signature="7595:7734" ph="{...}" />
-                    <marker date="1519073637759" expanded="true" signature="7790:7866" ph="{...}" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="DefaultLanguageHighlighterColors.class" pinned="false" current-in-tab="false">
-            <entry file="jar://$APPLICATION_HOME_DIR$/lib/openapi.jar!/com/intellij/openapi/editor/DefaultLanguageHighlighterColors.class">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="123">
-                  <caret line="91" column="16" lean-forward="false" selection-start-line="91" selection-start-column="8" selection-end-line="91" selection-end-column="16" />
-                  <folding>
-                    <marker date="1519073637759" expanded="false" signature="0:104" ph="/.../" />
-                    <marker date="1519073637759" expanded="true" signature="2638:2645" ph="{}" />
-                    <marker date="1519073637759" expanded="true" signature="2658:6697" ph="{...}" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="HighlighterColors.class" pinned="false" current-in-tab="false">
-            <entry file="jar://$APPLICATION_HOME_DIR$/lib/openapi.jar!/com/intellij/openapi/editor/HighlighterColors.class">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="90">
-                  <caret line="9" column="17" lean-forward="false" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
-                  <folding>
-                    <marker date="1519073637759" expanded="false" signature="0:104" ph="/.../" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="WasmTypes.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/com/wasmplugin/psi/WasmTypes.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="555">
-                  <caret line="40" column="0" lean-forward="false" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
-                  <folding>
-                    <marker date="1542910061611" expanded="true" signature="3803:6357" ph="{...}" />
-                    <marker date="1542910061611" expanded="true" signature="3803:6361" ph="{...}" />
-                    <marker date="1542910061611" expanded="true" signature="6267:6357" ph="{...}" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf>
-          <file leaf-file-name="Wasm.bnf.preview" pinned="false" current-in-tab="true">
-            <entry file="mock:///Wasm.bnf.preview">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="30">
-                  <caret line="2" column="1" lean-forward="true" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="Wasm.bnf" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/wasmplugin/Wasm.bnf">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="126">
+              <caret line="142" column="0" lean-forward="false" selection-start-line="142" selection-start-column="0" selection-end-line="142" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="plugin.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/META-INF/plugin.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="7" column="45" lean-forward="false" selection-start-line="7" selection-start-column="45" selection-end-line="7" selection-end-column="45" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="wasm-text-format-parser-plugin.iml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.idea/wasm-text-format-parser-plugin.iml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="14" column="9" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="14" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".name" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.idea/.name">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="wasm-text-format-parser-plugin.iml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/wasm-text-format-parser-plugin.iml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="14" column="9" lean-forward="false" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="as.wat" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/as.wat">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="631">
+              <caret line="264" column="29" lean-forward="false" selection-start-line="264" selection-start-column="29" selection-end-line="264" selection-end-column="29" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="WasmTypes.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/wasmplugin/psi/WasmTypes.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="16" column="37" lean-forward="false" selection-start-line="16" selection-start-column="37" selection-end-line="16" selection-end-column="37" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <marker date="1544044396421" expanded="true" signature="11927:12699" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Wasm.flex" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/wasmplugin/Wasm.flex">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="222">
+              <caret line="22" column="29" lean-forward="false" selection-start-line="22" selection-start-column="29" selection-end-line="22" selection-end-column="29" />
+              <folding>
+                <marker date="1544043672328" expanded="false" signature="32:176" ph="..." />
+                <marker date="1544043672328" expanded="true" signature="1327:10642" ph="{...}" />
+                <marker date="1544043672328" expanded="true" signature="1327:11171" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>TANYTYPE</find>
-      <find>variable</find>
-      <find>type</find>
-      <find>ID_CHAR</find>
-      <find>TEMPLATE_LANGUAGE_COLOR</find>
-      <find>METADATA</find>
+      <find>value_type</find>
+      <find>Idx</find>
+      <find>global</find>
+      <find>tINT</find>
+      <find>v</find>
+      <find>data</find>
+      <find>as</find>
+      <find>func_type</find>
+      <find>type_use</find>
+      <find>tUINTEGER</find>
+      <find>tSTRING</find>
+      <find>tNAME</find>
       <find>func</find>
-      <find>table_type</find>
-      <find>UINTE</find>
+      <find>TINTEGE</find>
+      <find>WasmOffImpl</find>
+      <find>constant_exp</find>
+      <find>tI32 tDOT tCONST tINT</find>
+      <find>reinterpret/f64</find>
+      <find>UINTEGER</find>
+      <find>nan</find>
+      <find>TSTORE</find>
+      <find>number</find>
+      <find>TELSE</find>
+      <find>local</find>
+      <find>IDENTIFIER</find>
+      <find>const</find>
+      <find>br</find>
+      <find>BLOCK_CHAR</find>
+      <find>plugin</find>
+      <find>if</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -257,14 +270,18 @@
         <option value="$PROJECT_DIR$/wasm-parser-plugim.iml" />
         <option value="$PROJECT_DIR$/.idea/plugin.iml" />
         <option value="$PROJECT_DIR$/src/com/wasmplugin/WasmFile.java" />
-        <option value="$PROJECT_DIR$/resources/META-INF/plugin.xml" />
         <option value="$PROJECT_DIR$/src/wawa.wat" />
         <option value="$PROJECT_DIR$/src/com/wasmplugin/psi/WasmTokenType.java" />
-        <option value="$PROJECT_DIR$/src/com/wasmplugin/Wasm.flex" />
-        <option value="$PROJECT_DIR$/src/com/wasmplugin/WasmSyntaxHighlighter.java" />
         <option value="$PROJECT_DIR$/src/com/wasmplugin/WasmParserDefinition.java" />
-        <option value="$PROJECT_DIR$/src/com/wasmplugin/Wasm.bnf" />
+        <option value="$PROJECT_DIR$/src/com/wasmplugin/WasmIcon.java" />
         <option value="/Wasm.bnf.preview" />
+        <option value="$PROJECT_DIR$/gen/production/plugin/as.wat" />
+        <option value="$PROJECT_DIR$/src/com/wasmplugin/WasmSyntaxHighlighter.java" />
+        <option value="$PROJECT_DIR$/src/as.wat" />
+        <option value="$PROJECT_DIR$/src/com/wasmplugin/Wasm.bnf" />
+        <option value="$PROJECT_DIR$/src/com/wasmplugin/Wasm.flex" />
+        <option value="$PROJECT_DIR$/resources/META-INF/plugin.xml" />
+        <option value="$PROJECT_DIR$/wasm-parser-plugin.iml" />
       </list>
     </option>
   </component>
@@ -301,33 +318,31 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="AndroidView" />
       <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="wasm-parser-plugin.iml" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wasm-text-format-parser-plugin.iml" type="b2602c69:ProjectViewProjectNode" />
               <item name="plugin" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="wasm-parser-plugin.iml" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wasm-text-format-parser-plugin.iml" type="b2602c69:ProjectViewProjectNode" />
+              <item name="plugin" type="462c0819:PsiDirectoryNode" />
+              <item name=".idea" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="wasm-text-format-parser-plugin.iml" type="b2602c69:ProjectViewProjectNode" />
               <item name="plugin" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="wasm-parser-plugin.iml" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wasm-text-format-parser-plugin.iml" type="b2602c69:ProjectViewProjectNode" />
               <item name="plugin" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="wasmplugin" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="wasm-parser-plugin.iml" type="b2602c69:ProjectViewProjectNode" />
-              <item name="plugin" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="wasmplugin" type="462c0819:PsiDirectoryNode" />
-              <item name="parser" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -338,14 +353,24 @@
   </component>
   <component name="PropertiesComponent">
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
-    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Language Defaults" />
-    <property name="SearchEverywhereHistoryKey" value="was&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/wasm-parse/plugin/src/com/wasmplugin/Wasm.bnf&#10;bn&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/wasm-parse/plugin/src/com/wasmplugin/Wasm.bnf&#10;bnf&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/wasm-parse/plugin/src/com/wasmplugin/Wasm.bnf&#10;WasmToke&#9;PSI&#9;JAVA://com.wasmplugin.psi.WasmTokenType" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/wasm-parse/plugin/src/com/wasmplugin/Wasm.bnf&#10;was&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/wasm-parse/plugin/src/com/wasmplugin/Wasm.bnf&#10;bn&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/wasm-parse/plugin/src/com/wasmplugin/Wasm.bnf&#10;bnf&#9;FILE&#9;file:///Users/davidherrera/Documents/Research/wasm-parse/plugin/src/com/wasmplugin/Wasm.bnf&#10;WasmToke&#9;PSI&#9;JAVA://com.wasmplugin.psi.WasmTokenType" />
     <property name="last.edited.regexp" value="" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/src/com/wasmplugin" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -380,6 +405,25 @@
       <module name="" />
       <envs />
     </configuration>
+    <configuration default="true" type="DjangoTestsConfigurationType" factoryName="Django tests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="plugin" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="TARGET" value="" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+    </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="" />
@@ -399,6 +443,63 @@
       </option>
       <envs />
       <patterns />
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
+      <module name="plugin" />
+      <envs />
+    </configuration>
+    <configuration default="true" type="PyBehaveRunConfigurationType" factoryName="Behave">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="plugin" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="ADDITIONAL_ARGS" value="" />
+    </configuration>
+    <configuration default="true" type="PyLettuceRunConfigurationType" factoryName="Lettuce">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="plugin" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="ADDITIONAL_ARGS" value="" />
+    </configuration>
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="plugin" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
     </configuration>
     <configuration default="true" type="Remote" factoryName="Remote">
       <option name="USE_SOCKET_TRANSPORT" value="true" />
@@ -434,6 +535,18 @@
       <properties />
       <listeners />
     </configuration>
+    <configuration default="true" type="Tox" factoryName="Tox">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <module name="plugin" />
+    </configuration>
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
       <module name="" />
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
@@ -441,11 +554,92 @@
       <predefined_log_file id="idea.log" enabled="true" />
     </configuration>
     <configuration name="plugin" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
-      <module name="plugin" />
+      <module name="wasm-text-format-parser-plugin" />
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
       <option name="PROGRAM_PARAMETERS" value="" />
       <alternative-path path="IntelliJ IDEA IU-173.4548.28" alternative-path-enabled="true" />
       <predefined_log_file id="idea.log" enabled="true" />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Doctests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="plugin" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Nosetests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="plugin" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="_new_regexPattern" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Twisted Trial">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="plugin" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Unittests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="plugin" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="py.test">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="plugin" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
     </configuration>
   </component>
   <component name="SbtLocalSettings">
@@ -478,47 +672,57 @@
       <workItem from="1542822558506" duration="516000" />
       <workItem from="1542823132884" duration="23000" />
       <workItem from="1542823188064" duration="1142000" />
-      <workItem from="1542824564752" duration="7812000" />
+      <workItem from="1542824564752" duration="8092000" />
+      <workItem from="1543702283405" duration="7772000" />
+      <workItem from="1543966802970" duration="9611000" />
+      <workItem from="1543984820898" duration="178000" />
+      <workItem from="1543985035846" duration="32000" />
+      <workItem from="1543985102661" duration="341000" />
+      <workItem from="1543985575668" duration="45000" />
+      <workItem from="1543985652824" duration="264000" />
+      <workItem from="1543985953352" duration="36000" />
+      <workItem from="1543986023225" duration="464000" />
+      <workItem from="1543986521212" duration="97000" />
+      <workItem from="1543986651508" duration="1872000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9985000" />
+    <option name="totallyTimeSpent" value="30977000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Tool Output" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32970026" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="ANTLR Preview" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32833788" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32833788" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32561308" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="ANTLR Preview" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32833788" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.4945504" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32833788" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5054496" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -532,80 +736,10 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/wasmplugin/Wasm.bnf">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="16" column="59" lean-forward="false" selection-start-line="16" selection-start-column="59" selection-end-line="16" selection-end-column="59" />
-          <folding>
-            <element signature="e#0#1072#0" expanded="true" />
-            <element signature="e#433#1070#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/wasmplugin/Wasm.flex">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
-          <caret line="54" column="47" lean-forward="false" selection-start-line="54" selection-start-column="47" selection-end-line="54" selection-end-column="47" />
-          <folding>
-            <marker date="1542910044700" expanded="false" signature="32:176" ph="..." />
-            <marker date="1542910044700" expanded="true" signature="1746:3787" ph="{...}" />
-            <marker date="1542910044700" expanded="true" signature="1746:4249" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wasm-parser-plugin.iml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="9" lean-forward="false" selection-start-line="13" selection-start-column="9" selection-end-line="13" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/wasmplugin/WasmFile.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="11" column="8" lean-forward="false" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/wasmplugin/WasmParserDefinition.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/META-INF/plugin.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="28" column="106" lean-forward="false" selection-start-line="28" selection-start-column="106" selection-end-line="28" selection-end-column="106" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/wasmplugin/WasmSyntaxHighlighterFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="12" column="30" lean-forward="false" selection-start-line="12" selection-start-column="30" selection-end-line="12" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/lib/openapi.jar!/com/intellij/openapi/editor/DefaultLanguageHighlighterColors.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="11" column="52" lean-forward="false" selection-start-line="11" selection-start-column="42" selection-end-line="11" selection-end-column="52" />
-          <folding>
-            <marker date="1519073637759" expanded="false" signature="0:104" ph="/.../" />
-            <marker date="1519073637759" expanded="true" signature="2638:2645" ph="{}" />
-            <marker date="1519073637759" expanded="true" signature="2658:6697" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -614,9 +748,8 @@
         <state relative-caret-position="120">
           <caret line="11" column="19" lean-forward="false" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
           <folding>
-            <marker date="1542910061611" expanded="true" signature="3803:6357" ph="{...}" />
-            <marker date="1542910061611" expanded="true" signature="3803:6361" ph="{...}" />
-            <marker date="1542910061611" expanded="true" signature="6267:6357" ph="{...}" />
+            <element signature="imports" expanded="true" />
+            <marker date="1544044396421" expanded="true" signature="11927:12699" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -625,9 +758,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="495">
           <caret line="46" column="0" lean-forward="false" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -636,8 +767,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#1072#0" expanded="true" />
-            <element signature="e#433#1070#0" expanded="true" />
+            <element signature="e#0#1514#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -646,17 +776,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="11" column="8" lean-forward="false" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wasm-parser-plugin.iml">
+    <entry file="file://$PROJECT_DIR$/wasm-text-format-parser-plugin.iml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
           <caret line="13" column="9" lean-forward="false" selection-start-line="13" selection-start-column="9" selection-end-line="13" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -664,7 +790,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="405">
           <caret line="27" column="6" lean-forward="false" selection-start-line="27" selection-start-column="6" selection-end-line="27" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -672,7 +797,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
           <caret line="32" column="0" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -681,17 +805,15 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#1072#0" expanded="true" />
-            <element signature="e#433#1070#0" expanded="true" />
+            <element signature="e#0#1514#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wasm-parser-plugin.iml">
+    <entry file="file://$PROJECT_DIR$/wasm-text-format-parser-plugin.iml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
           <caret line="13" column="9" lean-forward="false" selection-start-line="13" selection-start-column="9" selection-end-line="13" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -699,9 +821,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="11" column="8" lean-forward="false" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -709,7 +828,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="405">
           <caret line="27" column="6" lean-forward="false" selection-start-line="27" selection-start-column="6" selection-end-line="27" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -717,7 +835,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
           <caret line="32" column="0" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -726,8 +843,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#1072#0" expanded="true" />
-            <element signature="e#433#1070#0" expanded="true" />
+            <element signature="e#0#1514#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -736,118 +852,23 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/asdas.wat" />
-    <entry file="file://$PROJECT_DIR$/wasm-parser-plugin.iml" />
-    <entry file="file://$PROJECT_DIR$/.idea/plugin.iml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="9" lean-forward="false" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wasm-parser-plugin.iml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="9" lean-forward="false" selection-start-line="13" selection-start-column="9" selection-end-line="13" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/META-INF/plugin.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="28" column="106" lean-forward="false" selection-start-line="28" selection-start-column="106" selection-end-line="28" selection-end-column="106" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/wasm-text-format-parser-plugin.iml" />
     <entry file="file://$PROJECT_DIR$/src/com/wasmplugin/WasmSyntaxHighlighterFactory.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="12" column="30" lean-forward="false" selection-start-line="12" selection-start-column="30" selection-end-line="12" selection-end-column="30" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/wawa.wat">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/wasmplugin/WasmFile.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="11" column="8" lean-forward="false" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/wasmplugin/parser/WasmParser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/wawa.wat" />
     <entry file="jar://$APPLICATION_HOME_DIR$/lib/openapi.jar!/com/intellij/psi/tree/IElementType.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-186">
           <caret line="18" column="13" lean-forward="false" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
-          <folding>
-            <marker date="1519073637759" expanded="false" signature="0:104" ph="/.../" />
-            <marker date="1519073637759" expanded="false" signature="145:506" ph="..." />
-            <marker date="1519073637759" expanded="true" signature="785:859" ph="{...}" />
-            <marker date="1519073637759" expanded="true" signature="925:953" ph="{...}" />
-            <marker date="1519073637759" expanded="true" signature="1377:1870" ph="{...}" />
-            <marker date="1519073637759" expanded="true" signature="1952:2078" ph="{...}" />
-            <marker date="1519073637759" expanded="true" signature="2181:2990" ph="{...}" />
-            <marker date="1519073637759" expanded="true" signature="3039:3200" ph="{...}" />
-            <marker date="1519073637759" expanded="false" signature="3235:3246" ph=" { " />
-            <marker date="1519073637759" expanded="false" signature="3266:3272" ph=" }" />
-            <marker date="1519073637759" expanded="false" signature="3299:3310" ph=" { " />
-            <marker date="1519073637759" expanded="false" signature="3369:3375" ph=" }" />
-            <marker date="1519073637759" expanded="false" signature="3405:3416" ph=" { " />
-            <marker date="1519073637759" expanded="false" signature="3440:3446" ph=" }" />
-            <marker date="1519073637759" expanded="false" signature="3480:3491" ph=" { " />
-            <marker date="1519073637759" expanded="false" signature="3504:3510" ph=" }" />
-            <marker date="1519073637759" expanded="false" signature="3558:3569" ph=" { " />
-            <marker date="1519073637759" expanded="false" signature="3593:3599" ph=" }" />
-            <marker date="1519073637759" expanded="true" signature="3643:3742" ph="{...}" />
-            <marker date="1519073637759" expanded="true" signature="3835:4453" ph="{...}" />
-            <marker date="1519073637759" expanded="true" signature="4466:4690" ph="{...}" />
-            <marker date="1519073637759" expanded="true" signature="4748:4808" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/wasmplugin/psi/WasmTypes.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="555">
-          <caret line="40" column="0" lean-forward="false" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
-          <folding>
-            <marker date="1542910061611" expanded="true" signature="3803:6357" ph="{...}" />
-            <marker date="1542910061611" expanded="true" signature="3803:6361" ph="{...}" />
-            <marker date="1542910061611" expanded="true" signature="6267:6357" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/wasmplugin/WasmLexer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="593" column="35" lean-forward="false" selection-start-line="593" selection-start-column="35" selection-end-line="593" selection-end-column="35" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -855,113 +876,204 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="6" column="39" lean-forward="false" selection-start-line="6" selection-start-column="39" selection-end-line="6" selection-end-column="39" />
-          <folding>
-            <element signature="e#253#254#0" expanded="true" />
-            <element signature="e#312#313#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/openapi.jar!/com/intellij/openapi/editor/HighlighterColors.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="9" column="17" lean-forward="false" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
-          <folding>
-            <marker date="1519073637759" expanded="false" signature="0:104" ph="/.../" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/openapi.jar!/com/intellij/openapi/editor/DefaultLanguageHighlighterColors.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="123">
-          <caret line="91" column="16" lean-forward="false" selection-start-line="91" selection-start-column="8" selection-end-line="91" selection-end-column="16" />
-          <folding>
-            <marker date="1519073637759" expanded="false" signature="0:104" ph="/.../" />
-            <marker date="1519073637759" expanded="true" signature="2638:2645" ph="{}" />
-            <marker date="1519073637759" expanded="true" signature="2658:6697" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/lib/openapi.jar!/com/intellij/openapi/editor/colors/TextAttributesKey.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-106">
+        <state relative-caret-position="90">
           <caret line="24" column="19" lean-forward="false" selection-start-line="24" selection-start-column="19" selection-end-line="24" selection-end-column="19" />
-          <folding>
-            <marker date="1519073637759" expanded="false" signature="0:104" ph="/.../" />
-            <marker date="1519073637759" expanded="false" signature="158:885" ph="..." />
-            <marker date="1519073637759" expanded="false" signature="1429:1613" ph="compute() → {" />
-            <marker date="1519073637759" expanded="false" signature="1774:1785" ph="}" />
-            <marker date="1519073637759" expanded="true" signature="1982:2085" ph="{...}" />
-            <marker date="1519073637759" expanded="true" signature="2142:2556" ph="{...}" />
-            <marker date="1519073637759" expanded="true" signature="2650:2927" ph="{...}" />
-            <marker date="1519073637759" expanded="false" signature="2957:2968" ph=" { " />
-            <marker date="1519073637759" expanded="false" signature="2995:3001" ph=" }" />
-            <marker date="1519073637759" expanded="false" signature="3038:3049" ph=" { " />
-            <marker date="1519073637759" expanded="false" signature="3076:3082" ph=" }" />
-            <marker date="1519073637759" expanded="true" signature="3141:3286" ph="{...}" />
-            <marker date="1519073637759" expanded="true" signature="3399:3646" ph="{...}" />
-            <marker date="1519073637759" expanded="true" signature="3695:4016" ph="{...}" />
-            <marker date="1519073637759" expanded="true" signature="4054:4358" ph="{...}" />
-            <marker date="1519073637759" expanded="false" signature="4385:4396" ph=" { " />
-            <marker date="1519073637759" expanded="false" signature="4434:4440" ph=" }" />
-            <marker date="1519073637759" expanded="true" signature="4491:5053" ph="{...}" />
-            <marker date="1519073637759" expanded="true" signature="5059:5077" ph="/**...*/" />
-            <marker date="1519073637759" expanded="true" signature="5082:5106" ph="@{...}" />
-            <marker date="1519073637759" expanded="true" signature="5239:5632" ph="{...}" />
-            <marker date="1519073637759" expanded="true" signature="5783:6079" ph="{...}" />
-            <marker date="1519073637759" expanded="true" signature="6232:6525" ph="{...}" />
-            <marker date="1519073637759" expanded="false" signature="6595:6606" ph=" { " />
-            <marker date="1519073637759" expanded="false" signature="6641:6647" ph=" }" />
-            <marker date="1519073637759" expanded="true" signature="6739:7310" ph="{...}" />
-            <marker date="1519073637759" expanded="true" signature="6948:7031" ph="{...}" />
-            <marker date="1519073637759" expanded="true" signature="7065:7114" ph="{...}" />
-            <marker date="1519073637759" expanded="true" signature="7397:7528" ph="{...}" />
-            <marker date="1519073637759" expanded="true" signature="7595:7734" ph="{...}" />
-            <marker date="1519073637759" expanded="true" signature="7790:7866" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/wasmplugin/WasmSyntaxHighlighter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="60" column="55" lean-forward="false" selection-start-line="60" selection-start-column="55" selection-end-line="60" selection-end-column="55" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/wasmplugin/WasmParserDefinition.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="134">
-          <caret line="21" column="5" lean-forward="false" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
+        <state relative-caret-position="105">
+          <caret line="14" column="74" lean-forward="false" selection-start-line="14" selection-start-column="74" selection-end-line="14" selection-end-column="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/openapi.jar!/com/intellij/lang/ASTNode.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="16" column="17" lean-forward="false" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/wasmplugin/psi/impl/WasmDataShortImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="15" column="38" lean-forward="false" selection-start-line="15" selection-start-column="38" selection-end-line="15" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/wasmplugin/psi/impl/WasmOffImpl.java" />
+    <entry file="file://$PROJECT_DIR$/src/com/wasmplugin/psi/WasmVisitor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1320">
+          <caret line="170" column="0" lean-forward="false" selection-start-line="170" selection-start-column="0" selection-end-line="170" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/wasmplugin/wasm_icon.ico" />
+    <entry file="file://$PROJECT_DIR$/resources/META-INF/wasm_icon.ico" />
+    <entry file="file://$PROJECT_DIR$/src/com/wasmplugin/WasmFile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="11" column="8" lean-forward="false" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/wasmplugin/WasmFileTypeFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/wasmplugin/WasmIcon.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="7" column="91" lean-forward="false" selection-start-line="7" selection-start-column="91" selection-end-line="7" selection-end-column="91" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/wasmplugin/WasmFileType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="40" column="25" lean-forward="false" selection-start-line="40" selection-start-column="25" selection-end-line="40" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/wasmplugin/WasmLexer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="123">
+          <caret line="1204" column="30" lean-forward="false" selection-start-line="1204" selection-start-column="30" selection-end-line="1204" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/wasmplugin/psi/impl/WasmConstantExpImpl.java" />
+    <entry file="file://$PROJECT_DIR$/gen/production/plugin/as.wat" />
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/openapi.jar!/com/intellij/openapi/editor/HighlighterColors.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="9" column="17" lean-forward="false" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/openapi.jar!/com/intellij/openapi/editor/DefaultLanguageHighlighterColors.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-63">
+          <caret line="75" column="115" lean-forward="false" selection-start-line="75" selection-start-column="105" selection-end-line="75" selection-end-column="115" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/wasmplugin/parser/WasmParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="702" column="24" lean-forward="false" selection-start-line="702" selection-start-column="24" selection-end-line="702" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/wasmplugin/WasmSyntaxHighlighter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="21" column="42" lean-forward="false" selection-start-line="21" selection-start-column="42" selection-end-line="21" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/as.wat">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="631">
+          <caret line="264" column="29" lean-forward="false" selection-start-line="264" selection-start-column="29" selection-end-line="264" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/.name">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/wasmplugin/psi/impl/WasmPlainInstructionImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="20" column="11" lean-forward="false" selection-start-line="20" selection-start-column="11" selection-end-line="20" selection-end-column="11" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/wasmplugin/Wasm.flex">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="77">
-          <caret line="49" column="24" lean-forward="true" selection-start-line="49" selection-start-column="24" selection-end-line="49" selection-end-column="24" />
+        <state relative-caret-position="222">
+          <caret line="22" column="29" lean-forward="false" selection-start-line="22" selection-start-column="29" selection-end-line="22" selection-end-column="29" />
           <folding>
-            <marker date="1542910044700" expanded="false" signature="32:176" ph="..." />
-            <marker date="1542910044700" expanded="true" signature="1746:3787" ph="{...}" />
-            <marker date="1542910044700" expanded="true" signature="1746:4249" ph="{...}" />
+            <marker date="1544043672328" expanded="false" signature="32:176" ph="..." />
+            <marker date="1544043672328" expanded="true" signature="1327:10642" ph="{...}" />
+            <marker date="1544043672328" expanded="true" signature="1327:11171" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/resources/META-INF/plugin.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="45" lean-forward="false" selection-start-line="7" selection-start-column="45" selection-end-line="7" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/wasm-text-format-parser-plugin.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="9" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="14" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wasm-text-format-parser-plugin.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="9" lean-forward="false" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/wasmplugin/psi/WasmTypes.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="37" lean-forward="false" selection-start-line="16" selection-start-column="37" selection-end-line="16" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <marker date="1544044396421" expanded="true" signature="11927:12699" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/wasmplugin/wasm_icon_16x16.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/wasmplugin/wasm_icon.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/wasmplugin/Wasm.bnf">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="32">
-          <caret line="90" column="57" lean-forward="false" selection-start-line="90" selection-start-column="57" selection-end-line="90" selection-end-column="57" />
-          <folding>
-            <element signature="e#0#1072#0" expanded="true" />
-            <element signature="e#433#1070#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="126">
+          <caret line="142" column="0" lean-forward="false" selection-start-line="142" selection-start-column="0" selection-end-line="142" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1018,7 +1130,7 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>plugin</last-edited>
+          <last-edited>wasm-text-format-parser-plugin</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
