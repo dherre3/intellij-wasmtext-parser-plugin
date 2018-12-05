@@ -5,12 +5,25 @@
   <vendor email="david.herrera@mail.mcgill.ca" url="http://cs.mcgill.ca/~dherre3">David Herrera</vendor>
 
   <description><![CDATA[
-      WebAssembly text format syntax highlighter<br>
-      - First version contains full syntax highlighting support for version 1.0 of the WebAssembly specification.
-      - I plan to add the ability to jump to function definitions from function calls, and syntax highlighting variables
-        that have not been defined.
-    ]]></description>
 
+<h1>WebAssembly Text Format IntelliJ Plugin</h1>
+Plugin to syntax highlight the WebAssembly text format in IntelliJ.
+This plugin supports the v1.0.0 of the WebAssembly specification.
+
+<div style="width:vw;height:auto;">
+<img src="./resources/sample.png" width="100%" height="auto"></img>
+</div>
+
+<h2> Future Plan</h2>
+<ul>
+<li>Provide a way to jump between function calls and function definitions.</li>
+<li>Provide a syntax highlighting for variables not defined and incorrectly defined modules.</li>
+<li>Provide static type checking for the module.</li>
+</ul>
+<h2>Contributing</h2>
+Contributions are welcomed via pull-requests.
+<h2>Licence</h2>
+    ]]></description>
   <change-notes><![CDATA[
      1.0 First version<br>
     ]]>

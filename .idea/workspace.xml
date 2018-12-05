@@ -2,118 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4b00be01-432d-452d-ae1d-05910f9d2704" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/as.wat" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/com/wasmplugin/wasm_icon.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/com/wasmplugin/wasm_icon_16x16.png" />
-      <change beforePath="$PROJECT_DIR$/.idea/.name" afterPath="$PROJECT_DIR$/.idea/.name" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/plugin.iml" afterPath="$PROJECT_DIR$/.idea/wasm-text-format-parser-plugin.iml" />
-      <change beforePath="$PROJECT_DIR$/.idea/plugin.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/gen/production/plugin/META-INF/wasm_icon.ico" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/Wasm.bnf" afterPath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/Wasm.bnf" />
-      <change beforePath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/WasmIcon.class" afterPath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/WasmIcon.class" />
-      <change beforePath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/WasmLexer.class" afterPath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/WasmLexer.class" />
-      <change beforePath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/WasmParserDefinition.class" afterPath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/WasmParserDefinition.class" />
-      <change beforePath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/WasmSyntaxHighlighter.class" afterPath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/WasmSyntaxHighlighter.class" />
-      <change beforePath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/parser/WasmParser.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/psi/WasmData.class" afterPath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/psi/WasmData.class" />
-      <change beforePath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/psi/WasmElement.class" afterPath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/psi/WasmElement.class" />
-      <change beforePath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/psi/WasmGlobal.class" afterPath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/psi/WasmGlobal.class" />
-      <change beforePath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/psi/WasmMemory.class" afterPath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/psi/WasmMemory.class" />
-      <change beforePath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/psi/WasmTable.class" afterPath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/psi/WasmTable.class" />
-      <change beforePath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/psi/WasmTypeUse.class" afterPath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/psi/WasmTypeUse.class" />
-      <change beforePath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/psi/WasmTypes$Factory.class" afterPath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/psi/WasmTypes$Factory.class" />
-      <change beforePath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/psi/WasmTypes.class" afterPath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/psi/WasmTypes.class" />
-      <change beforePath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/psi/WasmVisitor.class" afterPath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/psi/WasmVisitor.class" />
-      <change beforePath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/psi/impl/WasmComImpl.class" afterPath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/psi/impl/WasmComImpl.class" />
-      <change beforePath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/psi/impl/WasmDataImpl.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/psi/impl/WasmDataShortImpl.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/psi/impl/WasmElemShortImpl.class" afterPath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/psi/impl/WasmElemShortImpl.class" />
-      <change beforePath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/psi/impl/WasmElemTypeImpl.class" afterPath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/psi/impl/WasmElemTypeImpl.class" />
-      <change beforePath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/psi/impl/WasmElementImpl.class" afterPath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/psi/impl/WasmElementImpl.class" />
-      <change beforePath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/psi/impl/WasmExportDescImpl.class" afterPath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/psi/impl/WasmExportDescImpl.class" />
-      <change beforePath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/psi/impl/WasmExportImpl.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/psi/impl/WasmExportShortImpl.class" afterPath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/psi/impl/WasmExportShortImpl.class" />
-      <change beforePath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/psi/impl/WasmFuncTypeImpl.class" afterPath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/psi/impl/WasmFuncTypeImpl.class" />
-      <change beforePath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/psi/impl/WasmGlobalImpl.class" afterPath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/psi/impl/WasmGlobalImpl.class" />
-      <change beforePath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/psi/impl/WasmGlobalTypeImpl.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/psi/impl/WasmIdxImpl.class" afterPath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/psi/impl/WasmIdxImpl.class" />
-      <change beforePath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/psi/impl/WasmImportDescImpl.class" afterPath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/psi/impl/WasmImportDescImpl.class" />
-      <change beforePath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/psi/impl/WasmImportImpl.class" afterPath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/psi/impl/WasmImportImpl.class" />
-      <change beforePath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/psi/impl/WasmImportShortImpl.class" afterPath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/psi/impl/WasmImportShortImpl.class" />
-      <change beforePath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/psi/impl/WasmLimitsImpl.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/psi/impl/WasmMemoryImpl.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/psi/impl/WasmMemoryTypeImpl.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/psi/impl/WasmOffImpl.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/psi/impl/WasmParamExplicitImpl.class" afterPath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/psi/impl/WasmParamExplicitImpl.class" />
-      <change beforePath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/psi/impl/WasmParamListImpl.class" afterPath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/psi/impl/WasmParamListImpl.class" />
-      <change beforePath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/psi/impl/WasmResultExplicitImpl.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/psi/impl/WasmResultImpl.class" afterPath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/psi/impl/WasmResultImpl.class" />
-      <change beforePath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/psi/impl/WasmStartImpl.class" afterPath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/psi/impl/WasmStartImpl.class" />
-      <change beforePath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/psi/impl/WasmTableImpl.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/psi/impl/WasmTableTypeImpl.class" afterPath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/psi/impl/WasmTableTypeImpl.class" />
-      <change beforePath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/psi/impl/WasmTypeImpl.class" afterPath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/psi/impl/WasmTypeImpl.class" />
-      <change beforePath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/psi/impl/WasmTypeUseImpl.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/psi/impl/WasmValueTypeImpl.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/gen/production/plugin/com/wasmplugin/wasm_icon.ico" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/gen/production/plugin/production/plugin/META-INF/wasm_icon.ico" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/gen/production/plugin/production/plugin/com/wasmplugin/wasm_icon.ico" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/gen/production/plugin/production/plugin/production/plugin/META-INF/wasm_icon.ico" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/gen/production/plugin/production/plugin/production/plugin/com/wasmplugin/Wasm.bnf" afterPath="$PROJECT_DIR$/gen/production/plugin/production/plugin/production/plugin/com/wasmplugin/Wasm.bnf" />
-      <change beforePath="$PROJECT_DIR$/gen/production/plugin/production/plugin/production/plugin/com/wasmplugin/wasm_icon.ico" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/gen/production/plugin/production/plugin/production/plugin/production/plugin/com/wasmplugin/Wasm.bnf" afterPath="$PROJECT_DIR$/gen/production/plugin/production/plugin/production/plugin/production/plugin/com/wasmplugin/Wasm.bnf" />
-      <change beforePath="$PROJECT_DIR$/intellij-wasmtext-parser-plugin.jar" afterPath="" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/README.md" />
       <change beforePath="$PROJECT_DIR$/resources/META-INF/plugin.xml" afterPath="$PROJECT_DIR$/resources/META-INF/plugin.xml" />
-      <change beforePath="$PROJECT_DIR$/resources/META-INF/wasm_icon.ico" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/com/wasmplugin/Wasm.bnf" afterPath="$PROJECT_DIR$/src/com/wasmplugin/Wasm.bnf" />
-      <change beforePath="$PROJECT_DIR$/src/com/wasmplugin/Wasm.flex" afterPath="$PROJECT_DIR$/src/com/wasmplugin/Wasm.flex" />
-      <change beforePath="$PROJECT_DIR$/src/com/wasmplugin/WasmIcon.java" afterPath="$PROJECT_DIR$/src/com/wasmplugin/WasmIcon.java" />
-      <change beforePath="$PROJECT_DIR$/src/com/wasmplugin/WasmLexer.java" afterPath="$PROJECT_DIR$/src/com/wasmplugin/WasmLexer.java" />
-      <change beforePath="$PROJECT_DIR$/src/com/wasmplugin/WasmParserDefinition.java" afterPath="$PROJECT_DIR$/src/com/wasmplugin/WasmParserDefinition.java" />
-      <change beforePath="$PROJECT_DIR$/src/com/wasmplugin/WasmSyntaxHighlighter.java" afterPath="$PROJECT_DIR$/src/com/wasmplugin/WasmSyntaxHighlighter.java" />
-      <change beforePath="$PROJECT_DIR$/src/com/wasmplugin/parser/WasmParser.java" afterPath="$PROJECT_DIR$/src/com/wasmplugin/parser/WasmParser.java" />
-      <change beforePath="$PROJECT_DIR$/src/com/wasmplugin/psi/WasmData.java" afterPath="$PROJECT_DIR$/src/com/wasmplugin/psi/WasmData.java" />
-      <change beforePath="$PROJECT_DIR$/src/com/wasmplugin/psi/WasmElement.java" afterPath="$PROJECT_DIR$/src/com/wasmplugin/psi/WasmElement.java" />
-      <change beforePath="$PROJECT_DIR$/src/com/wasmplugin/psi/WasmGlobal.java" afterPath="$PROJECT_DIR$/src/com/wasmplugin/psi/WasmGlobal.java" />
-      <change beforePath="$PROJECT_DIR$/src/com/wasmplugin/psi/WasmMemory.java" afterPath="$PROJECT_DIR$/src/com/wasmplugin/psi/WasmMemory.java" />
-      <change beforePath="$PROJECT_DIR$/src/com/wasmplugin/psi/WasmTable.java" afterPath="$PROJECT_DIR$/src/com/wasmplugin/psi/WasmTable.java" />
-      <change beforePath="$PROJECT_DIR$/src/com/wasmplugin/psi/WasmTypeUse.java" afterPath="$PROJECT_DIR$/src/com/wasmplugin/psi/WasmTypeUse.java" />
-      <change beforePath="$PROJECT_DIR$/src/com/wasmplugin/psi/WasmTypes.java" afterPath="$PROJECT_DIR$/src/com/wasmplugin/psi/WasmTypes.java" />
-      <change beforePath="$PROJECT_DIR$/src/com/wasmplugin/psi/WasmVisitor.java" afterPath="$PROJECT_DIR$/src/com/wasmplugin/psi/WasmVisitor.java" />
-      <change beforePath="$PROJECT_DIR$/src/com/wasmplugin/psi/impl/WasmComImpl.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/com/wasmplugin/psi/impl/WasmDataImpl.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/com/wasmplugin/psi/impl/WasmDataShortImpl.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/com/wasmplugin/psi/impl/WasmElemShortImpl.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/com/wasmplugin/psi/impl/WasmElemTypeImpl.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/com/wasmplugin/psi/impl/WasmElementImpl.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/com/wasmplugin/psi/impl/WasmExportDescImpl.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/com/wasmplugin/psi/impl/WasmExportImpl.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/com/wasmplugin/psi/impl/WasmExportShortImpl.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/com/wasmplugin/psi/impl/WasmFuncTypeImpl.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/com/wasmplugin/psi/impl/WasmGlobalImpl.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/com/wasmplugin/psi/impl/WasmGlobalTypeImpl.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/com/wasmplugin/psi/impl/WasmIdxImpl.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/com/wasmplugin/psi/impl/WasmImportDescImpl.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/com/wasmplugin/psi/impl/WasmImportImpl.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/com/wasmplugin/psi/impl/WasmImportShortImpl.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/com/wasmplugin/psi/impl/WasmLimitsImpl.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/com/wasmplugin/psi/impl/WasmMemoryImpl.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/com/wasmplugin/psi/impl/WasmMemoryTypeImpl.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/com/wasmplugin/psi/impl/WasmOffImpl.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/com/wasmplugin/psi/impl/WasmParamExplicitImpl.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/com/wasmplugin/psi/impl/WasmParamListImpl.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/com/wasmplugin/psi/impl/WasmResultExplicitImpl.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/com/wasmplugin/psi/impl/WasmResultImpl.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/com/wasmplugin/psi/impl/WasmStartImpl.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/com/wasmplugin/psi/impl/WasmTableImpl.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/com/wasmplugin/psi/impl/WasmTableTypeImpl.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/com/wasmplugin/psi/impl/WasmTypeImpl.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/com/wasmplugin/psi/impl/WasmTypeUseImpl.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/com/wasmplugin/psi/impl/WasmValueTypeImpl.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/com/wasmplugin/wasm_icon.ico" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/wasm-parser-plugin.iml" afterPath="$PROJECT_DIR$/wasm-text-format-parser-plugin.iml" />
-      <change beforePath="$PROJECT_DIR$/wasm-parser-plugin.jar" afterPath="" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -127,7 +17,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Wasm.bnf" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Wasm.bnf" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/wasmplugin/Wasm.bnf">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="126">
@@ -137,11 +27,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="plugin.xml" pinned="false" current-in-tab="false">
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="105">
+                <caret line="7" column="6" lean-forward="true" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
+                <folding />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="plugin.xml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/META-INF/plugin.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="45" lean-forward="false" selection-start-line="7" selection-start-column="45" selection-end-line="7" selection-end-column="45" />
+            <state relative-caret-position="375">
+              <caret line="25" column="21" lean-forward="false" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -180,7 +83,7 @@
       <file leaf-file-name="as.wat" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/as.wat">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="631">
+            <state relative-caret-position="3960">
               <caret line="264" column="29" lean-forward="false" selection-start-line="264" selection-start-column="29" selection-end-line="264" selection-end-column="29" />
               <folding />
             </state>
@@ -280,8 +183,9 @@
         <option value="$PROJECT_DIR$/src/as.wat" />
         <option value="$PROJECT_DIR$/src/com/wasmplugin/Wasm.bnf" />
         <option value="$PROJECT_DIR$/src/com/wasmplugin/Wasm.flex" />
-        <option value="$PROJECT_DIR$/resources/META-INF/plugin.xml" />
         <option value="$PROJECT_DIR$/wasm-parser-plugin.iml" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/resources/META-INF/plugin.xml" />
       </list>
     </option>
   </component>
@@ -331,18 +235,18 @@
             <path>
               <item name="wasm-text-format-parser-plugin.iml" type="b2602c69:ProjectViewProjectNode" />
               <item name="plugin" type="462c0819:PsiDirectoryNode" />
-              <item name=".idea" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="wasm-text-format-parser-plugin.iml" type="b2602c69:ProjectViewProjectNode" />
+              <item name="plugin" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="META-INF" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="wasm-text-format-parser-plugin.iml" type="b2602c69:ProjectViewProjectNode" />
               <item name="plugin" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="wasm-text-format-parser-plugin.iml" type="b2602c69:ProjectViewProjectNode" />
-              <item name="plugin" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="wasmplugin" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -364,12 +268,12 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/src/com/wasmplugin" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -683,12 +587,12 @@
       <workItem from="1543985953352" duration="36000" />
       <workItem from="1543986023225" duration="464000" />
       <workItem from="1543986521212" duration="97000" />
-      <workItem from="1543986651508" duration="1872000" />
+      <workItem from="1543986651508" duration="2604000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="30977000" />
+    <option name="totallyTimeSpent" value="31709000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -710,9 +614,9 @@
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32561308" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32561308" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32833788" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32833788" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.4945504" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32833788" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -736,13 +640,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/openapi.jar!/com/intellij/openapi/editor/DefaultLanguageHighlighterColors.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="11" column="52" lean-forward="false" selection-start-line="11" selection-start-column="42" selection-end-line="11" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/wasmplugin/psi/WasmTypes.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -988,14 +885,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/as.wat">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="631">
-          <caret line="264" column="29" lean-forward="false" selection-start-line="264" selection-start-column="29" selection-end-line="264" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.idea/.name">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1021,14 +910,6 @@
             <marker date="1544043672328" expanded="true" signature="1327:10642" ph="{...}" />
             <marker date="1544043672328" expanded="true" signature="1327:11171" ph="{...}" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/META-INF/plugin.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="45" lean-forward="false" selection-start-line="7" selection-start-column="45" selection-end-line="7" selection-end-column="45" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1073,6 +954,33 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
           <caret line="142" column="0" lean-forward="false" selection-start-line="142" selection-start-column="0" selection-end-line="142" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/as.wat">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3960">
+          <caret line="264" column="29" lean-forward="false" selection-start-line="264" selection-start-column="29" selection-end-line="264" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="105">
+            <caret line="7" column="6" lean-forward="true" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/META-INF/plugin.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" column="21" lean-forward="false" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="21" />
           <folding />
         </state>
       </provider>
