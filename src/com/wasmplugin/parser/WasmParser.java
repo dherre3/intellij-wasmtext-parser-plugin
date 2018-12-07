@@ -1476,6 +1476,7 @@ public class WasmParser implements PsiParser, LightPsiParser {
   //                     |   tF32 tDOT tNEAREST
   //                     |   tF32 tDOT tSQRT
   //                     |   tF32 tDOT tADD
+  //                     |   tF32 tDOT tSUB
   //                     |   tF32 tDOT tMUL
   //                     |   tF32 tDOT tDIV
   //                     |   tF32 tDOT tMIN
@@ -1490,6 +1491,7 @@ public class WasmParser implements PsiParser, LightPsiParser {
   //                     |   tF64 tDOT tNEAREST
   //                     |   tF64 tDOT tSQRT
   //                     |   tF64 tDOT tADD
+  //                     |   tF64 tDOT tSUB
   //                     |   tF64 tDOT tMUL
   //                     |   tF64 tDOT tDIV
   //                     |   tF64 tDOT tMIN
@@ -1651,6 +1653,7 @@ public class WasmParser implements PsiParser, LightPsiParser {
     if (!r) r = parseTokens(b, 0, TF32, TDOT, TNEAREST);
     if (!r) r = parseTokens(b, 0, TF32, TDOT, TSQRT);
     if (!r) r = parseTokens(b, 0, TF32, TDOT, TADD);
+    if (!r) r = parseTokens(b, 0, TF32, TDOT, TSUB);
     if (!r) r = parseTokens(b, 0, TF32, TDOT, TMUL);
     if (!r) r = parseTokens(b, 0, TF32, TDOT, TDIV);
     if (!r) r = parseTokens(b, 0, TF32, TDOT, TMIN);
@@ -1664,6 +1667,7 @@ public class WasmParser implements PsiParser, LightPsiParser {
     if (!r) r = parseTokens(b, 0, TF64, TDOT, TNEAREST);
     if (!r) r = parseTokens(b, 0, TF64, TDOT, TSQRT);
     if (!r) r = parseTokens(b, 0, TF64, TDOT, TADD);
+    if (!r) r = parseTokens(b, 0, TF64, TDOT, TSUB);
     if (!r) r = parseTokens(b, 0, TF64, TDOT, TMUL);
     if (!r) r = parseTokens(b, 0, TF64, TDOT, TDIV);
     if (!r) r = parseTokens(b, 0, TF64, TDOT, TMIN);

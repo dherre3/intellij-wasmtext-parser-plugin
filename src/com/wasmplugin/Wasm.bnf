@@ -249,6 +249,7 @@ private plain_instruction::=    tUNREACHABLE
                     |   tF32 tDOT tNEAREST
                     |   tF32 tDOT tSQRT
                     |   tF32 tDOT tADD
+                    |   tF32 tDOT tSUB
                     |   tF32 tDOT tMUL
                     |   tF32 tDOT tDIV
                     |   tF32 tDOT tMIN
@@ -263,6 +264,7 @@ private plain_instruction::=    tUNREACHABLE
                     |   tF64 tDOT tNEAREST
                     |   tF64 tDOT tSQRT
                     |   tF64 tDOT tADD
+                    |   tF64 tDOT tSUB
                     |   tF64 tDOT tMUL
                     |   tF64 tDOT tDIV
                     |   tF64 tDOT tMIN

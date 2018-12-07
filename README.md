@@ -4,7 +4,7 @@ Plugin to syntax highlight the WebAssembly text format in IntelliJ.
 This plugin supports the v1.0.0 of the WebAssembly specification.
 
 <div style="width:vw;height:auto;">
-<img src="./resources/sample.png" width="100%" height="auto"></img> 
+<img src="https://github.com/dherre3/intellij-wasmtext-parser-plugin/blob/master/resources/sample.png" width="100%" height="auto"></img> 
 </div>
 
 ## Future Plan
