@@ -7,4 +7,10 @@ import com.intellij.psi.PsiElement;
 
 public interface WasmMemArg extends PsiElement {
 
+  @Nullable
+  WasmAlignArg getAlignArg();
+
+  @Nullable
+  WasmOffsetArg getOffsetArg();
+
 }

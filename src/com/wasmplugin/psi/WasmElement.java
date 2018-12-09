@@ -7,7 +7,10 @@ import com.intellij.psi.PsiElement;
 
 public interface WasmElement extends PsiElement {
 
-  @Nullable
-  WasmIdx getIdx();
+  @NotNull
+  List<WasmIdx> getIdxList();
+
+  @NotNull
+  WasmOffsetAbbrv getOffsetAbbrv();
 
 }

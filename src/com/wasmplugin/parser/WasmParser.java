@@ -23,7 +23,13 @@ public class WasmParser implements PsiParser, LightPsiParser {
     boolean r;
     b = adapt_builder_(t, b, this, null);
     Marker m = enter_section_(b, 0, _COLLAPSE_, null);
-    if (t == COM) {
+    if (t == ABBR_TYPE_USE) {
+      r = abbr_type_use(b, 0);
+    }
+    else if (t == ALIGN_ARG) {
+      r = align_arg(b, 0);
+    }
+    else if (t == COM) {
       r = com(b, 0);
     }
     else if (t == DATA) {
@@ -83,8 +89,8 @@ public class WasmParser implements PsiParser, LightPsiParser {
     else if (t == LOCAL) {
       r = local(b, 0);
     }
-    else if (t == LOCAL_EXPLICIT) {
-      r = local_explicit(b, 0);
+    else if (t == LOCAL_ABBR) {
+      r = local_abbr(b, 0);
     }
     else if (t == MEM_ARG) {
       r = mem_arg(b, 0);
@@ -98,8 +104,11 @@ public class WasmParser implements PsiParser, LightPsiParser {
     else if (t == NUM) {
       r = num(b, 0);
     }
-    else if (t == OFFSET_DATA) {
-      r = offset_data(b, 0);
+    else if (t == OFFSET_ABBRV) {
+      r = offset_abbrv(b, 0);
+    }
+    else if (t == OFFSET_ARG) {
+      r = offset_arg(b, 0);
     }
     else if (t == PARAM_EXPLICIT) {
       r = param_explicit(b, 0);
@@ -142,9 +151,47 @@ public class WasmParser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // tBLOCK tNAME? result? instruction* tEND tNAME?
-  //                     |   tLOOP tNAME? result? instruction tEND tNAME?
-  //                     |   tIF tNAME? result? instruction* else_clause? tEND tNAME?
+  // param_list? result?
+  public static boolean abbr_type_use(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "abbr_type_use")) return false;
+    boolean r;
+    Marker m = enter_section_(b, l, _NONE_, ABBR_TYPE_USE, "<abbr type use>");
+    r = abbr_type_use_0(b, l + 1);
+    r = r && abbr_type_use_1(b, l + 1);
+    exit_section_(b, l, m, r, false, null);
+    return r;
+  }
+
+  // param_list?
+  private static boolean abbr_type_use_0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "abbr_type_use_0")) return false;
+    param_list(b, l + 1);
+    return true;
+  }
+
+  // result?
+  private static boolean abbr_type_use_1(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "abbr_type_use_1")) return false;
+    result(b, l + 1);
+    return true;
+  }
+
+  /* ********************************************************** */
+  // tALIGN tEQ tINT
+  public static boolean align_arg(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "align_arg")) return false;
+    if (!nextTokenIs(b, TALIGN)) return false;
+    boolean r;
+    Marker m = enter_section_(b);
+    r = consumeTokens(b, 0, TALIGN, TEQ, TINT);
+    exit_section_(b, m, ALIGN_ARG, r);
+    return r;
+  }
+
+  /* ********************************************************** */
+  // tBLOCK tID? result? instruction* tEND tID?
+  //                     |   tLOOP tID? result? instruction* tEND tID?
+  //                     |   tIF tID? result? instruction* else_clause? tEND tID?
   static boolean block_instruction(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "block_instruction")) return false;
     boolean r;
@@ -156,7 +203,7 @@ public class WasmParser implements PsiParser, LightPsiParser {
     return r;
   }
 
-  // tBLOCK tNAME? result? instruction* tEND tNAME?
+  // tBLOCK tID? result? instruction* tEND tID?
   private static boolean block_instruction_0(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "block_instruction_0")) return false;
     boolean r;
@@ -171,10 +218,10 @@ public class WasmParser implements PsiParser, LightPsiParser {
     return r;
   }
 
-  // tNAME?
+  // tID?
   private static boolean block_instruction_0_1(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "block_instruction_0_1")) return false;
-    consumeToken(b, TNAME);
+    consumeToken(b, TID);
     return true;
   }
 
@@ -196,14 +243,14 @@ public class WasmParser implements PsiParser, LightPsiParser {
     return true;
   }
 
-  // tNAME?
+  // tID?
   private static boolean block_instruction_0_5(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "block_instruction_0_5")) return false;
-    consumeToken(b, TNAME);
+    consumeToken(b, TID);
     return true;
   }
 
-  // tLOOP tNAME? result? instruction tEND tNAME?
+  // tLOOP tID? result? instruction* tEND tID?
   private static boolean block_instruction_1(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "block_instruction_1")) return false;
     boolean r;
@@ -211,17 +258,17 @@ public class WasmParser implements PsiParser, LightPsiParser {
     r = consumeToken(b, TLOOP);
     r = r && block_instruction_1_1(b, l + 1);
     r = r && block_instruction_1_2(b, l + 1);
-    r = r && instruction(b, l + 1);
+    r = r && block_instruction_1_3(b, l + 1);
     r = r && consumeToken(b, TEND);
     r = r && block_instruction_1_5(b, l + 1);
     exit_section_(b, m, null, r);
     return r;
   }
 
-  // tNAME?
+  // tID?
   private static boolean block_instruction_1_1(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "block_instruction_1_1")) return false;
-    consumeToken(b, TNAME);
+    consumeToken(b, TID);
     return true;
   }
 
@@ -232,14 +279,25 @@ public class WasmParser implements PsiParser, LightPsiParser {
     return true;
   }
 
-  // tNAME?
-  private static boolean block_instruction_1_5(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "block_instruction_1_5")) return false;
-    consumeToken(b, TNAME);
+  // instruction*
+  private static boolean block_instruction_1_3(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "block_instruction_1_3")) return false;
+    while (true) {
+      int c = current_position_(b);
+      if (!instruction(b, l + 1)) break;
+      if (!empty_element_parsed_guard_(b, "block_instruction_1_3", c)) break;
+    }
     return true;
   }
 
-  // tIF tNAME? result? instruction* else_clause? tEND tNAME?
+  // tID?
+  private static boolean block_instruction_1_5(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "block_instruction_1_5")) return false;
+    consumeToken(b, TID);
+    return true;
+  }
+
+  // tIF tID? result? instruction* else_clause? tEND tID?
   private static boolean block_instruction_2(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "block_instruction_2")) return false;
     boolean r;
@@ -255,10 +313,10 @@ public class WasmParser implements PsiParser, LightPsiParser {
     return r;
   }
 
-  // tNAME?
+  // tID?
   private static boolean block_instruction_2_1(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "block_instruction_2_1")) return false;
-    consumeToken(b, TNAME);
+    consumeToken(b, TID);
     return true;
   }
 
@@ -287,10 +345,10 @@ public class WasmParser implements PsiParser, LightPsiParser {
     return true;
   }
 
-  // tNAME?
+  // tID?
   private static boolean block_instruction_2_6(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "block_instruction_2_6")) return false;
-    consumeToken(b, TNAME);
+    consumeToken(b, TID);
     return true;
   }
 
@@ -308,7 +366,7 @@ public class WasmParser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // tLP tDATA idx? offset_data tNAME tRP
+  // tLP tDATA idx? offset_abbrv tNAME tRP
   public static boolean data(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "data")) return false;
     if (!nextTokenIs(b, TLP)) return false;
@@ -316,7 +374,7 @@ public class WasmParser implements PsiParser, LightPsiParser {
     Marker m = enter_section_(b);
     r = consumeTokens(b, 0, TLP, TDATA);
     r = r && data_2(b, l + 1);
-    r = r && offset_data(b, l + 1);
+    r = r && offset_abbrv(b, l + 1);
     r = r && consumeTokens(b, 0, TNAME, TRP);
     exit_section_(b, m, DATA, r);
     return r;
@@ -379,7 +437,7 @@ public class WasmParser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // tLP tELEM idx? tLP tNAME tRP tRP
+  // tLP tELEM idx? offset_abbrv idx*  tRP
   public static boolean element(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "element")) return false;
     if (!nextTokenIs(b, TLP)) return false;
@@ -387,7 +445,9 @@ public class WasmParser implements PsiParser, LightPsiParser {
     Marker m = enter_section_(b);
     r = consumeTokens(b, 0, TLP, TELEM);
     r = r && element_2(b, l + 1);
-    r = r && consumeTokens(b, 0, TLP, TNAME, TRP, TRP);
+    r = r && offset_abbrv(b, l + 1);
+    r = r && element_4(b, l + 1);
+    r = r && consumeToken(b, TRP);
     exit_section_(b, m, ELEMENT, r);
     return r;
   }
@@ -399,8 +459,19 @@ public class WasmParser implements PsiParser, LightPsiParser {
     return true;
   }
 
+  // idx*
+  private static boolean element_4(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "element_4")) return false;
+    while (true) {
+      int c = current_position_(b);
+      if (!idx(b, l + 1)) break;
+      if (!empty_element_parsed_guard_(b, "element_4", c)) break;
+    }
+    return true;
+  }
+
   /* ********************************************************** */
-  // tELSE tNAME? instruction*
+  // tELSE tID? instruction*
   static boolean else_clause(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "else_clause")) return false;
     if (!nextTokenIs(b, TELSE)) return false;
@@ -413,10 +484,10 @@ public class WasmParser implements PsiParser, LightPsiParser {
     return r;
   }
 
-  // tNAME?
+  // tID?
   private static boolean else_clause_1(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "else_clause_1")) return false;
-    consumeToken(b, TNAME);
+    consumeToken(b, TID);
     return true;
   }
 
@@ -522,9 +593,9 @@ public class WasmParser implements PsiParser, LightPsiParser {
 
   /* ********************************************************** */
   // tLP plain_instruction folded_instruction* tRP
-  //                     |   tLP tBLOCK tNAME? result? instruction* tRP
-  //                     |   tLP tLOOP tNAME? result? instruction* tRP
-  //                     |   tLP tIF tNAME? result? folded_instruction* tLP tTHEN instruction* tRP else_clause_folded? tRP
+  //                     |   tLP tBLOCK tID? result? instruction* tRP
+  //                     |   tLP tLOOP tID? result? instruction* tRP
+  //                     |   tLP tIF tID? result? folded_instruction* tLP tTHEN instruction* tRP else_clause_folded? tRP
   static boolean folded_instruction(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "folded_instruction")) return false;
     if (!nextTokenIs(b, TLP)) return false;
@@ -562,7 +633,7 @@ public class WasmParser implements PsiParser, LightPsiParser {
     return true;
   }
 
-  // tLP tBLOCK tNAME? result? instruction* tRP
+  // tLP tBLOCK tID? result? instruction* tRP
   private static boolean folded_instruction_1(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "folded_instruction_1")) return false;
     boolean r;
@@ -576,10 +647,10 @@ public class WasmParser implements PsiParser, LightPsiParser {
     return r;
   }
 
-  // tNAME?
+  // tID?
   private static boolean folded_instruction_1_2(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "folded_instruction_1_2")) return false;
-    consumeToken(b, TNAME);
+    consumeToken(b, TID);
     return true;
   }
 
@@ -601,7 +672,7 @@ public class WasmParser implements PsiParser, LightPsiParser {
     return true;
   }
 
-  // tLP tLOOP tNAME? result? instruction* tRP
+  // tLP tLOOP tID? result? instruction* tRP
   private static boolean folded_instruction_2(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "folded_instruction_2")) return false;
     boolean r;
@@ -615,10 +686,10 @@ public class WasmParser implements PsiParser, LightPsiParser {
     return r;
   }
 
-  // tNAME?
+  // tID?
   private static boolean folded_instruction_2_2(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "folded_instruction_2_2")) return false;
-    consumeToken(b, TNAME);
+    consumeToken(b, TID);
     return true;
   }
 
@@ -640,7 +711,7 @@ public class WasmParser implements PsiParser, LightPsiParser {
     return true;
   }
 
-  // tLP tIF tNAME? result? folded_instruction* tLP tTHEN instruction* tRP else_clause_folded? tRP
+  // tLP tIF tID? result? folded_instruction* tLP tTHEN instruction* tRP else_clause_folded? tRP
   private static boolean folded_instruction_3(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "folded_instruction_3")) return false;
     boolean r;
@@ -658,10 +729,10 @@ public class WasmParser implements PsiParser, LightPsiParser {
     return r;
   }
 
-  // tNAME?
+  // tID?
   private static boolean folded_instruction_3_2(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "folded_instruction_3_2")) return false;
-    consumeToken(b, TNAME);
+    consumeToken(b, TID);
     return true;
   }
 
@@ -702,7 +773,7 @@ public class WasmParser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // tLP tFUNC tID? type_use local? expression tRP
+  // tLP tFUNC tID? type_use local* expression tRP
   public static boolean func(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "func")) return false;
     if (!nextTokenIs(b, TLP)) return false;
@@ -725,10 +796,14 @@ public class WasmParser implements PsiParser, LightPsiParser {
     return true;
   }
 
-  // local?
+  // local*
   private static boolean func_4(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "func_4")) return false;
-    local(b, l + 1);
+    while (true) {
+      int c = current_position_(b);
+      if (!local(b, l + 1)) break;
+      if (!empty_element_parsed_guard_(b, "func_4", c)) break;
+    }
     return true;
   }
 
@@ -1029,86 +1104,88 @@ public class WasmParser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // tLP tLOCAL  value_type value_type+ tRP
-  //         | local_explicit+
+  // tLP tLOCAL  tID? value_type tRP
+  //         | local_abbr
   public static boolean local(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "local")) return false;
     if (!nextTokenIs(b, TLP)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = local_0(b, l + 1);
-    if (!r) r = local_1(b, l + 1);
+    if (!r) r = local_abbr(b, l + 1);
     exit_section_(b, m, LOCAL, r);
     return r;
   }
 
-  // tLP tLOCAL  value_type value_type+ tRP
+  // tLP tLOCAL  tID? value_type tRP
   private static boolean local_0(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "local_0")) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = consumeTokens(b, 0, TLP, TLOCAL);
+    r = r && local_0_2(b, l + 1);
     r = r && value_type(b, l + 1);
-    r = r && local_0_3(b, l + 1);
     r = r && consumeToken(b, TRP);
     exit_section_(b, m, null, r);
     return r;
   }
 
-  // value_type+
-  private static boolean local_0_3(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "local_0_3")) return false;
-    boolean r;
-    Marker m = enter_section_(b);
-    r = value_type(b, l + 1);
-    while (r) {
-      int c = current_position_(b);
-      if (!value_type(b, l + 1)) break;
-      if (!empty_element_parsed_guard_(b, "local_0_3", c)) break;
-    }
-    exit_section_(b, m, null, r);
-    return r;
-  }
-
-  // local_explicit+
-  private static boolean local_1(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "local_1")) return false;
-    boolean r;
-    Marker m = enter_section_(b);
-    r = local_explicit(b, l + 1);
-    while (r) {
-      int c = current_position_(b);
-      if (!local_explicit(b, l + 1)) break;
-      if (!empty_element_parsed_guard_(b, "local_1", c)) break;
-    }
-    exit_section_(b, m, null, r);
-    return r;
+  // tID?
+  private static boolean local_0_2(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "local_0_2")) return false;
+    consumeToken(b, TID);
+    return true;
   }
 
   /* ********************************************************** */
-  // tLP tLOCAL tID value_type tRP
-  public static boolean local_explicit(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "local_explicit")) return false;
+  // tLP tLOCAL value_type* tRP
+  public static boolean local_abbr(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "local_abbr")) return false;
     if (!nextTokenIs(b, TLP)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, TLP, TLOCAL, TID);
-    r = r && value_type(b, l + 1);
+    r = consumeTokens(b, 0, TLP, TLOCAL);
+    r = r && local_abbr_2(b, l + 1);
     r = r && consumeToken(b, TRP);
-    exit_section_(b, m, LOCAL_EXPLICIT, r);
+    exit_section_(b, m, LOCAL_ABBR, r);
     return r;
   }
 
+  // value_type*
+  private static boolean local_abbr_2(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "local_abbr_2")) return false;
+    while (true) {
+      int c = current_position_(b);
+      if (!value_type(b, l + 1)) break;
+      if (!empty_element_parsed_guard_(b, "local_abbr_2", c)) break;
+    }
+    return true;
+  }
+
   /* ********************************************************** */
-  // tOFFSET tEQ tINT tALIGN tEQ tINT
+  // offset_arg? align_arg?
   public static boolean mem_arg(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "mem_arg")) return false;
-    if (!nextTokenIs(b, TOFFSET)) return false;
     boolean r;
-    Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, TOFFSET, TEQ, TINT, TALIGN, TEQ, TINT);
-    exit_section_(b, m, MEM_ARG, r);
+    Marker m = enter_section_(b, l, _NONE_, MEM_ARG, "<mem arg>");
+    r = mem_arg_0(b, l + 1);
+    r = r && mem_arg_1(b, l + 1);
+    exit_section_(b, l, m, r, false, null);
     return r;
+  }
+
+  // offset_arg?
+  private static boolean mem_arg_0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "mem_arg_0")) return false;
+    offset_arg(b, l + 1);
+    return true;
+  }
+
+  // align_arg?
+  private static boolean mem_arg_1(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "mem_arg_1")) return false;
+    align_arg(b, l + 1);
+    return true;
   }
 
   /* ********************************************************** */
@@ -1224,18 +1301,18 @@ public class WasmParser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // tLP tMODULE tID? top_declaration*  tRP | /*empty*/
+  // tLP tMODULE tID? module_field*  tRP | module_field*
   static boolean module(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "module")) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = module_0(b, l + 1);
-    if (!r) r = consumeToken(b, MODULE_1_0);
+    if (!r) r = module_1(b, l + 1);
     exit_section_(b, m, null, r);
     return r;
   }
 
-  // tLP tMODULE tID? top_declaration*  tRP
+  // tLP tMODULE tID? module_field*  tRP
   private static boolean module_0(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "module_0")) return false;
     boolean r;
@@ -1255,15 +1332,54 @@ public class WasmParser implements PsiParser, LightPsiParser {
     return true;
   }
 
-  // top_declaration*
+  // module_field*
   private static boolean module_0_3(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "module_0_3")) return false;
     while (true) {
       int c = current_position_(b);
-      if (!top_declaration(b, l + 1)) break;
+      if (!module_field(b, l + 1)) break;
       if (!empty_element_parsed_guard_(b, "module_0_3", c)) break;
     }
     return true;
+  }
+
+  // module_field*
+  private static boolean module_1(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "module_1")) return false;
+    while (true) {
+      int c = current_position_(b);
+      if (!module_field(b, l + 1)) break;
+      if (!empty_element_parsed_guard_(b, "module_1", c)) break;
+    }
+    return true;
+  }
+
+  /* ********************************************************** */
+  // type
+  //                              | import
+  //                              | table
+  //                              | memory
+  //                              | global
+  //                              | export
+  //                              | element
+  //                              | data
+  //                              | start
+  //                              | func
+  static boolean module_field(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "module_field")) return false;
+    if (!nextTokenIs(b, TLP)) return false;
+    boolean r;
+    r = type(b, l + 1);
+    if (!r) r = import_$(b, l + 1);
+    if (!r) r = table(b, l + 1);
+    if (!r) r = memory(b, l + 1);
+    if (!r) r = global(b, l + 1);
+    if (!r) r = export(b, l + 1);
+    if (!r) r = element(b, l + 1);
+    if (!r) r = data(b, l + 1);
+    if (!r) r = start(b, l + 1);
+    if (!r) r = func(b, l + 1);
+    return r;
   }
 
   /* ********************************************************** */
@@ -1281,24 +1397,36 @@ public class WasmParser implements PsiParser, LightPsiParser {
 
   /* ********************************************************** */
   // tLP tOFFSET? instruction tRP
-  public static boolean offset_data(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "offset_data")) return false;
+  public static boolean offset_abbrv(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "offset_abbrv")) return false;
     if (!nextTokenIs(b, TLP)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = consumeToken(b, TLP);
-    r = r && offset_data_1(b, l + 1);
+    r = r && offset_abbrv_1(b, l + 1);
     r = r && instruction(b, l + 1);
     r = r && consumeToken(b, TRP);
-    exit_section_(b, m, OFFSET_DATA, r);
+    exit_section_(b, m, OFFSET_ABBRV, r);
     return r;
   }
 
   // tOFFSET?
-  private static boolean offset_data_1(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "offset_data_1")) return false;
+  private static boolean offset_abbrv_1(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "offset_abbrv_1")) return false;
     consumeToken(b, TOFFSET);
     return true;
+  }
+
+  /* ********************************************************** */
+  // tOFFSET tEQ tINT
+  public static boolean offset_arg(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "offset_arg")) return false;
+    if (!nextTokenIs(b, TOFFSET)) return false;
+    boolean r;
+    Marker m = enter_section_(b);
+    r = consumeTokens(b, 0, TOFFSET, TEQ, TINT);
+    exit_section_(b, m, OFFSET_ARG, r);
+    return r;
   }
 
   /* ********************************************************** */
@@ -1398,29 +1526,29 @@ public class WasmParser implements PsiParser, LightPsiParser {
   //                     |   tSET_GLOBAL idx
   //                     |   tTEE_GLOBAL idx
   //                     // Memory Instructions
-  //                     |   tI32 tDOT tLOAD mem_arg?
-  //                     |   tI64 tDOT tLOAD mem_arg?
-  //                     |   tF32 tDOT tLOAD mem_arg?
-  //                     |   tF64 tDOT tLOAD mem_arg?
-  //                     |   tI32 tDOT tLOAD8_S mem_arg?
-  //                     |   tI32 tDOT tLOAD8_U mem_arg?
-  //                     |   tI32 tDOT tLOAD16_S mem_arg?
-  //                     |   tI32 tDOT tLOAD16_U mem_arg?
-  //                     |   tI64 tDOT tLOAD8_S mem_arg?
-  //                     |   tI64 tDOT tLOAD8_U mem_arg?
-  //                     |   tI64 tDOT tLOAD16_S mem_arg?
-  //                     |   tI64 tDOT tLOAD16_U mem_arg?
-  //                     |   tI64 tDOT tLOAD32_S mem_arg?
-  //                     |   tI64 tDOT tLOAD32_U mem_arg?
-  //                     |   tI32 tDOT tSTORE mem_arg?
-  //                     |   tI64 tDOT tSTORE mem_arg?
-  //                     |   tF32 tDOT tSTORE mem_arg?
-  //                     |   tF64 tDOT tSTORE mem_arg?
-  //                     |   tI32 tDOT tSTORE8 mem_arg?
-  //                     |   tI32 tDOT tSTORE16 mem_arg?
-  //                     |   tI64 tDOT tSTORE8 mem_arg?
-  //                     |   tI64 tDOT tSTORE16 mem_arg?
-  //                     |   tI64 tDOT tSTORE32 mem_arg?
+  //                     |   tI32 tDOT tLOAD mem_arg
+  //                     |   tI64 tDOT tLOAD mem_arg
+  //                     |   tF32 tDOT tLOAD mem_arg
+  //                     |   tF64 tDOT tLOAD mem_arg
+  //                     |   tI32 tDOT tLOAD8_S mem_arg
+  //                     |   tI32 tDOT tLOAD8_U mem_arg
+  //                     |   tI32 tDOT tLOAD16_S mem_arg
+  //                     |   tI32 tDOT tLOAD16_U mem_arg
+  //                     |   tI64 tDOT tLOAD8_S mem_arg
+  //                     |   tI64 tDOT tLOAD8_U mem_arg
+  //                     |   tI64 tDOT tLOAD16_S mem_arg
+  //                     |   tI64 tDOT tLOAD16_U mem_arg
+  //                     |   tI64 tDOT tLOAD32_S mem_arg
+  //                     |   tI64 tDOT tLOAD32_U mem_arg
+  //                     |   tI32 tDOT tSTORE mem_arg
+  //                     |   tI64 tDOT tSTORE mem_arg
+  //                     |   tF32 tDOT tSTORE mem_arg
+  //                     |   tF64 tDOT tSTORE mem_arg
+  //                     |   tI32 tDOT tSTORE8 mem_arg
+  //                     |   tI32 tDOT tSTORE16 mem_arg
+  //                     |   tI64 tDOT tSTORE8 mem_arg
+  //                     |   tI64 tDOT tSTORE16 mem_arg
+  //                     |   tI64 tDOT tSTORE32 mem_arg
   //                     |   tMEMORY tDOT tSIZE
   //                     |   tMEMORY tDOT tGROW
   //                     //      Numeric instructions
@@ -1861,418 +1989,257 @@ public class WasmParser implements PsiParser, LightPsiParser {
     return r;
   }
 
-  // tI32 tDOT tLOAD mem_arg?
+  // tI32 tDOT tLOAD mem_arg
   private static boolean plain_instruction_15(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "plain_instruction_15")) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = consumeTokens(b, 0, TI32, TDOT, TLOAD);
-    r = r && plain_instruction_15_3(b, l + 1);
+    r = r && mem_arg(b, l + 1);
     exit_section_(b, m, null, r);
     return r;
   }
 
-  // mem_arg?
-  private static boolean plain_instruction_15_3(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "plain_instruction_15_3")) return false;
-    mem_arg(b, l + 1);
-    return true;
-  }
-
-  // tI64 tDOT tLOAD mem_arg?
+  // tI64 tDOT tLOAD mem_arg
   private static boolean plain_instruction_16(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "plain_instruction_16")) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = consumeTokens(b, 0, TI64, TDOT, TLOAD);
-    r = r && plain_instruction_16_3(b, l + 1);
+    r = r && mem_arg(b, l + 1);
     exit_section_(b, m, null, r);
     return r;
   }
 
-  // mem_arg?
-  private static boolean plain_instruction_16_3(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "plain_instruction_16_3")) return false;
-    mem_arg(b, l + 1);
-    return true;
-  }
-
-  // tF32 tDOT tLOAD mem_arg?
+  // tF32 tDOT tLOAD mem_arg
   private static boolean plain_instruction_17(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "plain_instruction_17")) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = consumeTokens(b, 0, TF32, TDOT, TLOAD);
-    r = r && plain_instruction_17_3(b, l + 1);
+    r = r && mem_arg(b, l + 1);
     exit_section_(b, m, null, r);
     return r;
   }
 
-  // mem_arg?
-  private static boolean plain_instruction_17_3(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "plain_instruction_17_3")) return false;
-    mem_arg(b, l + 1);
-    return true;
-  }
-
-  // tF64 tDOT tLOAD mem_arg?
+  // tF64 tDOT tLOAD mem_arg
   private static boolean plain_instruction_18(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "plain_instruction_18")) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = consumeTokens(b, 0, TF64, TDOT, TLOAD);
-    r = r && plain_instruction_18_3(b, l + 1);
+    r = r && mem_arg(b, l + 1);
     exit_section_(b, m, null, r);
     return r;
   }
 
-  // mem_arg?
-  private static boolean plain_instruction_18_3(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "plain_instruction_18_3")) return false;
-    mem_arg(b, l + 1);
-    return true;
-  }
-
-  // tI32 tDOT tLOAD8_S mem_arg?
+  // tI32 tDOT tLOAD8_S mem_arg
   private static boolean plain_instruction_19(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "plain_instruction_19")) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = consumeTokens(b, 0, TI32, TDOT, TLOAD8_S);
-    r = r && plain_instruction_19_3(b, l + 1);
+    r = r && mem_arg(b, l + 1);
     exit_section_(b, m, null, r);
     return r;
   }
 
-  // mem_arg?
-  private static boolean plain_instruction_19_3(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "plain_instruction_19_3")) return false;
-    mem_arg(b, l + 1);
-    return true;
-  }
-
-  // tI32 tDOT tLOAD8_U mem_arg?
+  // tI32 tDOT tLOAD8_U mem_arg
   private static boolean plain_instruction_20(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "plain_instruction_20")) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = consumeTokens(b, 0, TI32, TDOT, TLOAD8_U);
-    r = r && plain_instruction_20_3(b, l + 1);
+    r = r && mem_arg(b, l + 1);
     exit_section_(b, m, null, r);
     return r;
   }
 
-  // mem_arg?
-  private static boolean plain_instruction_20_3(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "plain_instruction_20_3")) return false;
-    mem_arg(b, l + 1);
-    return true;
-  }
-
-  // tI32 tDOT tLOAD16_S mem_arg?
+  // tI32 tDOT tLOAD16_S mem_arg
   private static boolean plain_instruction_21(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "plain_instruction_21")) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = consumeTokens(b, 0, TI32, TDOT, TLOAD16_S);
-    r = r && plain_instruction_21_3(b, l + 1);
+    r = r && mem_arg(b, l + 1);
     exit_section_(b, m, null, r);
     return r;
   }
 
-  // mem_arg?
-  private static boolean plain_instruction_21_3(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "plain_instruction_21_3")) return false;
-    mem_arg(b, l + 1);
-    return true;
-  }
-
-  // tI32 tDOT tLOAD16_U mem_arg?
+  // tI32 tDOT tLOAD16_U mem_arg
   private static boolean plain_instruction_22(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "plain_instruction_22")) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = consumeTokens(b, 0, TI32, TDOT, TLOAD16_U);
-    r = r && plain_instruction_22_3(b, l + 1);
+    r = r && mem_arg(b, l + 1);
     exit_section_(b, m, null, r);
     return r;
   }
 
-  // mem_arg?
-  private static boolean plain_instruction_22_3(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "plain_instruction_22_3")) return false;
-    mem_arg(b, l + 1);
-    return true;
-  }
-
-  // tI64 tDOT tLOAD8_S mem_arg?
+  // tI64 tDOT tLOAD8_S mem_arg
   private static boolean plain_instruction_23(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "plain_instruction_23")) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = consumeTokens(b, 0, TI64, TDOT, TLOAD8_S);
-    r = r && plain_instruction_23_3(b, l + 1);
+    r = r && mem_arg(b, l + 1);
     exit_section_(b, m, null, r);
     return r;
   }
 
-  // mem_arg?
-  private static boolean plain_instruction_23_3(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "plain_instruction_23_3")) return false;
-    mem_arg(b, l + 1);
-    return true;
-  }
-
-  // tI64 tDOT tLOAD8_U mem_arg?
+  // tI64 tDOT tLOAD8_U mem_arg
   private static boolean plain_instruction_24(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "plain_instruction_24")) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = consumeTokens(b, 0, TI64, TDOT, TLOAD8_U);
-    r = r && plain_instruction_24_3(b, l + 1);
+    r = r && mem_arg(b, l + 1);
     exit_section_(b, m, null, r);
     return r;
   }
 
-  // mem_arg?
-  private static boolean plain_instruction_24_3(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "plain_instruction_24_3")) return false;
-    mem_arg(b, l + 1);
-    return true;
-  }
-
-  // tI64 tDOT tLOAD16_S mem_arg?
+  // tI64 tDOT tLOAD16_S mem_arg
   private static boolean plain_instruction_25(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "plain_instruction_25")) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = consumeTokens(b, 0, TI64, TDOT, TLOAD16_S);
-    r = r && plain_instruction_25_3(b, l + 1);
+    r = r && mem_arg(b, l + 1);
     exit_section_(b, m, null, r);
     return r;
   }
 
-  // mem_arg?
-  private static boolean plain_instruction_25_3(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "plain_instruction_25_3")) return false;
-    mem_arg(b, l + 1);
-    return true;
-  }
-
-  // tI64 tDOT tLOAD16_U mem_arg?
+  // tI64 tDOT tLOAD16_U mem_arg
   private static boolean plain_instruction_26(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "plain_instruction_26")) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = consumeTokens(b, 0, TI64, TDOT, TLOAD16_U);
-    r = r && plain_instruction_26_3(b, l + 1);
+    r = r && mem_arg(b, l + 1);
     exit_section_(b, m, null, r);
     return r;
   }
 
-  // mem_arg?
-  private static boolean plain_instruction_26_3(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "plain_instruction_26_3")) return false;
-    mem_arg(b, l + 1);
-    return true;
-  }
-
-  // tI64 tDOT tLOAD32_S mem_arg?
+  // tI64 tDOT tLOAD32_S mem_arg
   private static boolean plain_instruction_27(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "plain_instruction_27")) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = consumeTokens(b, 0, TI64, TDOT, TLOAD32_S);
-    r = r && plain_instruction_27_3(b, l + 1);
+    r = r && mem_arg(b, l + 1);
     exit_section_(b, m, null, r);
     return r;
   }
 
-  // mem_arg?
-  private static boolean plain_instruction_27_3(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "plain_instruction_27_3")) return false;
-    mem_arg(b, l + 1);
-    return true;
-  }
-
-  // tI64 tDOT tLOAD32_U mem_arg?
+  // tI64 tDOT tLOAD32_U mem_arg
   private static boolean plain_instruction_28(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "plain_instruction_28")) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = consumeTokens(b, 0, TI64, TDOT, TLOAD32_U);
-    r = r && plain_instruction_28_3(b, l + 1);
+    r = r && mem_arg(b, l + 1);
     exit_section_(b, m, null, r);
     return r;
   }
 
-  // mem_arg?
-  private static boolean plain_instruction_28_3(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "plain_instruction_28_3")) return false;
-    mem_arg(b, l + 1);
-    return true;
-  }
-
-  // tI32 tDOT tSTORE mem_arg?
+  // tI32 tDOT tSTORE mem_arg
   private static boolean plain_instruction_29(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "plain_instruction_29")) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = consumeTokens(b, 0, TI32, TDOT, TSTORE);
-    r = r && plain_instruction_29_3(b, l + 1);
+    r = r && mem_arg(b, l + 1);
     exit_section_(b, m, null, r);
     return r;
   }
 
-  // mem_arg?
-  private static boolean plain_instruction_29_3(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "plain_instruction_29_3")) return false;
-    mem_arg(b, l + 1);
-    return true;
-  }
-
-  // tI64 tDOT tSTORE mem_arg?
+  // tI64 tDOT tSTORE mem_arg
   private static boolean plain_instruction_30(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "plain_instruction_30")) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = consumeTokens(b, 0, TI64, TDOT, TSTORE);
-    r = r && plain_instruction_30_3(b, l + 1);
+    r = r && mem_arg(b, l + 1);
     exit_section_(b, m, null, r);
     return r;
   }
 
-  // mem_arg?
-  private static boolean plain_instruction_30_3(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "plain_instruction_30_3")) return false;
-    mem_arg(b, l + 1);
-    return true;
-  }
-
-  // tF32 tDOT tSTORE mem_arg?
+  // tF32 tDOT tSTORE mem_arg
   private static boolean plain_instruction_31(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "plain_instruction_31")) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = consumeTokens(b, 0, TF32, TDOT, TSTORE);
-    r = r && plain_instruction_31_3(b, l + 1);
+    r = r && mem_arg(b, l + 1);
     exit_section_(b, m, null, r);
     return r;
   }
 
-  // mem_arg?
-  private static boolean plain_instruction_31_3(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "plain_instruction_31_3")) return false;
-    mem_arg(b, l + 1);
-    return true;
-  }
-
-  // tF64 tDOT tSTORE mem_arg?
+  // tF64 tDOT tSTORE mem_arg
   private static boolean plain_instruction_32(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "plain_instruction_32")) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = consumeTokens(b, 0, TF64, TDOT, TSTORE);
-    r = r && plain_instruction_32_3(b, l + 1);
+    r = r && mem_arg(b, l + 1);
     exit_section_(b, m, null, r);
     return r;
   }
 
-  // mem_arg?
-  private static boolean plain_instruction_32_3(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "plain_instruction_32_3")) return false;
-    mem_arg(b, l + 1);
-    return true;
-  }
-
-  // tI32 tDOT tSTORE8 mem_arg?
+  // tI32 tDOT tSTORE8 mem_arg
   private static boolean plain_instruction_33(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "plain_instruction_33")) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = consumeTokens(b, 0, TI32, TDOT, TSTORE8);
-    r = r && plain_instruction_33_3(b, l + 1);
+    r = r && mem_arg(b, l + 1);
     exit_section_(b, m, null, r);
     return r;
   }
 
-  // mem_arg?
-  private static boolean plain_instruction_33_3(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "plain_instruction_33_3")) return false;
-    mem_arg(b, l + 1);
-    return true;
-  }
-
-  // tI32 tDOT tSTORE16 mem_arg?
+  // tI32 tDOT tSTORE16 mem_arg
   private static boolean plain_instruction_34(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "plain_instruction_34")) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = consumeTokens(b, 0, TI32, TDOT, TSTORE16);
-    r = r && plain_instruction_34_3(b, l + 1);
+    r = r && mem_arg(b, l + 1);
     exit_section_(b, m, null, r);
     return r;
   }
 
-  // mem_arg?
-  private static boolean plain_instruction_34_3(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "plain_instruction_34_3")) return false;
-    mem_arg(b, l + 1);
-    return true;
-  }
-
-  // tI64 tDOT tSTORE8 mem_arg?
+  // tI64 tDOT tSTORE8 mem_arg
   private static boolean plain_instruction_35(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "plain_instruction_35")) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = consumeTokens(b, 0, TI64, TDOT, TSTORE8);
-    r = r && plain_instruction_35_3(b, l + 1);
+    r = r && mem_arg(b, l + 1);
     exit_section_(b, m, null, r);
     return r;
   }
 
-  // mem_arg?
-  private static boolean plain_instruction_35_3(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "plain_instruction_35_3")) return false;
-    mem_arg(b, l + 1);
-    return true;
-  }
-
-  // tI64 tDOT tSTORE16 mem_arg?
+  // tI64 tDOT tSTORE16 mem_arg
   private static boolean plain_instruction_36(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "plain_instruction_36")) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = consumeTokens(b, 0, TI64, TDOT, TSTORE16);
-    r = r && plain_instruction_36_3(b, l + 1);
+    r = r && mem_arg(b, l + 1);
     exit_section_(b, m, null, r);
     return r;
   }
 
-  // mem_arg?
-  private static boolean plain_instruction_36_3(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "plain_instruction_36_3")) return false;
-    mem_arg(b, l + 1);
-    return true;
-  }
-
-  // tI64 tDOT tSTORE32 mem_arg?
+  // tI64 tDOT tSTORE32 mem_arg
   private static boolean plain_instruction_37(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "plain_instruction_37")) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = consumeTokens(b, 0, TI64, TDOT, TSTORE32);
-    r = r && plain_instruction_37_3(b, l + 1);
+    r = r && mem_arg(b, l + 1);
     exit_section_(b, m, null, r);
     return r;
-  }
-
-  // mem_arg?
-  private static boolean plain_instruction_37_3(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "plain_instruction_37_3")) return false;
-    mem_arg(b, l + 1);
-    return true;
   }
 
   // tF32 tDOT tCONST num
@@ -2497,34 +2464,6 @@ public class WasmParser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // type
-  //                              | import
-  //                              | table
-  //                              | memory
-  //                              | global
-  //                              | export
-  //                              | element
-  //                              | data
-  //                              | start
-  //                              | func
-  static boolean top_declaration(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "top_declaration")) return false;
-    if (!nextTokenIs(b, TLP)) return false;
-    boolean r;
-    r = type(b, l + 1);
-    if (!r) r = import_$(b, l + 1);
-    if (!r) r = table(b, l + 1);
-    if (!r) r = memory(b, l + 1);
-    if (!r) r = global(b, l + 1);
-    if (!r) r = export(b, l + 1);
-    if (!r) r = element(b, l + 1);
-    if (!r) r = data(b, l + 1);
-    if (!r) r = start(b, l + 1);
-    if (!r) r = func(b, l + 1);
-    return r;
-  }
-
-  /* ********************************************************** */
   // tLP tTYPE tID? func_type tRP
   public static boolean type(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "type")) return false;
@@ -2547,18 +2486,19 @@ public class WasmParser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // tLP tTYPE idx tRP | param_list? result?
+  // tLP tTYPE idx tRP abbr_type_use
+  //         |   abbr_type_use
   public static boolean type_use(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "type_use")) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, TYPE_USE, "<type use>");
     r = type_use_0(b, l + 1);
-    if (!r) r = type_use_1(b, l + 1);
+    if (!r) r = abbr_type_use(b, l + 1);
     exit_section_(b, l, m, r, false, null);
     return r;
   }
 
-  // tLP tTYPE idx tRP
+  // tLP tTYPE idx tRP abbr_type_use
   private static boolean type_use_0(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "type_use_0")) return false;
     boolean r;
@@ -2566,33 +2506,9 @@ public class WasmParser implements PsiParser, LightPsiParser {
     r = consumeTokens(b, 0, TLP, TTYPE);
     r = r && idx(b, l + 1);
     r = r && consumeToken(b, TRP);
+    r = r && abbr_type_use(b, l + 1);
     exit_section_(b, m, null, r);
     return r;
-  }
-
-  // param_list? result?
-  private static boolean type_use_1(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "type_use_1")) return false;
-    boolean r;
-    Marker m = enter_section_(b);
-    r = type_use_1_0(b, l + 1);
-    r = r && type_use_1_1(b, l + 1);
-    exit_section_(b, m, null, r);
-    return r;
-  }
-
-  // param_list?
-  private static boolean type_use_1_0(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "type_use_1_0")) return false;
-    param_list(b, l + 1);
-    return true;
-  }
-
-  // result?
-  private static boolean type_use_1_1(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "type_use_1_1")) return false;
-    result(b, l + 1);
-    return true;
   }
 
   /* ********************************************************** */

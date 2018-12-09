@@ -27,15 +27,15 @@ public class WasmLocalImpl extends ASTWrapperPsiElement implements WasmLocal {
   }
 
   @Override
-  @NotNull
-  public List<WasmLocalExplicit> getLocalExplicitList() {
-    return PsiTreeUtil.getChildrenOfTypeAsList(this, WasmLocalExplicit.class);
+  @Nullable
+  public WasmLocalAbbr getLocalAbbr() {
+    return findChildByClass(WasmLocalAbbr.class);
   }
 
   @Override
-  @NotNull
-  public List<WasmValueType> getValueTypeList() {
-    return PsiTreeUtil.getChildrenOfTypeAsList(this, WasmValueType.class);
+  @Nullable
+  public WasmValueType getValueType() {
+    return findChildByClass(WasmValueType.class);
   }
 
 }

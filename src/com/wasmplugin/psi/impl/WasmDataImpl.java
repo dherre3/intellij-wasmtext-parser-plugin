@@ -34,8 +34,8 @@ public class WasmDataImpl extends ASTWrapperPsiElement implements WasmData {
 
   @Override
   @NotNull
-  public WasmOffsetData getOffsetData() {
-    return findNotNullChildByClass(WasmOffsetData.class);
+  public WasmOffsetAbbrv getOffsetAbbrv() {
+    return findNotNullChildByClass(WasmOffsetAbbrv.class);
   }
 
 }

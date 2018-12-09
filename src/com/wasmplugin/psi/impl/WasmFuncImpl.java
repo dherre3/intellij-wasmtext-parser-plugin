@@ -33,9 +33,9 @@ public class WasmFuncImpl extends ASTWrapperPsiElement implements WasmFunc {
   }
 
   @Override
-  @Nullable
-  public WasmLocal getLocal() {
-    return findChildByClass(WasmLocal.class);
+  @NotNull
+  public List<WasmLocal> getLocalList() {
+    return PsiTreeUtil.getChildrenOfTypeAsList(this, WasmLocal.class);
   }
 
   @Override

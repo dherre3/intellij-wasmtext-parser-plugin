@@ -27,9 +27,15 @@ public class WasmElementImpl extends ASTWrapperPsiElement implements WasmElement
   }
 
   @Override
-  @Nullable
-  public WasmIdx getIdx() {
-    return findChildByClass(WasmIdx.class);
+  @NotNull
+  public List<WasmIdx> getIdxList() {
+    return PsiTreeUtil.getChildrenOfTypeAsList(this, WasmIdx.class);
+  }
+
+  @Override
+  @NotNull
+  public WasmOffsetAbbrv getOffsetAbbrv() {
+    return findNotNullChildByClass(WasmOffsetAbbrv.class);
   }
 
 }

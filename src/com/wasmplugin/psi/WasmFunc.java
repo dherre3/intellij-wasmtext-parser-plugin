@@ -10,8 +10,8 @@ public interface WasmFunc extends PsiElement {
   @NotNull
   List<WasmInstruction> getInstructionList();
 
-  @Nullable
-  WasmLocal getLocal();
+  @NotNull
+  List<WasmLocal> getLocalList();
 
   @NotNull
   WasmTypeUse getTypeUse();

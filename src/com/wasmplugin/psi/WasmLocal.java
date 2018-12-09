@@ -7,10 +7,10 @@ import com.intellij.psi.PsiElement;
 
 public interface WasmLocal extends PsiElement {
 
-  @NotNull
-  List<WasmLocalExplicit> getLocalExplicitList();
+  @Nullable
+  WasmLocalAbbr getLocalAbbr();
 
-  @NotNull
-  List<WasmValueType> getValueTypeList();
+  @Nullable
+  WasmValueType getValueType();
 
 }

@@ -7,13 +7,10 @@ import com.intellij.psi.PsiElement;
 
 public interface WasmTypeUse extends PsiElement {
 
+  @NotNull
+  WasmAbbrTypeUse getAbbrTypeUse();
+
   @Nullable
   WasmIdx getIdx();
-
-  @Nullable
-  WasmParamList getParamList();
-
-  @Nullable
-  WasmResult getResult();
 
 }

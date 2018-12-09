@@ -51,9 +51,9 @@
 //    ]
 }
 
-module ::= tLP tMODULE tID? top_declaration*  tRP | /*empty*/
+module ::= tLP tMODULE tID? module_field*  tRP | module_field*
 
-private top_declaration ::=    type
+private module_field ::=    type
                              | import
                              | table
                              | memory
@@ -65,11 +65,14 @@ private top_declaration ::=    type
                              | func
 private expression::=instruction*
 
-func::= tLP tFUNC tID? type_use local? expression tRP
+func::= tLP tFUNC tID? type_use local* expression tRP
 
 value_type::= tI32|tF64|tF32|tI64
 //
-type_use::= tLP tTYPE idx tRP | param_list? result?
+type_use::= tLP tTYPE idx tRP abbr_type_use
+        |   abbr_type_use
+
+abbr_type_use ::=  param_list? result?
 //
 idx::= tINT | tID
 //
@@ -94,10 +97,10 @@ result::=   tLP tRESULT  value_type value_type+ tRP
         | result_explicit+
 result_explicit::= tLP tRESULT value_type tRP
 
-local::=   tLP tLOCAL  value_type value_type+ tRP
-        | local_explicit+
+local::=   tLP tLOCAL  tID? value_type tRP
+        | local_abbr
 
-local_explicit::= tLP tLOCAL tID value_type tRP
+local_abbr::= tLP tLOCAL value_type* tRP
 
 import ::= tLP tIMPORT tNAME tNAME import_desc tRP
 
@@ -130,27 +133,30 @@ export_desc::= tLP (tFUNC|tMEMORY|tTABLE|tGLOBAL) idx tRP
 //
 start::= tLP tSTART idx tRP
 //
-element::=  tLP tELEM idx? tLP tNAME tRP tRP
-offset_data::= tLP tOFFSET? instruction tRP/*TODO: ADD EXPRESSION */
+element::=  tLP tELEM idx? offset_abbrv idx*  tRP
+
+offset_abbrv::=tLP tOFFSET? instruction tRP
 //
-data::= tLP tDATA idx? offset_data tNAME tRP
+data::= tLP tDATA idx? offset_abbrv tNAME tRP
 
 //instruction::= value_type DOT CONST ()
 
 instruction::= block_instruction | plain_instruction | folded_instruction
 
-mem_arg::= tOFFSET tEQ tINT tALIGN tEQ tINT
+mem_arg::= offset_arg? align_arg?
 
+offset_arg::=  tOFFSET tEQ tINT
+align_arg::= tALIGN tEQ tINT
 
-private block_instruction::=    tBLOCK tNAME? result? instruction* tEND tNAME?
-                    |   tLOOP tNAME? result? instruction tEND tNAME?
-                    |   tIF tNAME? result? instruction* else_clause? tEND tNAME?
-private else_clause::= tELSE tNAME? instruction*
+private block_instruction::=    tBLOCK tID? result? instruction* tEND tID?
+                    |   tLOOP tID? result? instruction* tEND tID?
+                    |   tIF tID? result? instruction* else_clause? tEND tID?
+private else_clause::= tELSE tID? instruction*
                     // Control Instructions
 private folded_instruction ::=  tLP plain_instruction folded_instruction* tRP
-                    |   tLP tBLOCK tNAME? result? instruction* tRP
-                    |   tLP tLOOP tNAME? result? instruction* tRP
-                    |   tLP tIF tNAME? result? folded_instruction* tLP tTHEN instruction* tRP else_clause_folded? tRP
+                    |   tLP tBLOCK tID? result? instruction* tRP
+                    |   tLP tLOOP tID? result? instruction* tRP
+                    |   tLP tIF tID? result? folded_instruction* tLP tTHEN instruction* tRP else_clause_folded? tRP
 
 private else_clause_folded::=  tLP tTHEN instruction* tRP
 
@@ -171,29 +177,29 @@ private plain_instruction::=    tUNREACHABLE
                     |   tSET_GLOBAL idx
                     |   tTEE_GLOBAL idx
                     // Memory Instructions
-                    |   tI32 tDOT tLOAD mem_arg?
-                    |   tI64 tDOT tLOAD mem_arg?
-                    |   tF32 tDOT tLOAD mem_arg?
-                    |   tF64 tDOT tLOAD mem_arg?
-                    |   tI32 tDOT tLOAD8_S mem_arg?
-                    |   tI32 tDOT tLOAD8_U mem_arg?
-                    |   tI32 tDOT tLOAD16_S mem_arg?
-                    |   tI32 tDOT tLOAD16_U mem_arg?
-                    |   tI64 tDOT tLOAD8_S mem_arg?
-                    |   tI64 tDOT tLOAD8_U mem_arg?
-                    |   tI64 tDOT tLOAD16_S mem_arg?
-                    |   tI64 tDOT tLOAD16_U mem_arg?
-                    |   tI64 tDOT tLOAD32_S mem_arg?
-                    |   tI64 tDOT tLOAD32_U mem_arg?
-                    |   tI32 tDOT tSTORE mem_arg?
-                    |   tI64 tDOT tSTORE mem_arg?
-                    |   tF32 tDOT tSTORE mem_arg?
-                    |   tF64 tDOT tSTORE mem_arg?
-                    |   tI32 tDOT tSTORE8 mem_arg?
-                    |   tI32 tDOT tSTORE16 mem_arg?
-                    |   tI64 tDOT tSTORE8 mem_arg?
-                    |   tI64 tDOT tSTORE16 mem_arg?
-                    |   tI64 tDOT tSTORE32 mem_arg?
+                    |   tI32 tDOT tLOAD mem_arg
+                    |   tI64 tDOT tLOAD mem_arg
+                    |   tF32 tDOT tLOAD mem_arg
+                    |   tF64 tDOT tLOAD mem_arg
+                    |   tI32 tDOT tLOAD8_S mem_arg
+                    |   tI32 tDOT tLOAD8_U mem_arg
+                    |   tI32 tDOT tLOAD16_S mem_arg
+                    |   tI32 tDOT tLOAD16_U mem_arg
+                    |   tI64 tDOT tLOAD8_S mem_arg
+                    |   tI64 tDOT tLOAD8_U mem_arg
+                    |   tI64 tDOT tLOAD16_S mem_arg
+                    |   tI64 tDOT tLOAD16_U mem_arg
+                    |   tI64 tDOT tLOAD32_S mem_arg
+                    |   tI64 tDOT tLOAD32_U mem_arg
+                    |   tI32 tDOT tSTORE mem_arg
+                    |   tI64 tDOT tSTORE mem_arg
+                    |   tF32 tDOT tSTORE mem_arg
+                    |   tF64 tDOT tSTORE mem_arg
+                    |   tI32 tDOT tSTORE8 mem_arg
+                    |   tI32 tDOT tSTORE16 mem_arg
+                    |   tI64 tDOT tSTORE8 mem_arg
+                    |   tI64 tDOT tSTORE16 mem_arg
+                    |   tI64 tDOT tSTORE32 mem_arg
                     |   tMEMORY tDOT tSIZE
                     |   tMEMORY tDOT tGROW
                     //      Numeric instructions

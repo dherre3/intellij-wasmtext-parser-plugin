@@ -1,7 +1,7 @@
 <idea-plugin>
   <id>com.dherre3.wasm-text-parser</id>
   <name>WebAssembly Text Format Parser</name>
-  <version>1.0</version>
+  <version>1.0.1</version>
   <vendor email="david.herrera@mail.mcgill.ca" url="http://cs.mcgill.ca/~dherre3">David Herrera</vendor>
 
   <description><![CDATA[
@@ -26,6 +26,7 @@ Contributions are welcomed via pull-requests.
     ]]></description>
   <change-notes><![CDATA[
      1.0 First version<br>
+     1.0.1 Fix to some constructs
     ]]>
   </change-notes>
 

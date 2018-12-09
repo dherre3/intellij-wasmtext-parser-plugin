@@ -7,6 +7,14 @@ import com.intellij.psi.PsiElement;
 
 public class WasmVisitor extends PsiElementVisitor {
 
+  public void visitAbbrTypeUse(@NotNull WasmAbbrTypeUse o) {
+    visitPsiElement(o);
+  }
+
+  public void visitAlignArg(@NotNull WasmAlignArg o) {
+    visitPsiElement(o);
+  }
+
   public void visitCom(@NotNull WasmCom o) {
     visitPsiElement(o);
   }
@@ -87,7 +95,7 @@ public class WasmVisitor extends PsiElementVisitor {
     visitPsiElement(o);
   }
 
-  public void visitLocalExplicit(@NotNull WasmLocalExplicit o) {
+  public void visitLocalAbbr(@NotNull WasmLocalAbbr o) {
     visitPsiElement(o);
   }
 
@@ -107,7 +115,11 @@ public class WasmVisitor extends PsiElementVisitor {
     visitPsiElement(o);
   }
 
-  public void visitOffsetData(@NotNull WasmOffsetData o) {
+  public void visitOffsetAbbrv(@NotNull WasmOffsetAbbrv o) {
+    visitPsiElement(o);
+  }
+
+  public void visitOffsetArg(@NotNull WasmOffsetArg o) {
     visitPsiElement(o);
   }
 

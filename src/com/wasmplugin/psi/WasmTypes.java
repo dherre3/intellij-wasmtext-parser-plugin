@@ -8,6 +8,8 @@ import com.wasmplugin.psi.impl.*;
 
 public interface WasmTypes {
 
+  IElementType ABBR_TYPE_USE = new WasmElementType("ABBR_TYPE_USE");
+  IElementType ALIGN_ARG = new WasmElementType("ALIGN_ARG");
   IElementType COM = new WasmElementType("COM");
   IElementType DATA = new WasmElementType("DATA");
   IElementType DATA_SHORT = new WasmElementType("DATA_SHORT");
@@ -28,12 +30,13 @@ public interface WasmTypes {
   IElementType INSTRUCTION = new WasmElementType("INSTRUCTION");
   IElementType LIMITS = new WasmElementType("LIMITS");
   IElementType LOCAL = new WasmElementType("LOCAL");
-  IElementType LOCAL_EXPLICIT = new WasmElementType("LOCAL_EXPLICIT");
+  IElementType LOCAL_ABBR = new WasmElementType("LOCAL_ABBR");
   IElementType MEMORY = new WasmElementType("MEMORY");
   IElementType MEMORY_TYPE = new WasmElementType("MEMORY_TYPE");
   IElementType MEM_ARG = new WasmElementType("MEM_ARG");
   IElementType NUM = new WasmElementType("NUM");
-  IElementType OFFSET_DATA = new WasmElementType("OFFSET_DATA");
+  IElementType OFFSET_ABBRV = new WasmElementType("OFFSET_ABBRV");
+  IElementType OFFSET_ARG = new WasmElementType("OFFSET_ARG");
   IElementType PARAM_EXPLICIT = new WasmElementType("PARAM_EXPLICIT");
   IElementType PARAM_LIST = new WasmElementType("PARAM_LIST");
   IElementType RESULT = new WasmElementType("RESULT");
@@ -47,7 +50,6 @@ public interface WasmTypes {
 
   IElementType BLOCK_COMMENT = new WasmTokenType("BLOCK_COMMENT");
   IElementType LINE_COMMENT = new WasmTokenType("LINE_COMMENT");
-  IElementType MODULE_1_0 = new WasmTokenType("module_1_0");
   IElementType TABS = new WasmTokenType("tABS");
   IElementType TADD = new WasmTokenType("tADD");
   IElementType TALIGN = new WasmTokenType("tALIGN");
@@ -177,7 +179,13 @@ public interface WasmTypes {
   class Factory {
     public static PsiElement createElement(ASTNode node) {
       IElementType type = node.getElementType();
-      if (type == COM) {
+      if (type == ABBR_TYPE_USE) {
+        return new WasmAbbrTypeUseImpl(node);
+      }
+      else if (type == ALIGN_ARG) {
+        return new WasmAlignArgImpl(node);
+      }
+      else if (type == COM) {
         return new WasmComImpl(node);
       }
       else if (type == DATA) {
@@ -237,8 +245,8 @@ public interface WasmTypes {
       else if (type == LOCAL) {
         return new WasmLocalImpl(node);
       }
-      else if (type == LOCAL_EXPLICIT) {
-        return new WasmLocalExplicitImpl(node);
+      else if (type == LOCAL_ABBR) {
+        return new WasmLocalAbbrImpl(node);
       }
       else if (type == MEMORY) {
         return new WasmMemoryImpl(node);
@@ -252,8 +260,11 @@ public interface WasmTypes {
       else if (type == NUM) {
         return new WasmNumImpl(node);
       }
-      else if (type == OFFSET_DATA) {
-        return new WasmOffsetDataImpl(node);
+      else if (type == OFFSET_ABBRV) {
+        return new WasmOffsetAbbrvImpl(node);
+      }
+      else if (type == OFFSET_ARG) {
+        return new WasmOffsetArgImpl(node);
       }
       else if (type == PARAM_EXPLICIT) {
         return new WasmParamExplicitImpl(node);

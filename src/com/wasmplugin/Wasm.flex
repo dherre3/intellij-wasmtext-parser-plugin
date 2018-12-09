@@ -57,6 +57,7 @@ FORMAT=[\t\r\n]
 <YYINITIAL> "memory"                              {return WasmTypes.TMEMORY;}
 <YYINITIAL> "elem"                              {return WasmTypes.TELEM;}
 <YYINITIAL> "offset"                              {return WasmTypes.TOFFSET;}
+<YYINITIAL> "align"                              {return WasmTypes.TALIGN;}
 <YYINITIAL> "data"                              {return WasmTypes.TDATA;}
 <YYINITIAL> "start"                              {return WasmTypes.TSTART;}
 <YYINITIAL> "global"                              {return WasmTypes.TGLOBAL;}

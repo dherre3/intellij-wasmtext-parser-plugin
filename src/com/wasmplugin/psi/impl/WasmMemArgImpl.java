@@ -26,4 +26,16 @@ public class WasmMemArgImpl extends ASTWrapperPsiElement implements WasmMemArg {
     else super.accept(visitor);
   }
 
+  @Override
+  @Nullable
+  public WasmAlignArg getAlignArg() {
+    return findChildByClass(WasmAlignArg.class);
+  }
+
+  @Override
+  @Nullable
+  public WasmOffsetArg getOffsetArg() {
+    return findChildByClass(WasmOffsetArg.class);
+  }
+
 }
