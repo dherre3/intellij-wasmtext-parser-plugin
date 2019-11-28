@@ -1,10 +1,10 @@
 <idea-plugin>
-  <id>com.dherre3.wasm-text-parser</id>
-  <name>WebAssembly Text Format Parser</name>
-  <version>1.0.1</version>
-  <vendor email="david.herrera@mail.mcgill.ca" url="http://cs.mcgill.ca/~dherre3">David Herrera</vendor>
+    <id>com.dherre3.wasm-text-parser</id>
+    <name>WebAssembly Text Format Parser</name>
+    <version>1.0.2</version>
+    <vendor email="david.herrera@mail.mcgill.ca" url="http://cs.mcgill.ca/~dherre3">David Herrera</vendor>
 
-  <description><![CDATA[
+    <description><![CDATA[
 
 <h1>WebAssembly Text Format IntelliJ Plugin</h1>
 Plugin to syntax highlight the WebAssembly text format in IntelliJ.
@@ -24,28 +24,39 @@ This plugin supports the v1.0.0 of the WebAssembly specification.
 Contributions are welcomed via pull-requests.
 <h2>Licence</h2>
     ]]></description>
-  <change-notes><![CDATA[
-     1.0 First version<br>
+    <change-notes><![CDATA[
+     1.0.3 Enable support of other IDEs
+     1.0.2 Commenter, Live templates, line marker, brace matcher, folding etc
      1.0.1 Fix to some constructs
+     1.0 First version<br>
     ]]>
-  </change-notes>
+    </change-notes>
 
-  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
-  <idea-version since-build="173.0"/>
+    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+    <idea-version since-build="173.0"/>
 
-  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
-       on how to target different products -->
-  <depends>com.intellij.modules.lang</depends>
+    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+         on how to target different products -->
+  
+    <depends>com.intellij.modules.lang</depends>
 
 
-  <extensions defaultExtensionNs="com.intellij">
-      <fileTypeFactory implementation="com.wasmplugin.WasmFileTypeFactory"/>
-      <lang.parserDefinition language="Wasm" implementationClass="com.wasmplugin.WasmParserDefinition"/>
-      <lang.syntaxHighlighterFactory language="Wasm" implementationClass="com.wasmplugin.WasmSyntaxHighlighterFactory"/>
-  </extensions>
+    <extensions defaultExtensionNs="com.intellij">
+        <fileType name="Wasm Text File" implementationClass="com.wasmplugin.WasmFileType" fieldName="INSTANCE"
+                  language="Wasm" extensions="wat"/>
+        <lang.parserDefinition language="Wasm" implementationClass="com.wasmplugin.WasmParserDefinition"/>
+        <lang.syntaxHighlighterFactory language="Wasm"
+                                       implementationClass="com.wasmplugin.WasmSyntaxHighlighterFactory"/>
+        <lang.commenter language="Wasm" implementationClass="com.wasmplugin.WasmCommenter"/>
+        <lang.braceMatcher language="Wasm" implementationClass="com.wasmplugin.WasmBraceMatcher"/>
+        <codeInsight.lineMarkerProvider language="Wasm" implementationClass="com.wasmplugin.WasmLineMarkerProvider"/>
+        <liveTemplateContext implementation="com.wasmplugin.WasmTemplateContext"/>
+        <defaultLiveTemplatesProvider implementation="com.wasmplugin.WasmLiveTemplateProvider"/>
+        <lang.foldingBuilder language="Wasm" implementationClass="com.wasmplugin.WasmFoldingBuilder"/>
+    </extensions>
 
-  <actions>
-    <!-- Add your actions here -->
-  </actions>
+    <actions>
+        <!-- Add your actions here -->
+    </actions>
 
 </idea-plugin>
