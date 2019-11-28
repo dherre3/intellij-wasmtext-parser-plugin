@@ -28,7 +28,7 @@ public class WasmSyntaxHighlighter extends SyntaxHighlighterBase{
     public static final TextAttributesKey BAD_CHARACTER =
             createTextAttributesKey("SIMPLE_BAD_CHARACTER", HighlighterColors.BAD_CHARACTER);
     public static final TextAttributesKey GLOBAL_CHARACTER =
-            createTextAttributesKey("SIMPLE_BAD_CHARACTER", DefaultLanguageHighlighterColors.GLOBAL_VARIABLE);
+            createTextAttributesKey("SIMPLE_GLOBAL_CHARACTER", DefaultLanguageHighlighterColors.GLOBAL_VARIABLE);
     public static final TextAttributesKey NUMBER_CHARACTER =
             createTextAttributesKey("SIMPLE_NUMBER_CHARACTER", DefaultLanguageHighlighterColors.NUMBER);
     public static final TextAttributesKey IDENTIFIER =

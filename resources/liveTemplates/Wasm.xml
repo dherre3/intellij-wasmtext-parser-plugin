@@ -1,0 +1,24 @@
+<templateSet group="Wasm">
+    <template name="exp" value="(export &quot;external_name&quot; (func $internal_name))"
+              description="New Export function." toReformat="false"
+              toShortenFQNames="false">
+        <context>
+            <option name="Wasm" value="true"/>
+        </context>
+    </template>
+    <template name="imp"
+              value="(import &quot;module&quot; &quot;external_name&quot; (func $internal_name (param f64)(result f64)))"
+              description="New Import function." toReformat="false"
+              toShortenFQNames="false">
+        <context>
+            <option name="Wasm" value="true"/>
+        </context>
+    </template>
+    <template name="func" value="(func $funame (param $i i32)(result i32) &#10; $END$ &#10; )" description="New function."
+              toReformat="false"
+              toShortenFQNames="false">
+        <context>
+            <option name="Wasm" value="true"/>
+        </context>
+    </template>
+</templateSet>
