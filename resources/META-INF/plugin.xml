@@ -1,14 +1,14 @@
 <idea-plugin>
     <id>com.dherre3.wasm-text-parser</id>
     <name>WebAssembly Text Format Parser</name>
-    <version>1.0.2</version>
+    <version>1.0.4</version>
     <vendor email="david.herrera@mail.mcgill.ca" url="http://cs.mcgill.ca/~dherre3">David Herrera</vendor>
 
     <description><![CDATA[
 
 <h1>WebAssembly Text Format IntelliJ Plugin</h1>
 Plugin to syntax highlight the WebAssembly text format in IntelliJ.
-This plugin supports the v1.0.0 of the WebAssembly specification.
+This plugin supports the v1.1 of the WebAssembly specification.
 
 <div style="width:vw;height:auto;">
 <img src="https://github.com/dherre3/intellij-wasmtext-parser-plugin/blob/master/resources/sample.png" width="100%" height="auto"></img>
@@ -25,6 +25,7 @@ Contributions are welcomed via pull-requests.
 <h2>Licence</h2>
     ]]></description>
     <change-notes><![CDATA[
+     1.0.4 Upgrade to v1.1, fixes to the scanner and parser
      1.0.3 Enable support of other IDEs
      1.0.2 Commenter, Live templates, line marker, brace matcher, folding etc
      1.0.1 Fix to some constructs
@@ -42,8 +43,7 @@ Contributions are welcomed via pull-requests.
 
 
     <extensions defaultExtensionNs="com.intellij">
-        <fileType name="Wasm Text File" implementationClass="com.wasmplugin.WasmFileType" fieldName="INSTANCE"
-                  language="Wasm" extensions="wat"/>
+        <fileTypeFactory implementation="com.wasmplugin.WasmFileTypeFactory"/>
         <lang.parserDefinition language="Wasm" implementationClass="com.wasmplugin.WasmParserDefinition"/>
         <lang.syntaxHighlighterFactory language="Wasm"
                                        implementationClass="com.wasmplugin.WasmSyntaxHighlighterFactory"/>

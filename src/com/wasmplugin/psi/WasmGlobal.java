@@ -7,16 +7,16 @@ import com.intellij.psi.PsiElement;
 
 public interface WasmGlobal extends PsiElement {
 
-  @Nullable
-  WasmExportShort getExportShort();
-
   @NotNull
+  List<WasmExportShort> getExportShortList();
+
+  @Nullable
   WasmGlobalType getGlobalType();
 
   @Nullable
   WasmImportShort getImportShort();
 
-  @Nullable
-  WasmInstruction getInstruction();
+  @NotNull
+  List<WasmInstruction> getInstructionList();
 
 }

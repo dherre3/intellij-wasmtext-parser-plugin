@@ -8,6 +8,6 @@ import com.intellij.psi.PsiElement;
 public interface WasmOffsetAbbrv extends PsiElement {
 
   @NotNull
-  WasmInstruction getInstruction();
+  List<WasmInstruction> getInstructionList();
 
 }

@@ -27,11 +27,11 @@ public class WasmLineMarkerProvider extends LineMarkerProviderDescriptor {
     @Nullable
     @Override
     public LineMarkerInfo getLineMarkerInfo(@NotNull PsiElement psiElement) {
-        if (psiElement instanceof WasmExport) {
-            return new LineMarkerInfo(psiElement, psiElement.getTextRange(), AllIcons.Actions.Export, null, null, GutterIconRenderer.Alignment.CENTER);
-        } else if (psiElement instanceof WasmImport) {
-            return new LineMarkerInfo(psiElement, psiElement.getTextRange(), AllIcons.Css.Import, null, null, GutterIconRenderer.Alignment.CENTER);
-        }
+//        if (psiElement instanceof WasmExport) {
+//            return new LineMarkerInfo(psiElement, psiElement.getTextRange(), AllIcons.Actions.Export, null, null, GutterIconRenderer.Alignment.CENTER);
+//        } else if (psiElement instanceof WasmImport) {
+//            return new LineMarkerInfo(psiElement, psiElement.getTextRange(), AllIcons.Css.Import, null, null, GutterIconRenderer.Alignment.CENTER);
+//        }
         return null;
     }
 }

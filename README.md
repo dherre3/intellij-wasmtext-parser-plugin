@@ -8,6 +8,7 @@ This plugin supports the v1.0.0 of the WebAssembly specification.
 </div>
 
 ## Future Plan
+- Provide completing of ids.
 - Provide a way to jump between function calls and function definitions.
 - Provide a syntax highlighting for variables not defined and incorrectly defined modules.
 - Provide static type checking for the module.

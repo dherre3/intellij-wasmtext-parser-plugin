@@ -28,6 +28,18 @@ public class WasmFuncImpl extends ASTWrapperPsiElement implements WasmFunc {
 
   @Override
   @NotNull
+  public List<WasmExportShort> getExportShortList() {
+    return PsiTreeUtil.getChildrenOfTypeAsList(this, WasmExportShort.class);
+  }
+
+  @Override
+  @NotNull
+  public List<WasmImportShort> getImportShortList() {
+    return PsiTreeUtil.getChildrenOfTypeAsList(this, WasmImportShort.class);
+  }
+
+  @Override
+  @NotNull
   public List<WasmInstruction> getInstructionList() {
     return PsiTreeUtil.getChildrenOfTypeAsList(this, WasmInstruction.class);
   }

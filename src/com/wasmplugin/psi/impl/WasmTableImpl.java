@@ -39,9 +39,9 @@ public class WasmTableImpl extends ASTWrapperPsiElement implements WasmTable {
   }
 
   @Override
-  @Nullable
-  public WasmExportShort getExportShort() {
-    return findChildByClass(WasmExportShort.class);
+  @NotNull
+  public List<WasmExportShort> getExportShortList() {
+    return PsiTreeUtil.getChildrenOfTypeAsList(this, WasmExportShort.class);
   }
 
   @Override

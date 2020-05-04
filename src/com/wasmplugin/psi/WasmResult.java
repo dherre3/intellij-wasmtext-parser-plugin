@@ -8,9 +8,6 @@ import com.intellij.psi.PsiElement;
 public interface WasmResult extends PsiElement {
 
   @NotNull
-  List<WasmResultExplicit> getResultExplicitList();
-
-  @NotNull
   List<WasmValueType> getValueTypeList();
 
 }

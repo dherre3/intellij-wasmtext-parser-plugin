@@ -8,6 +8,12 @@ import com.intellij.psi.PsiElement;
 public interface WasmFunc extends PsiElement {
 
   @NotNull
+  List<WasmExportShort> getExportShortList();
+
+  @NotNull
+  List<WasmImportShort> getImportShortList();
+
+  @NotNull
   List<WasmInstruction> getInstructionList();
 
   @NotNull

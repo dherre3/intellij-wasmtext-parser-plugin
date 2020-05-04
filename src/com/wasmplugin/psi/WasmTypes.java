@@ -10,7 +10,6 @@ public interface WasmTypes {
 
   IElementType ABBR_TYPE_USE = new WasmElementType("ABBR_TYPE_USE");
   IElementType ALIGN_ARG = new WasmElementType("ALIGN_ARG");
-  IElementType COM = new WasmElementType("COM");
   IElementType DATA = new WasmElementType("DATA");
   IElementType DATA_SHORT = new WasmElementType("DATA_SHORT");
   IElementType ELEMENT = new WasmElementType("ELEMENT");
@@ -30,17 +29,16 @@ public interface WasmTypes {
   IElementType INSTRUCTION = new WasmElementType("INSTRUCTION");
   IElementType LIMITS = new WasmElementType("LIMITS");
   IElementType LOCAL = new WasmElementType("LOCAL");
-  IElementType LOCAL_ABBR = new WasmElementType("LOCAL_ABBR");
   IElementType MEMORY = new WasmElementType("MEMORY");
   IElementType MEMORY_TYPE = new WasmElementType("MEMORY_TYPE");
   IElementType MEM_ARG = new WasmElementType("MEM_ARG");
   IElementType NUM = new WasmElementType("NUM");
   IElementType OFFSET_ABBRV = new WasmElementType("OFFSET_ABBRV");
   IElementType OFFSET_ARG = new WasmElementType("OFFSET_ARG");
+  IElementType PARAM_ABBREVIATED = new WasmElementType("PARAM_ABBREVIATED");
   IElementType PARAM_EXPLICIT = new WasmElementType("PARAM_EXPLICIT");
   IElementType PARAM_LIST = new WasmElementType("PARAM_LIST");
   IElementType RESULT = new WasmElementType("RESULT");
-  IElementType RESULT_EXPLICIT = new WasmElementType("RESULT_EXPLICIT");
   IElementType START = new WasmElementType("START");
   IElementType TABLE = new WasmElementType("TABLE");
   IElementType TABLE_TYPE = new WasmElementType("TABLE_TYPE");
@@ -50,131 +48,139 @@ public interface WasmTypes {
 
   IElementType BLOCK_COMMENT = new WasmTokenType("BLOCK_COMMENT");
   IElementType LINE_COMMENT = new WasmTokenType("LINE_COMMENT");
-  IElementType TABS = new WasmTokenType("tABS");
-  IElementType TADD = new WasmTokenType("tADD");
-  IElementType TALIGN = new WasmTokenType("tALIGN");
-  IElementType TAND = new WasmTokenType("tAND");
-  IElementType TANYFUNC = new WasmTokenType("tANYFUNC");
-  IElementType TBLOCK = new WasmTokenType("tBLOCK");
-  IElementType TBR = new WasmTokenType("tBR");
-  IElementType TBR_IF = new WasmTokenType("tBR_IF");
-  IElementType TBR_TABLE = new WasmTokenType("tBR_TABLE");
-  IElementType TCALL = new WasmTokenType("tCALL");
-  IElementType TCALL_INDIRECT = new WasmTokenType("tCALL_INDIRECT");
-  IElementType TCEIL = new WasmTokenType("tCEIL");
-  IElementType TCLZ = new WasmTokenType("tCLZ");
-  IElementType TCONST = new WasmTokenType("tCONST");
-  IElementType TCONVERT_S_I32 = new WasmTokenType("tCONVERT_S_I32");
-  IElementType TCONVERT_S_I64 = new WasmTokenType("tCONVERT_S_I64");
-  IElementType TCONVERT_U_I32 = new WasmTokenType("tCONVERT_U_I32");
-  IElementType TCONVERT_U_I64 = new WasmTokenType("tCONVERT_U_I64");
-  IElementType TCOPYSIGN = new WasmTokenType("tCOPYSIGN");
-  IElementType TCTZ = new WasmTokenType("tCTZ");
-  IElementType TDATA = new WasmTokenType("tDATA");
-  IElementType TDEMOTE_F64 = new WasmTokenType("tDEMOTE_F64");
-  IElementType TDIV = new WasmTokenType("tDIV");
-  IElementType TDIV_S = new WasmTokenType("tDIV_S");
-  IElementType TDIV_U = new WasmTokenType("tDIV_U");
-  IElementType TDOT = new WasmTokenType("tDOT");
-  IElementType TDROP = new WasmTokenType("tDROP");
-  IElementType TELEM = new WasmTokenType("tELEM");
-  IElementType TELSE = new WasmTokenType("tELSE");
-  IElementType TEND = new WasmTokenType("tEND");
-  IElementType TEQ = new WasmTokenType("tEQ");
-  IElementType TEQZ = new WasmTokenType("tEQZ");
-  IElementType TEXPORT = new WasmTokenType("tEXPORT");
-  IElementType TEXTEND_S_I32 = new WasmTokenType("tEXTEND_S_I32");
-  IElementType TEXTEND_U_I32 = new WasmTokenType("tEXTEND_U_I32");
-  IElementType TF32 = new WasmTokenType("tF32");
-  IElementType TF64 = new WasmTokenType("tF64");
-  IElementType TFLOAT = new WasmTokenType("tFLOAT");
-  IElementType TFLOOR = new WasmTokenType("tFLOOR");
-  IElementType TFUNC = new WasmTokenType("tFUNC");
-  IElementType TGE = new WasmTokenType("tGE");
-  IElementType TGET_GLOBAL = new WasmTokenType("tGET_GLOBAL");
-  IElementType TGET_LOCAL = new WasmTokenType("tGET_LOCAL");
-  IElementType TGE_S = new WasmTokenType("tGE_S");
-  IElementType TGE_U = new WasmTokenType("tGE_U");
-  IElementType TGLOBAL = new WasmTokenType("tGLOBAL");
-  IElementType TGROW = new WasmTokenType("tGROW");
-  IElementType TGT = new WasmTokenType("tGT");
-  IElementType TGT_S = new WasmTokenType("tGT_S");
-  IElementType TGT_U = new WasmTokenType("tGT_U");
-  IElementType TI32 = new WasmTokenType("tI32");
-  IElementType TI64 = new WasmTokenType("tI64");
-  IElementType TID = new WasmTokenType("tID");
-  IElementType TIF = new WasmTokenType("tIF");
-  IElementType TIMPORT = new WasmTokenType("tIMPORT");
-  IElementType TINT = new WasmTokenType("tINT");
-  IElementType TLE = new WasmTokenType("tLE");
-  IElementType TLE_S = new WasmTokenType("tLE_S");
-  IElementType TLE_U = new WasmTokenType("tLE_U");
-  IElementType TLOAD = new WasmTokenType("tLOAD");
-  IElementType TLOAD16_S = new WasmTokenType("tLOAD16_S");
-  IElementType TLOAD16_U = new WasmTokenType("tLOAD16_U");
-  IElementType TLOAD32_S = new WasmTokenType("tLOAD32_S");
-  IElementType TLOAD32_U = new WasmTokenType("tLOAD32_U");
-  IElementType TLOAD8_S = new WasmTokenType("tLOAD8_S");
-  IElementType TLOAD8_U = new WasmTokenType("tLOAD8_U");
-  IElementType TLOCAL = new WasmTokenType("tLOCAL");
-  IElementType TLOOP = new WasmTokenType("tLOOP");
-  IElementType TLP = new WasmTokenType("tLP");
-  IElementType TLT = new WasmTokenType("tLT");
-  IElementType TLT_S = new WasmTokenType("tLT_S");
-  IElementType TLT_U = new WasmTokenType("tLT_U");
-  IElementType TMAX = new WasmTokenType("tMAX");
-  IElementType TMEMORY = new WasmTokenType("tMEMORY");
-  IElementType TMIN = new WasmTokenType("tMIN");
-  IElementType TMODULE = new WasmTokenType("tMODULE");
-  IElementType TMUL = new WasmTokenType("tMUL");
-  IElementType TMUT = new WasmTokenType("tMUT");
-  IElementType TNAME = new WasmTokenType("tNAME");
-  IElementType TNE = new WasmTokenType("tNE");
-  IElementType TNEAREST = new WasmTokenType("tNEAREST");
-  IElementType TNEG = new WasmTokenType("tNEG");
-  IElementType TNOP = new WasmTokenType("tNOP");
-  IElementType TOFFSET = new WasmTokenType("tOFFSET");
-  IElementType TOR = new WasmTokenType("tOR");
-  IElementType TPARAM = new WasmTokenType("tPARAM");
-  IElementType TPOPCNT = new WasmTokenType("tPOPCNT");
-  IElementType TPROMOTE_F32 = new WasmTokenType("tPROMOTE_F32");
-  IElementType TREINTERPRET_F32 = new WasmTokenType("tREINTERPRET_F32");
-  IElementType TREINTERPRET_F64 = new WasmTokenType("tREINTERPRET_F64");
-  IElementType TREINTERPRET_I32 = new WasmTokenType("tREINTERPRET_I32");
-  IElementType TREINTERPRET_I64 = new WasmTokenType("tREINTERPRET_I64");
-  IElementType TREM_S = new WasmTokenType("tREM_S");
-  IElementType TREM_U = new WasmTokenType("tREM_U");
-  IElementType TRESULT = new WasmTokenType("tRESULT");
-  IElementType TRETURN = new WasmTokenType("tRETURN");
-  IElementType TROTL = new WasmTokenType("tROTL");
-  IElementType TROTR = new WasmTokenType("tROTR");
-  IElementType TRP = new WasmTokenType("tRP");
-  IElementType TSELECT = new WasmTokenType("tSELECT");
-  IElementType TSET_GLOBAL = new WasmTokenType("tSET_GLOBAL");
-  IElementType TSET_LOCAL = new WasmTokenType("tSET_LOCAL");
-  IElementType TSHL = new WasmTokenType("tSHL");
-  IElementType TSHR_S = new WasmTokenType("tSHR_S");
-  IElementType TSHR_U = new WasmTokenType("tSHR_U");
-  IElementType TSIZE = new WasmTokenType("tSIZE");
-  IElementType TSQRT = new WasmTokenType("tSQRT");
-  IElementType TSTART = new WasmTokenType("tSTART");
-  IElementType TSTORE = new WasmTokenType("tSTORE");
-  IElementType TSTORE16 = new WasmTokenType("tSTORE16");
-  IElementType TSTORE32 = new WasmTokenType("tSTORE32");
-  IElementType TSTORE8 = new WasmTokenType("tSTORE8");
-  IElementType TSUB = new WasmTokenType("tSUB");
-  IElementType TTABLE = new WasmTokenType("tTABLE");
-  IElementType TTEE_GLOBAL = new WasmTokenType("tTEE_GLOBAL");
-  IElementType TTHEN = new WasmTokenType("tTHEN");
-  IElementType TTRUNC = new WasmTokenType("tTRUNC");
-  IElementType TTRUNC_S_F32 = new WasmTokenType("tTRUNC_S_F32");
-  IElementType TTRUNC_S_F64 = new WasmTokenType("tTRUNC_S_F64");
-  IElementType TTRUNC_U_F32 = new WasmTokenType("tTRUNC_U_F32");
-  IElementType TTRUNC_U_F64 = new WasmTokenType("tTRUNC_U_F64");
-  IElementType TTYPE = new WasmTokenType("tTYPE");
-  IElementType TUNREACHABLE = new WasmTokenType("tUNREACHABLE");
-  IElementType TWRAP_I64 = new WasmTokenType("tWRAP_I64");
-  IElementType TXOR = new WasmTokenType("tXOR");
+  IElementType TABS = new WasmTokenType("TABS");
+  IElementType TADD = new WasmTokenType("TADD");
+  IElementType TALIGN = new WasmTokenType("TALIGN");
+  IElementType TAND = new WasmTokenType("TAND");
+  IElementType TBLOCK = new WasmTokenType("TBLOCK");
+  IElementType TBR = new WasmTokenType("TBR");
+  IElementType TBR_IF = new WasmTokenType("TBR_IF");
+  IElementType TBR_TABLE = new WasmTokenType("TBR_TABLE");
+  IElementType TCALL = new WasmTokenType("TCALL");
+  IElementType TCALL_INDIRECT = new WasmTokenType("TCALL_INDIRECT");
+  IElementType TCEIL = new WasmTokenType("TCEIL");
+  IElementType TCLZ = new WasmTokenType("TCLZ");
+  IElementType TCONST = new WasmTokenType("TCONST");
+  IElementType TCONVERT_S_I32 = new WasmTokenType("TCONVERT_S_I32");
+  IElementType TCONVERT_S_I64 = new WasmTokenType("TCONVERT_S_I64");
+  IElementType TCONVERT_U_I32 = new WasmTokenType("TCONVERT_U_I32");
+  IElementType TCONVERT_U_I64 = new WasmTokenType("TCONVERT_U_I64");
+  IElementType TCOPYSIGN = new WasmTokenType("TCOPYSIGN");
+  IElementType TCTZ = new WasmTokenType("TCTZ");
+  IElementType TDATA = new WasmTokenType("TDATA");
+  IElementType TDEMOTE_F64 = new WasmTokenType("TDEMOTE_F64");
+  IElementType TDIV = new WasmTokenType("TDIV");
+  IElementType TDIV_S = new WasmTokenType("TDIV_S");
+  IElementType TDIV_U = new WasmTokenType("TDIV_U");
+  IElementType TDOT = new WasmTokenType("TDOT");
+  IElementType TDROP = new WasmTokenType("TDROP");
+  IElementType TELEM = new WasmTokenType("TELEM");
+  IElementType TELSE = new WasmTokenType("TELSE");
+  IElementType TEND = new WasmTokenType("TEND");
+  IElementType TEQ = new WasmTokenType("TEQ");
+  IElementType TEQUAL = new WasmTokenType("TEQUAL");
+  IElementType TEQZ = new WasmTokenType("TEQZ");
+  IElementType TEXPORT = new WasmTokenType("TEXPORT");
+  IElementType TEXTEND16_S = new WasmTokenType("TEXTEND16_S");
+  IElementType TEXTEND32_S = new WasmTokenType("TEXTEND32_S");
+  IElementType TEXTEND8_S = new WasmTokenType("TEXTEND8_S");
+  IElementType TEXTEND_S_I32 = new WasmTokenType("TEXTEND_S_I32");
+  IElementType TEXTEND_U_I32 = new WasmTokenType("TEXTEND_U_I32");
+  IElementType TF32 = new WasmTokenType("TF32");
+  IElementType TF64 = new WasmTokenType("TF64");
+  IElementType TFLOAT = new WasmTokenType("TFLOAT");
+  IElementType TFLOOR = new WasmTokenType("TFLOOR");
+  IElementType TFUNC = new WasmTokenType("TFUNC");
+  IElementType TFUNCREF = new WasmTokenType("TFUNCREF");
+  IElementType TGE = new WasmTokenType("TGE");
+  IElementType TGET_GLOBAL = new WasmTokenType("TGET_GLOBAL");
+  IElementType TGET_LOCAL = new WasmTokenType("TGET_LOCAL");
+  IElementType TGE_S = new WasmTokenType("TGE_S");
+  IElementType TGE_U = new WasmTokenType("TGE_U");
+  IElementType TGLOBAL = new WasmTokenType("TGLOBAL");
+  IElementType TGROW = new WasmTokenType("TGROW");
+  IElementType TGT = new WasmTokenType("TGT");
+  IElementType TGT_S = new WasmTokenType("TGT_S");
+  IElementType TGT_U = new WasmTokenType("TGT_U");
+  IElementType TI32 = new WasmTokenType("TI32");
+  IElementType TI64 = new WasmTokenType("TI64");
+  IElementType TID = new WasmTokenType("TID");
+  IElementType TIF = new WasmTokenType("TIF");
+  IElementType TIMPORT = new WasmTokenType("TIMPORT");
+  IElementType TINT = new WasmTokenType("TINT");
+  IElementType TLE = new WasmTokenType("TLE");
+  IElementType TLE_S = new WasmTokenType("TLE_S");
+  IElementType TLE_U = new WasmTokenType("TLE_U");
+  IElementType TLOAD = new WasmTokenType("TLOAD");
+  IElementType TLOAD16_S = new WasmTokenType("TLOAD16_S");
+  IElementType TLOAD16_U = new WasmTokenType("TLOAD16_U");
+  IElementType TLOAD32_S = new WasmTokenType("TLOAD32_S");
+  IElementType TLOAD32_U = new WasmTokenType("TLOAD32_U");
+  IElementType TLOAD8_S = new WasmTokenType("TLOAD8_S");
+  IElementType TLOAD8_U = new WasmTokenType("TLOAD8_U");
+  IElementType TLOCAL = new WasmTokenType("TLOCAL");
+  IElementType TLOOP = new WasmTokenType("TLOOP");
+  IElementType TLP = new WasmTokenType("TLP");
+  IElementType TLT = new WasmTokenType("TLT");
+  IElementType TLT_S = new WasmTokenType("TLT_S");
+  IElementType TLT_U = new WasmTokenType("TLT_U");
+  IElementType TMAX = new WasmTokenType("TMAX");
+  IElementType TMEMORY = new WasmTokenType("TMEMORY");
+  IElementType TMIN = new WasmTokenType("TMIN");
+  IElementType TMODULE = new WasmTokenType("TMODULE");
+  IElementType TMUL = new WasmTokenType("TMUL");
+  IElementType TMUT = new WasmTokenType("TMUT");
+  IElementType TNAME = new WasmTokenType("TNAME");
+  IElementType TNE = new WasmTokenType("TNE");
+  IElementType TNEAREST = new WasmTokenType("TNEAREST");
+  IElementType TNEG = new WasmTokenType("TNEG");
+  IElementType TNOP = new WasmTokenType("TNOP");
+  IElementType TOFFSET = new WasmTokenType("TOFFSET");
+  IElementType TOR = new WasmTokenType("TOR");
+  IElementType TPARAM = new WasmTokenType("TPARAM");
+  IElementType TPOPCNT = new WasmTokenType("TPOPCNT");
+  IElementType TPROMOTE_F32 = new WasmTokenType("TPROMOTE_F32");
+  IElementType TREINTERPRET_F32 = new WasmTokenType("TREINTERPRET_F32");
+  IElementType TREINTERPRET_F64 = new WasmTokenType("TREINTERPRET_F64");
+  IElementType TREINTERPRET_I32 = new WasmTokenType("TREINTERPRET_I32");
+  IElementType TREINTERPRET_I64 = new WasmTokenType("TREINTERPRET_I64");
+  IElementType TREM_S = new WasmTokenType("TREM_S");
+  IElementType TREM_U = new WasmTokenType("TREM_U");
+  IElementType TRESULT = new WasmTokenType("TRESULT");
+  IElementType TRETURN = new WasmTokenType("TRETURN");
+  IElementType TROTL = new WasmTokenType("TROTL");
+  IElementType TROTR = new WasmTokenType("TROTR");
+  IElementType TRP = new WasmTokenType("TRP");
+  IElementType TSELECT = new WasmTokenType("TSELECT");
+  IElementType TSET_GLOBAL = new WasmTokenType("TSET_GLOBAL");
+  IElementType TSET_LOCAL = new WasmTokenType("TSET_LOCAL");
+  IElementType TSHL = new WasmTokenType("TSHL");
+  IElementType TSHR_S = new WasmTokenType("TSHR_S");
+  IElementType TSHR_U = new WasmTokenType("TSHR_U");
+  IElementType TSIZE = new WasmTokenType("TSIZE");
+  IElementType TSQRT = new WasmTokenType("TSQRT");
+  IElementType TSTART = new WasmTokenType("TSTART");
+  IElementType TSTORE = new WasmTokenType("TSTORE");
+  IElementType TSTORE16 = new WasmTokenType("TSTORE16");
+  IElementType TSTORE32 = new WasmTokenType("TSTORE32");
+  IElementType TSTORE8 = new WasmTokenType("TSTORE8");
+  IElementType TSUB = new WasmTokenType("TSUB");
+  IElementType TTABLE = new WasmTokenType("TTABLE");
+  IElementType TTEE_GLOBAL = new WasmTokenType("TTEE_GLOBAL");
+  IElementType TTHEN = new WasmTokenType("TTHEN");
+  IElementType TTRUNC = new WasmTokenType("TTRUNC");
+  IElementType TTRUNC_SAT_F32_S = new WasmTokenType("TTRUNC_SAT_F32_S");
+  IElementType TTRUNC_SAT_F32_U = new WasmTokenType("TTRUNC_SAT_F32_U");
+  IElementType TTRUNC_SAT_F64_S = new WasmTokenType("TTRUNC_SAT_F64_S");
+  IElementType TTRUNC_SAT_F64_U = new WasmTokenType("TTRUNC_SAT_F64_U");
+  IElementType TTRUNC_S_F32 = new WasmTokenType("TTRUNC_S_F32");
+  IElementType TTRUNC_S_F64 = new WasmTokenType("TTRUNC_S_F64");
+  IElementType TTRUNC_U_F32 = new WasmTokenType("TTRUNC_U_F32");
+  IElementType TTRUNC_U_F64 = new WasmTokenType("TTRUNC_U_F64");
+  IElementType TTYPE = new WasmTokenType("TTYPE");
+  IElementType TUNREACHABLE = new WasmTokenType("TUNREACHABLE");
+  IElementType TWRAP_I64 = new WasmTokenType("TWRAP_I64");
+  IElementType TXOR = new WasmTokenType("TXOR");
 
   class Factory {
     public static PsiElement createElement(ASTNode node) {
@@ -184,9 +190,6 @@ public interface WasmTypes {
       }
       else if (type == ALIGN_ARG) {
         return new WasmAlignArgImpl(node);
-      }
-      else if (type == COM) {
-        return new WasmComImpl(node);
       }
       else if (type == DATA) {
         return new WasmDataImpl(node);
@@ -245,9 +248,6 @@ public interface WasmTypes {
       else if (type == LOCAL) {
         return new WasmLocalImpl(node);
       }
-      else if (type == LOCAL_ABBR) {
-        return new WasmLocalAbbrImpl(node);
-      }
       else if (type == MEMORY) {
         return new WasmMemoryImpl(node);
       }
@@ -266,6 +266,9 @@ public interface WasmTypes {
       else if (type == OFFSET_ARG) {
         return new WasmOffsetArgImpl(node);
       }
+      else if (type == PARAM_ABBREVIATED) {
+        return new WasmParamAbbreviatedImpl(node);
+      }
       else if (type == PARAM_EXPLICIT) {
         return new WasmParamExplicitImpl(node);
       }
@@ -274,9 +277,6 @@ public interface WasmTypes {
       }
       else if (type == RESULT) {
         return new WasmResultImpl(node);
-      }
-      else if (type == RESULT_EXPLICIT) {
-        return new WasmResultExplicitImpl(node);
       }
       else if (type == START) {
         return new WasmStartImpl(node);

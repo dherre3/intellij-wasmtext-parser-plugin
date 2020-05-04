@@ -1,0 +1,8 @@
+Wasm File(0,770)
+  PsiWhiteSpace(';; Test comment syntax\n\n;;comment\n\n;;;;;;;;;;;\n\n    ;;comment\n\n')(0,63)
+  PsiElement(WasmTokenType.TLP)('(')(63,64)
+  PsiWhiteSpace(' ;;comment\n')(64,75)
+  PsiElement(WasmTokenType.TMODULE)('module')(75,81)
+  PsiWhiteSpace(';;comment\n')(81,91)
+  PsiElement(WasmTokenType.TRP)(')')(91,92)
+  PsiWhiteSpace(';;comment\n\n;;)\n;;;)\n;; ;)\n;; (;\n\n(;;)\n\n(;comment;)\n\n(;;comment;)\n\n(;;;comment;)\n\n(;;;;;;;;;;;;;;)\n\n(;(((((((((( ;)\n\n(;)))))))))));)\n\n(;comment";)\n\n(;comment"";)\n\n(;comment""";)\n\n;; ASCII 00-1F, 7F\n(;\n;)\n\n(;Heiße Würstchen;)\n\n(;;)\n\n(;comment\ncomment;)\n\n         \t(;comment;)\n;; Test comment syntax\n\n;;comment\n\n;;;;;;;;;;;\n\n    ;;comment\n\n;;)\n;;;)\n;; ;)\n;; (;\n\n(;;)\n\n(;comment;)\n\n(;;comment;)\n\n(;;;comment;)\n\n(;;;;;;;;;;;;;;)\n\n(;(((((((((( ;)\n\n(;)))))))))));)\n\n(;comment";)\n\n(;comment"";)\n\n(;comment""";)\n\n;; ASCII 00-1F, 7F\n(;\n;)\n\n(;Heiße Würstchen;)\n\n(;;)\n(;comment(;nested;)comment;)\n(;comment\ncomment;)\n(;comment;)')(92,770)

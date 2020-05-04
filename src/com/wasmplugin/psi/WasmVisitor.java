@@ -15,10 +15,6 @@ public class WasmVisitor extends PsiElementVisitor {
     visitPsiElement(o);
   }
 
-  public void visitCom(@NotNull WasmCom o) {
-    visitPsiElement(o);
-  }
-
   public void visitData(@NotNull WasmData o) {
     visitPsiElement(o);
   }
@@ -95,10 +91,6 @@ public class WasmVisitor extends PsiElementVisitor {
     visitPsiElement(o);
   }
 
-  public void visitLocalAbbr(@NotNull WasmLocalAbbr o) {
-    visitPsiElement(o);
-  }
-
   public void visitMemArg(@NotNull WasmMemArg o) {
     visitPsiElement(o);
   }
@@ -123,6 +115,10 @@ public class WasmVisitor extends PsiElementVisitor {
     visitPsiElement(o);
   }
 
+  public void visitParamAbbreviated(@NotNull WasmParamAbbreviated o) {
+    visitPsiElement(o);
+  }
+
   public void visitParamExplicit(@NotNull WasmParamExplicit o) {
     visitPsiElement(o);
   }
@@ -132,10 +128,6 @@ public class WasmVisitor extends PsiElementVisitor {
   }
 
   public void visitResult(@NotNull WasmResult o) {
-    visitPsiElement(o);
-  }
-
-  public void visitResultExplicit(@NotNull WasmResultExplicit o) {
     visitPsiElement(o);
   }
 

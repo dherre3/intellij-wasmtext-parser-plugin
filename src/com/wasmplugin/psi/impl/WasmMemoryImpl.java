@@ -33,15 +33,15 @@ public class WasmMemoryImpl extends ASTWrapperPsiElement implements WasmMemory {
   }
 
   @Override
-  @Nullable
-  public WasmExportShort getExportShort() {
-    return findChildByClass(WasmExportShort.class);
+  @NotNull
+  public List<WasmExportShort> getExportShortList() {
+    return PsiTreeUtil.getChildrenOfTypeAsList(this, WasmExportShort.class);
   }
 
   @Override
-  @Nullable
-  public WasmImportShort getImportShort() {
-    return findChildByClass(WasmImportShort.class);
+  @NotNull
+  public List<WasmImportShort> getImportShortList() {
+    return PsiTreeUtil.getChildrenOfTypeAsList(this, WasmImportShort.class);
   }
 
   @Override

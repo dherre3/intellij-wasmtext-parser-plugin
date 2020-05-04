@@ -65,9 +65,7 @@
 
 
     (global $TIC_TIME (mut f64) (f64.const 0))
-    (table $tab 256 anyfunc)
-
-    ;; (elem $tab (i32.const 10) )
+;;    (table $tab 256 anyfunc)
     (export "mem" (memory $mem))
     (export "tab" (table $tab))
 

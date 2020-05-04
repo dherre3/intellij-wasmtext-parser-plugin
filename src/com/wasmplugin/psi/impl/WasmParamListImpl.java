@@ -27,15 +27,15 @@ public class WasmParamListImpl extends ASTWrapperPsiElement implements WasmParam
   }
 
   @Override
-  @NotNull
-  public List<WasmParamExplicit> getParamExplicitList() {
-    return PsiTreeUtil.getChildrenOfTypeAsList(this, WasmParamExplicit.class);
+  @Nullable
+  public WasmParamAbbreviated getParamAbbreviated() {
+    return findChildByClass(WasmParamAbbreviated.class);
   }
 
   @Override
-  @NotNull
-  public List<WasmValueType> getValueTypeList() {
-    return PsiTreeUtil.getChildrenOfTypeAsList(this, WasmValueType.class);
+  @Nullable
+  public WasmParamExplicit getParamExplicit() {
+    return findChildByClass(WasmParamExplicit.class);
   }
 
 }

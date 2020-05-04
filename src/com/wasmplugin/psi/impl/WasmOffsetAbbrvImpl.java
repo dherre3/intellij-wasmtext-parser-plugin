@@ -28,8 +28,8 @@ public class WasmOffsetAbbrvImpl extends ASTWrapperPsiElement implements WasmOff
 
   @Override
   @NotNull
-  public WasmInstruction getInstruction() {
-    return findNotNullChildByClass(WasmInstruction.class);
+  public List<WasmInstruction> getInstructionList() {
+    return PsiTreeUtil.getChildrenOfTypeAsList(this, WasmInstruction.class);
   }
 
 }

@@ -7,10 +7,10 @@ import com.intellij.psi.PsiElement;
 
 public interface WasmParamList extends PsiElement {
 
-  @NotNull
-  List<WasmParamExplicit> getParamExplicitList();
+  @Nullable
+  WasmParamAbbreviated getParamAbbreviated();
 
-  @NotNull
-  List<WasmValueType> getValueTypeList();
+  @Nullable
+  WasmParamExplicit getParamExplicit();
 
 }

@@ -27,15 +27,15 @@ public class WasmAbbrTypeUseImpl extends ASTWrapperPsiElement implements WasmAbb
   }
 
   @Override
-  @Nullable
-  public WasmParamList getParamList() {
-    return findChildByClass(WasmParamList.class);
+  @NotNull
+  public List<WasmParamList> getParamListList() {
+    return PsiTreeUtil.getChildrenOfTypeAsList(this, WasmParamList.class);
   }
 
   @Override
-  @Nullable
-  public WasmResult getResult() {
-    return findChildByClass(WasmResult.class);
+  @NotNull
+  public List<WasmResult> getResultList() {
+    return PsiTreeUtil.getChildrenOfTypeAsList(this, WasmResult.class);
   }
 
 }

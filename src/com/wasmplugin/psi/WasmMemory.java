@@ -10,11 +10,11 @@ public interface WasmMemory extends PsiElement {
   @Nullable
   WasmDataShort getDataShort();
 
-  @Nullable
-  WasmExportShort getExportShort();
+  @NotNull
+  List<WasmExportShort> getExportShortList();
 
-  @Nullable
-  WasmImportShort getImportShort();
+  @NotNull
+  List<WasmImportShort> getImportShortList();
 
   @Nullable
   WasmMemoryType getMemoryType();

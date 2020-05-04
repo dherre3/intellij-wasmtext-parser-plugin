@@ -28,12 +28,6 @@ public class WasmResultImpl extends ASTWrapperPsiElement implements WasmResult {
 
   @Override
   @NotNull
-  public List<WasmResultExplicit> getResultExplicitList() {
-    return PsiTreeUtil.getChildrenOfTypeAsList(this, WasmResultExplicit.class);
-  }
-
-  @Override
-  @NotNull
   public List<WasmValueType> getValueTypeList() {
     return PsiTreeUtil.getChildrenOfTypeAsList(this, WasmValueType.class);
   }
